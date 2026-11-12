@@ -56,3 +56,7 @@ summary.md
 system.md
 roadmap.md
 wifi-report.md
+
+# Playwright test artifacts
+playwright-report/
+test-results/
