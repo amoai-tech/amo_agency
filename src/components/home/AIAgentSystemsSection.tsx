@@ -247,7 +247,7 @@ export default function AIAgentSystemsSection() {
                   }}
                 >
                   <span style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.3)', fontFamily: 'monospace' }}>
-                    ai-agents.sun-ai.io/dashboard
+                    www.amoai.ca/app/dashboard
                   </span>
                 </div>
                 <div className="flex gap-1.5 opacity-30">

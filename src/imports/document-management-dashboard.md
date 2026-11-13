@@ -659,7 +659,7 @@ type DocumentSearchResponse = Document[];
 │ SIDEBAR (240px)  │  FOLDER TREE (200px)  │  MAIN CONTENT (flex-1)         │
 │                  │                       │                                 │
 │ ┌──────────────┐ │ ┌───────────────────┐ │ ┌─────────────────────────────┐ │
-│ │ SUN AI       │ │ │ All Documents     │ │ │ Documents                   │ │
+│ │ AMO AI       │ │ │ All Documents     │ │ │ Documents                   │ │
 │ │              │ │ │                   │ │ └─────────────────────────────┘ │
 │ │ Dashboard    │ │ │ ▾ Acme Retail     │ │                                 │
 │ │ Projects     │ │ │   ▸ AI Trans. (7) │ │ ┌──────────────────┐ ┌──┬──┐  │

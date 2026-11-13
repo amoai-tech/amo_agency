@@ -715,7 +715,7 @@ strategy.post(`${PREFIX}/strategy/analyze`, async (c) => {
     const agentResults: any[] = [];
 
     // 3. Phase A — 3 agents in parallel
-    const systemPromptBase = `You are an AI strategy analyst for Sun AI Agency. Analyze the business data and Lean Canvas below.\n\n${getHonestyProtocol()}`;
+    const systemPromptBase = `You are an AI strategy analyst for AMO AI. Analyze the business data and Lean Canvas below.\n\n${getHonestyProtocol()}`;
 
     const [synthResult, oppResult, metricsResult] = await Promise.all([
       (async () => {

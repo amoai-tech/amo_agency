@@ -20,7 +20,7 @@ Build the `/auth` route with split-screen layout and tab-toggled authentication 
 ## Scope
 - `/auth` route rendering `AuthPage` component
 - Split-screen layout:
-  - Left half (50%): `#0A211F` background, Sun AI logo, value proposition text, minimal pattern
+  - Left half (50%): `#0A211F` background, AMO AI logo, value proposition text, minimal pattern
   - Right half (50%): white background, centered form container (max-width 380px)
 - Tab toggle: "Sign In" | "Create Account" — switches form below
 - Sign In form:

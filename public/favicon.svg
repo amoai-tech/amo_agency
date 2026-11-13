@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="AMO AI">
+  <rect width="64" height="64" rx="12" fill="#0A211F"/>
+  <path d="M17 45 28.6 17h6.8L47 45h-7.2l-2.3-6.2h-11L24.2 45H17Zm11.7-12.2h6.6L32 23.7l-3.3 9.1Z" fill="#F5F5F0"/>
+  <circle cx="47" cy="17" r="4" fill="#00875A"/>
+</svg>

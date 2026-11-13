@@ -20,12 +20,12 @@ mermaid_diagram: mermaid-wizard/02-business-context.md
 
 ## Figma Make Prompt
 
-> Design a premium, editorial-style wizard screen for "Sun AI Agency" — an AI consulting platform. This is Step 1 of a 5-step onboarding wizard titled "Business Context."
+> Design a premium, editorial-style wizard screen for "AMO AI" — an AI consulting platform. This is Step 1 of a 5-step onboarding wizard titled "Business Context."
 >
 > **Layout:** Three-panel layout on desktop (1440px wide).
 >
 > **Left Panel (240px, white background):**
-> - Sun AI Agency logo at top (small, minimal)
+> - AMO AI logo at top (small, minimal)
 > - Vertical step progress indicator with 5 steps:
 >   1. "Business Context" — active (lime green dot, bold label)
 >   2. "Industry Diagnostics" — inactive (gray dot)
@@ -127,9 +127,9 @@ Collect foundational business information. This is the first impression — it m
 
 ### Top Bar (64px)
 
-The top bar is a horizontal strip spanning the full width, 64px tall. On the left is the Sun AI logo (simple wordmark). In the center is the text "Step 1 of 5 — Business Context" (Lora 14px, muted). On the right is the auto-save indicator displaying "Saved".
+The top bar is a horizontal strip spanning the full width, 64px tall. On the left is the AMO AI logo (simple wordmark). In the center is the text "Step 1 of 5 — Business Context" (Lora 14px, muted). On the right is the auto-save indicator displaying "Saved".
 
-- Left: Sun AI logo (simple wordmark)
+- Left: AMO AI logo (simple wordmark)
 - Center: "Step 1 of 5 — Business Context" (Lora 14px, muted)
 - Right: Auto-save indicator
 

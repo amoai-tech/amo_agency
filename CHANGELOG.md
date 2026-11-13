@@ -1,6 +1,6 @@
-# CHANGELOG — Sun AI Agency
+# CHANGELOG — AMO AI
 
-**Project:** Sun AI Agency — AI Consulting & Solutions Website
+**Project:** AMO AI — AI Consulting & Solutions Website
 **Stack:** Vite + React + Tailwind CSS v4 + Supabase + Vercel
 **Design System:** BCG Consulting-Inspired (Calm Luxury Editorial)
 **Current Version:** v0.31.0

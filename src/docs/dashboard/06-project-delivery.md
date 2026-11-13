@@ -33,7 +33,7 @@ Real-world: "Acme Retail Phase 1 is 80% complete — consultant drags 'Configure
 │  SIDEBAR    │  Projects / AI Transformation           🔔    JD ▾          │
 │  240px      ├──────────────────────────────────────────────────────────────┤
 │             │                                                              │
-│  ☀ Sun AI   │  ┌──────────────────────────────────────────────────────┐    │
+│  ☀ AMO AI   │  ┌──────────────────────────────────────────────────────┐    │
 │             │  │ PROJECT HEADER                                       │    │
 │  ──────────│  │                                                      │    │
 │  ○ Dashboard│  │  AI Transformation — Acme Retail Group    ● Active   │    │

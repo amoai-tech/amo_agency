@@ -1,7 +1,7 @@
 # 00 — DASHBOARD MASTER PLAN & PROGRESS TRACKER
-# Sun AI Agency — Full Project Status Report
+# AMO AI — Full Project Status Report
 
-**Project:** Sun AI Agency — AI Consulting & Solutions Website
+**Project:** AMO AI — AI Consulting & Solutions Website
 **Stack:** Vite + React 18 + Tailwind CSS v4 + Supabase + Vercel
 **Design System:** BCG Consulting-Inspired (Calm Luxury Editorial)
 **Current Version:** v0.16.0
@@ -539,7 +539,7 @@
 | Supabase Architecture | `/imports/supabase-architecture-overview.md` | 🟢 | 100% | 21-table schema, edge functions, auth |
 | Supabase Prompt Docs (4) | `/docs/supabase/` | 🟢 | 100% | Frontend wiring, upload pipeline, realtime, SQL |
 | BCG Style Guides (2) | `/imports/bcg-style-guide*.md` | 🟢 | 100% | Design system reference |
-| Service Page Layout | `/imports/sun-ai-service-page.md` | 🟢 | 100% | Superside-inspired spec |
+| Service Page Layout | `/imports/amo-ai-service-page.md` | 🟢 | 100% | Superside-inspired spec |
 | UX Best Practices | `/imports/ux-best-practices-review.md` | 🟢 | 100% | Mobile-first standards |
 | Refactor Guide | `/imports/refactor-kv-to-tables.md` | 🟢 | 100% | KV→relational migration guide |
 

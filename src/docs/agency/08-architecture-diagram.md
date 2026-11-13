@@ -7,7 +7,7 @@
 
 ## Overview
 
-Three-column technical architecture diagram showing the complete data flow through the Sun AI Agency platform. Blueprint/technical drawing aesthetic with dark navy background and white/cyan lines.
+Three-column technical architecture diagram showing the complete data flow through the AMO AI platform. Blueprint/technical drawing aesthetic with dark navy background and white/cyan lines.
 
 - **Left column:** Frontend component tree (31 components as nested boxes)
 - **Center column:** API routes (38 edge function endpoints as horizontal bars with method badges)

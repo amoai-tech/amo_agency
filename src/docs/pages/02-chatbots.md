@@ -8,7 +8,7 @@
 
 ## 📋 Executive Summary
 
-The current Chatbots page (`/components/ChatbotsPage.tsx`) **does not follow the Sun AI Style Guide**. It uses incompatible colors (`#1A1A1A` background, `#F59E0B` orange accents), wrong typography, rounded corners on some elements, and violates the established brand system.
+The current Chatbots page (`/components/ChatbotsPage.tsx`) **does not follow the AMO AI Style Guide**. It uses incompatible colors (`#1A1A1A` background, `#F59E0B` orange accents), wrong typography, rounded corners on some elements, and violates the established brand system.
 
 **Style Guide Reference:** `/style-guide`
 

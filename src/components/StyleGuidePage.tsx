@@ -163,7 +163,7 @@ export default function StyleGuidePage() {
               Visual System &<br />Brand Style Guide
             </h1>
             <p className="font-['Lora'] text-xl lg:text-2xl text-white/80 max-w-3xl">
-              A comprehensive guide to the Sun AI Agency design system—colors, typography, components, and principles for creating premium, editorial-quality experiences.
+              A comprehensive guide to the AMO AI design system—colors, typography, components, and principles for creating premium, editorial-quality experiences.
             </p>
           </motion.div>
         </div>
@@ -220,7 +220,7 @@ export default function StyleGuidePage() {
             Color Palettes
           </h2>
           <p className="font-['Lora'] text-xl text-gray-600 mb-8 max-w-3xl">
-            Sun AI Agency uses two complementary color systems to create versatile, premium experiences across different contexts.
+            AMO AI uses two complementary color systems to create versatile, premium experiences across different contexts.
           </p>
 
           {/* Palette Usage Guide */}

@@ -413,4 +413,4 @@ If you want, I can also show you something very useful:
 
 **The ideal AI SaaS onboarding wizard layout used by companies like Stripe, Vercel, and Linear.**
 
-It will make your **Sun AI wizard feel world-class.**
+It will make your **AMO AI wizard feel world-class.**

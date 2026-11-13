@@ -713,7 +713,7 @@ interface NLParseResponse {
 │ SIDEBAR (240px)  │  MAIN CONTENT (max-w-[1200px], mx-auto, px-6)          │
 │                  │                                                         │
 │ ┌──────────────┐ │ ┌─────────────────────────────────────────────────────┐ │
-│ │ SUN AI       │ │ │ Workflow Automation                                 │ │
+│ │ AMO AI       │ │ │ Workflow Automation                                 │ │
 │ │              │ │ └─────────────────────────────────────────────────────┘ │
 │ │ Dashboard    │ │                                                         │
 │ │ Projects     │ │ ┌────────────┬────────────┬────────────┬────────────┐  │

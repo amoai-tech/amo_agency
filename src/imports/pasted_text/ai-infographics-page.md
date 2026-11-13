@@ -1,6 +1,6 @@
-Sun AI Agency Infographics Page
+AMO AI Infographics Page
 
-Design a premium, modern, editorial-style landing page for Sun AI Agency called “AI Infographics & Visual Intelligence”.
+Design a premium, modern, editorial-style landing page for AMO AI called “AI Infographics & Visual Intelligence”.
 
 The page should feel like a mix of:
 
@@ -12,7 +12,7 @@ modern SaaS product page
 
 data storytelling platform
 
-The goal of this page is to position Sun AI Agency as the company that turns complex AI strategy, automation, systems, and results into clear visual content:
+The goal of this page is to position AMO AI as the company that turns complex AI strategy, automation, systems, and results into clear visual content:
 
 infographics
 
@@ -32,7 +32,7 @@ This page should not feel generic or template-like. It should feel strategic, pr
 
 Core Positioning
 
-Sun AI Agency helps businesses understand, present, and sell AI visually.
+AMO AI helps businesses understand, present, and sell AI visually.
 
 We do not just build AI systems.
 We also turn AI outputs, strategies, workflows, and results into:
@@ -118,7 +118,7 @@ Use alternating section backgrounds and asymmetrical editorial composition where
 Section 1 — Hero
 Goal
 
-Immediately communicate that Sun AI turns complex AI ideas into visual intelligence.
+Immediately communicate that AMO AI turns complex AI ideas into visual intelligence.
 
 Content
 
@@ -205,7 +205,7 @@ Display 4 strong stats:
 
 293% Average ROI Potential
 
-These figures should feel like strategic proof points tied to Sun AI’s service architecture and AI system design approach
+These figures should feel like strategic proof points tied to AMO AI’s service architecture and AI system design approach
 
 UI direction
 
@@ -318,7 +318,7 @@ automation systems look too technical
 
 AI outputs are difficult to explain internally
 
-Right column: Sun AI solution
+Right column: AMO AI solution
 
 simplify complexity visually
 
@@ -332,7 +332,7 @@ make presentations more persuasive
 
 help teams align around one visual system
 
-This aligns with Sun AI’s role as an AI business operating system with guided strategy, system recommendations, and dashboards
+This aligns with AMO AI’s role as an AI business operating system with guided strategy, system recommendations, and dashboards
 
 UI direction
 
@@ -389,7 +389,7 @@ each block includes a small preview graphic
 Section 6 — Process Section
 Goal
 
-Explain how Sun AI creates infographic and visual content.
+Explain how AMO AI creates infographic and visual content.
 
 Content
 
@@ -412,7 +412,7 @@ Step 4 — Deliver
 
 You receive polished visual assets ready for websites, sales, dashboards, decks, or animation.
 
-This process should echo the Sun AI strategic workflow approach from diagnosis to recommendations to roadmap delivery
+This process should echo the AMO AI strategic workflow approach from diagnosis to recommendations to roadmap delivery
 
 UI direction
 
@@ -468,7 +468,7 @@ Agencies & Consulting
 
 Client strategy visuals, proposal graphics, ROI summaries, roadmap presentations
 
-These industries match Sun AI’s core industry positioning
+These industries match AMO AI’s core industry positioning
 
 UI direction
 
@@ -521,7 +521,7 @@ support
 
 analytics
 
-This should visually reflect Sun AI’s system-based service architecture and multi-agent approach
+This should visually reflect AMO AI’s system-based service architecture and multi-agent approach
 
 UI direction
 
@@ -688,7 +688,7 @@ editorial spacing
 
 Colors
 
-Use Sun AI premium palette:
+Use AMO AI premium palette:
 
 deep forest / near-black background
 

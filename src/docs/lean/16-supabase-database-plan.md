@@ -30,7 +30,7 @@
 
 ## 1. Executive Summary
 
-The Strategy Engine adds **12 new tables** to the existing 32-table Sun AI platform database, bringing the total to **44 tables**. The new tables are organized into two tiers:
+The Strategy Engine adds **12 new tables** to the existing 32-table AMO AI platform database, bringing the total to **44 tables**. The new tables are organized into two tiers:
 
 - **Core (6 tables):** `lean_canvases`, `lean_canvas_versions`, `strategy_insights`, `automation_opportunities`, `strategy_recommendations`, `strategy_actions`
 - **Advanced (6 tables):** `strategy_events`, `strategy_event_triggers`, `strategy_agent_memory`, `strategy_signals`, `strategy_roles`, `strategy_budgets`
@@ -174,7 +174,7 @@ Legend:
 
 ```
 ┌──────────────────────────────────────────────────────────────────────────────────┐
-│                         SUN AI PLATFORM — 44 TABLES                              │
+│                         AMO AI PLATFORM — 44 TABLES                              │
 │                                                                                  │
 │  ┌─────────────┐     ┌──────────────┐     ┌──────────────┐                      │
 │  │ auth.users  │────►│  profiles     │     │organizations │                      │

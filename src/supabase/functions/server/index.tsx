@@ -124,7 +124,7 @@ app.post(`${PREFIX}/dashboard-insights`, async (c) => {
     // Validate auth — must be a real authenticated user (not just header presence)
     await requireAuth(c.req.header("Authorization") ?? null);
 
-    const systemPrompt = `You are a senior AI strategy consultant at Sun AI Agency. Based on the client's project state, readiness score, and recent activity, generate 2-4 prioritized action recommendations.
+    const systemPrompt = `You are a senior AI strategy consultant at AMO AI. Based on the client's project state, readiness score, and recent activity, generate 2-4 prioritized action recommendations.
 
 Each recommendation should be specific, actionable, and tied to their actual data. Avoid generic advice.
 

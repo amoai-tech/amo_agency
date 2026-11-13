@@ -13,7 +13,7 @@ const TRADITIONAL_FEATURES = [
   'Costly change requests',
 ];
 
-const SUN_AI_FEATURES = [
+const AMO_AI_FEATURES = [
   '6-8 weeks from start to launch',
   'AI-powered automation',
   'Live, production-ready systems',
@@ -66,7 +66,7 @@ export default function ComparisonSection() {
             </ul>
           </motion.div>
 
-          {/* Sun AI Agency */}
+          {/* AMO AI */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -79,10 +79,10 @@ export default function ComparisonSection() {
               className="text-xl mb-6"
               style={{ fontFamily: 'Georgia, serif', color: '#1A1A1A' }}
             >
-              Sun AI Agency
+              AMO AI
             </h3>
             <ul className="space-y-4">
-              {SUN_AI_FEATURES.map((feature, index) => (
+              {AMO_AI_FEATURES.map((feature, index) => (
                 <li key={index} className="flex gap-3" style={{ color: '#1A1A1A' }}>
                   <Check className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: '#00875A' }} />
                   <span>{feature}</span>

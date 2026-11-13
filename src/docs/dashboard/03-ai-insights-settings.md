@@ -171,7 +171,7 @@ Central place for all documents generated during and after the wizard: the strat
 
 Documents are generated client-side as formatted HTML, then converted to PDF using the browser's print-to-PDF flow (window.print with a print-specific stylesheet). No server-side PDF generation needed for MVP.
 
-The print stylesheet: hides sidebar, header, and navigation. Sets white background. Uses Georgia serif for headings, Inter for body. Includes Sun AI Agency logo and "Confidential" watermark. Page breaks between major sections.
+The print stylesheet: hides sidebar, header, and navigation. Sets white background. Uses Georgia serif for headings, Inter for body. Includes AMO AI logo and "Confidential" watermark. Page breaks between major sections.
 
 ---
 
@@ -256,7 +256,7 @@ Account management, organization profile, and preferences. For MVP: display user
 ```
 ┌─────────────────────┐
 │                     │
-│  ☀ Sun AI Agency    │  ← Logo, 16px from top, Georgia serif
+│  ☀ AMO AI    │  ← Logo, 16px from top, Georgia serif
 │                     │
 │  ─────────────────  │  ← Divider #333
 │                     │
@@ -286,7 +286,7 @@ Account management, organization profile, and preferences. For MVP: display user
 Sidebar specs:
 - Width: 240px fixed on desktop
 - Background: #1A1A1A
-- Logo area: Sun icon (#00875A) + "Sun AI Agency" in Georgia serif, #F5F5F0
+- Logo area: Sun icon (#00875A) + "AMO AI" in Georgia serif, #F5F5F0
 - Nav items: 14px Inter, 40px row height, 16px left padding
 - Active item: #F5F5F0 text, 2px #00875A left border, rgba(245,245,240,0.05) background
 - Inactive item: #9CA39B text, transparent background, hover rgba(245,245,240,0.05)
@@ -333,7 +333,7 @@ Input: sessionId (to load all wizard data), projectState (optional, current phas
 
 Behavior: load wizard_answers for all 5 steps, assemble a summary of the org's current state, call Gemini with a system prompt focused on actionable project management recommendations, return 2-4 structured insights each with title, description, priority, and suggested action.
 
-Gemini system prompt focus: "You are a project management advisor at Sun AI Agency. Based on the client's readiness score, selected systems, roadmap progress, and diagnostic findings, recommend 2-4 specific next actions. Prioritize actions that unblock progress or address high-severity gaps. Each recommendation should be actionable within 1 week."
+Gemini system prompt focus: "You are a project management advisor at AMO AI. Based on the client's readiness score, selected systems, roadmap progress, and diagnostic findings, recommend 2-4 specific next actions. Prioritize actions that unblock progress or address high-severity gaps. Each recommendation should be actionable within 1 week."
 
 Response structure: array of insights, each with id, priority (high, medium, suggestion), title (short, action-oriented), description (2-3 sentences with specific data points), actionLabel (button text like "View Roadmap" or "Schedule Call"), actionRoute (relative route within the dashboard).
 

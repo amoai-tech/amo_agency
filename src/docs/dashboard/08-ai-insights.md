@@ -51,7 +51,7 @@ Real-world: "Business owner reviews full 5-step analysis before strategy call �
 │  SIDEBAR    │  AI Insights — Acme Retail Group        [Re-run Analysis ▶] │
 │  240px      ├──────────────────────────────────────────────────────────────┤
 │             │  ┌──────────────────────────────────────────────────────┐    │
-│  ☀ Sun AI   │  │ ● Profile │ Diagnostics │ Systems │ Readiness │ Road│    │
+│  ☀ AMO AI   │  │ ● Profile │ Diagnostics │ Systems │ Readiness │ Road│    │
 │             │  │ ══════════                              sticky 48px │    │
 │  ──────────│  └──────────────────────────────────────────────────────┘    │
 │  ○ Dashboard│                                                              │

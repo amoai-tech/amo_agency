@@ -2,7 +2,7 @@
 
 ## Figma Make Prompt
 
-> Design Step 4 of a 5-step premium wizard for "Sun AI Agency." This is the "Executive Summary" screen where all wizard inputs are compiled into a polished, professional strategy brief that the client reviews, can edit, and must approve.
+> Design Step 4 of a 5-step premium wizard for "AMO AI." This is the "Executive Summary" screen where all wizard inputs are compiled into a polished, professional strategy brief that the client reviews, can edit, and must approve.
 >
 > **Layout:** Three-panel layout (1440px desktop). The center panel is document-focused — it should feel like reading a beautifully typeset strategy document, not filling out a form.
 >
@@ -30,7 +30,7 @@
 > - **Brief Header:**
 >   - "STRATEGY BRIEF" — 12px uppercase, letter-spacing 0.1em, lime green
 >   - Company name: "Acme Retail Group" — 32px Playfair Display, dark teal
->   - "Prepared by Sun AI Agency" — 14px Lora, medium gray
+>   - "Prepared by AMO AI" — 14px Lora, medium gray
 >   - Date: "March 6, 2026"
 >   - Subtle horizontal rule (lime green, 2px, 60px wide)
 >
@@ -196,7 +196,7 @@ User edits a section
 User clicks "Request Changes"
   → briefs.status = 'in_review'
   → Optional: open a notes textarea for what they want changed
-  → Alert Sun AI team (future: notification system)
+  → Alert AMO AI team (future: notification system)
 
 User clicks "Approve Brief"
   → Confirmation dialog: "Approve this brief and create your project?"

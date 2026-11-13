@@ -189,7 +189,7 @@ Contains:
 1. Route receives request with client context
 2. selectAgents() determines which agent(s) to use
 3. extractExcerpt() reads agent .md file, strips frontmatter, extracts sections
-4. compilePrompt() assembles: Sun AI base + agent excerpt + route instructions + JSON schema
+4. compilePrompt() assembles: AMO AI base + agent excerpt + route instructions + JSON schema
 5. callGemini() receives the compiled prompt (existing function, no changes)
 6. Response logged to agent_runs table
 7. Response cached in ai_cache table (existing)
@@ -229,11 +229,11 @@ Agent call fails?
     |
     +-- Retry 3 (4s delay)
     |
-    +-- Give up: use existing Sun AI prompt WITHOUT agent excerpt
+    +-- Give up: use existing AMO AI prompt WITHOUT agent excerpt
         (graceful degradation to current behavior)
 ```
 
-Existing callGemini() already has retry logic with backoff. Agent loading adds one new failure mode: agent .md file not found. Fallback: skip agent excerpt, use Sun AI base prompt only.
+Existing callGemini() already has retry logic with backoff. Agent loading adds one new failure mode: agent .md file not found. Fallback: skip agent excerpt, use AMO AI base prompt only.
 
 ---
 

@@ -34,7 +34,7 @@ Real-world: "Agency owner reviews 18 active clients, sorts by last activity to f
 │  240px      │  Client Management                  18 clients   [+ Add]     │
 │  #1A1A1A    ├──────────────────────────────────────────────────────────────┤
 │             │                                                              │
-│  ☀ Sun AI   │  ┌──────────────────────────────────────────────────────┐    │
+│  ☀ AMO AI   │  ┌──────────────────────────────────────────────────────┐    │
 │             │  │ FILTER BAR                                 sticky    │    │
 │  ──────────│  │                                                      │    │
 │  ○ Dashboard│  │  [🔍 Search clients...                  ]           │    │

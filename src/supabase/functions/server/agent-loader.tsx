@@ -789,7 +789,7 @@ export function selectAgents(
  * route-specific instructions, and optional JSON schema.
  *
  * Layer order:
- *   1. Sun AI Base (identity, tone)
+ *   1. AMO AI Base (identity, tone)
  *   2. Agent Excerpt (reasoning methodology)
  *   3. Route Instructions (task-specific guidance)
  *   4. JSON Schema (output format — ALWAYS last for LLM priority)

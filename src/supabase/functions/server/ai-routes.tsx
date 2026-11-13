@@ -61,7 +61,7 @@ ai.post(`${PREFIX}/analyze-business`, async (c) => {
       );
     }
 
-    const systemPrompt = `You are a senior business analyst at Sun AI Agency. Analyze the company information provided and return a structured JSON analysis.
+    const systemPrompt = `You are a senior business analyst at AMO AI. Analyze the company information provided and return a structured JSON analysis.
 
 Return this exact JSON structure:
 {
@@ -127,7 +127,7 @@ ai.post(`${PREFIX}/industry-diagnostics`, async (c) => {
       return c.json({ error: "industryId is required" }, 400);
     }
 
-    const systemPrompt = `You are an AI diagnostics specialist at Sun AI Agency. Generate industry-specific diagnostic insights based on the company profile and industry.
+    const systemPrompt = `You are an AI diagnostics specialist at AMO AI. Generate industry-specific diagnostic insights based on the company profile and industry.
 
 Return this JSON structure:
 {
@@ -184,7 +184,7 @@ ai.post(`${PREFIX}/system-recommendations`, async (c) => {
     const body = await c.req.json();
     const { sessionId, wizardAnswers, industry, signals } = body;
 
-    const systemPrompt = `You are an AI systems architect at Sun AI Agency. Based on the wizard answers and diagnostic signals, rank and recommend AI systems.
+    const systemPrompt = `You are an AI systems architect at AMO AI. Based on the wizard answers and diagnostic signals, rank and recommend AI systems.
 
 Available systems: support-engine, growth-engine, operations-autopilot, data-intelligence, content-engine, onboarding-system, cart-recovery, recommendation-engine, sales-automation, loyalty-system, booking-engine, compliance-automation
 
@@ -277,7 +277,7 @@ ai.post(`${PREFIX}/readiness-score`, async (c) => {
       }
     }
 
-    const systemPrompt = `You are an AI readiness assessment expert at Sun AI Agency. Calculate an AI readiness score based on all available data about the business.
+    const systemPrompt = `You are an AI readiness assessment expert at AMO AI. Calculate an AI readiness score based on all available data about the business.
 
 Return this JSON structure:
 {
@@ -343,7 +343,7 @@ ai.post(`${PREFIX}/generate-roadmap`, async (c) => {
       return c.json({ error: "At least one system must be selected" }, 400);
     }
 
-    const systemPrompt = `You are a senior project manager at Sun AI Agency. Create a phased implementation roadmap for the selected AI systems.
+    const systemPrompt = `You are a senior project manager at AMO AI. Create a phased implementation roadmap for the selected AI systems.
 
 Return this JSON structure:
 {

@@ -48,7 +48,7 @@ agents.post(`${PREFIX}/agents/run`, async (c) => {
     const agentMeta = getAgentMeta(slug);
     const agentExcerpt = extractExcerpt(slug);
 
-    const baseInstructions = `You are "${agentName || agentMeta?.name || slug}", a specialist AI agent at Sun AI Agency.
+    const baseInstructions = `You are "${agentName || agentMeta?.name || slug}", a specialist AI agent at AMO AI.
 Your role is to execute tasks with expert-level quality, providing actionable, specific output.
 
 OUTPUT FORMAT: ${outputFormat === "json" ? "Return valid JSON only." : outputFormat === "freeform" ? "Return natural prose." : "Return a well-structured report with clear headers, bullet points, and sections."}

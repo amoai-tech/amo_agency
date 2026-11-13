@@ -1,6 +1,6 @@
 # Supabase Implementation Guide
 
-> Production files for the Sun AI Agency platform integration
+> Production files for the AMO AI platform integration
 > Last updated: 2026-03-07 (v0.10.0 — post KV-to-tables refactor)
 
 ---

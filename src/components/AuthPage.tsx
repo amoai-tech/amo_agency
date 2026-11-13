@@ -218,7 +218,7 @@ export default function AuthPage() {
               className="text-base md:text-lg"
               style={{ fontFamily: "'Playfair Display', Georgia, serif", color: '#FFFFFF' }}
             >
-              Sun AI Agency
+              AMO AI
             </span>
           </Link>
 
@@ -268,7 +268,7 @@ export default function AuthPage() {
         {/* Footer — desktop/tablet only */}
         <div className="hidden md:block relative z-10 p-10 lg:p-12">
           <p className="text-xs" style={{ fontFamily: "'Lora', Georgia, serif", color: '#6B6B63' }}>
-            &copy; 2026 Sun AI Agency. All rights reserved.
+            &copy; 2026 AMO AI. All rights reserved.
           </p>
         </div>
       </div>

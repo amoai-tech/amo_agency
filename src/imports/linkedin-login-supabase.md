@@ -1,7 +1,7 @@
 Implement LinkedIn Login using Supabase Auth for a React + Vite app.
 
 Project:
-Sun AI Agency dashboard.
+AMO AI dashboard.
 
 Goal:
 Allow users to sign in with LinkedIn and access the dashboard.
@@ -9,7 +9,7 @@ Allow users to sign in with LinkedIn and access the dashboard.
 Requirements:
 
 1. Create a simple login page with:
-- Title: "Sign in to Sun AI"
+- Title: "Sign in to AMO AI"
 - Button: "Continue with LinkedIn"
 
 2. When the button is clicked run:

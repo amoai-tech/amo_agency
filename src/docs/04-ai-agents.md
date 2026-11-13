@@ -49,7 +49,7 @@
 ## 🎨 DESIGN BRIEF
 
 ### Role
-You are a **Senior Product Designer & UX Architect** for Sun AI Agency, designing a premium marketing page for AI Agents services.
+You are a **Senior Product Designer & UX Architect** for AMO AI, designing a premium marketing page for AI Agents services.
 
 ### Objective
 Create a **high-converting AI Agents service page** that:

@@ -7,7 +7,7 @@
 
 ## Overview
 
-This document maps which AI agents power which product areas across the Sun AI platform. Each product area uses either **single-agent** calls (one specialist with context augmentation), **multi-agent** calls (2-3 agents in parallel with merged output), or **no AI call** (read-only from data).
+This document maps which AI agents power which product areas across the AMO AI platform. Each product area uses either **single-agent** calls (one specialist with context augmentation), **multi-agent** calls (2-3 agents in parallel with merged output), or **no AI call** (read-only from data).
 
 ---
 

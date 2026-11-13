@@ -28,7 +28,7 @@ This is the richest screen in the wizard — where intelligence meets decision-m
 ```
 ┌──────────────────────────────────────────────────────────────────────────┐
 │                                                                          │
-│  ☀ Sun AI    Step 3: System Recommendations              ✓ All saved    │
+│  ☀ AMO AI    Step 3: System Recommendations              ✓ All saved    │
 │                                                                          │
 ├───────────┬───────────────────────────────────────────┬──────────────────┤
 │           │                                           │                  │
@@ -536,7 +536,7 @@ PERSONALIZATION:
 
 GEMINI 3 PROMPT (for synchronous fallback):
 ────────────────────────────────────────────
-System: You are a senior AI solutions architect at Sun AI Agency.
+System: You are a senior AI solutions architect at AMO AI.
         Given a client's business context, industry diagnostics, and
         detected signals, produce ranked AI system recommendations
         with personalized justifications.

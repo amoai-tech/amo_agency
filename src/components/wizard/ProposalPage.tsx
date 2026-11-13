@@ -213,7 +213,7 @@ export default function ProposalPage() {
         <div className="max-w-[1120px] mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2" style={{ color: '#1A1A1A' }}>
             <Sun className="w-5 h-5" style={{ color: '#00875A' }} />
-            <span style={{ fontFamily: 'Georgia, serif' }}>Sun AI Agency</span>
+            <span style={{ fontFamily: 'Georgia, serif' }}>AMO AI</span>
           </Link>
           <div className="flex items-center gap-3">
             <button
@@ -525,11 +525,11 @@ export default function ProposalPage() {
           <div className="flex items-center justify-center gap-2 mb-2">
             <Sun className="w-4 h-4" style={{ color: '#00875A' }} />
             <span className="text-sm" style={{ fontFamily: 'Georgia, serif', color: '#1A1A1A' }}>
-              Sun AI Agency
+              AMO AI
             </span>
           </div>
           <p className="text-xs" style={{ color: '#9CA39B' }}>
-            sunaiagency.com · hello@sunaiagency.com
+            www.amoai.ca · Contact via website
           </p>
         </div>
       </div>

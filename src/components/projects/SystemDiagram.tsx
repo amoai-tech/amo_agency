@@ -54,7 +54,7 @@ export default function SystemDiagram() {
             className="text-3xl lg:text-4xl mb-4"
             style={{ fontFamily: 'Georgia, serif', color: '#1A1A1A' }}
           >
-            How Sun AI Builds
+            How AMO AI Builds
           </h2>
           <p className="text-lg" style={{ color: '#6B6B63' }}>
             Our AI Product Systems Architect framework

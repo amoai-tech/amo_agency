@@ -36,7 +36,7 @@ export default function FinancialPage() {
       {/* 7. Solutions for Financial Services */}
       <FinancialSolutions />
 
-      {/* 8. Sun AI Expand CTA */}
+      {/* 8. AMO AI Expand CTA */}
       <FinancialExpand />
 
       {/* 9. Consulting Leaders */}

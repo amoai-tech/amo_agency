@@ -143,7 +143,7 @@ function AIDiagram() {
               className="block text-[#84CC16] uppercase tracking-[0.2em]"
               style={{ fontSize: '0.5rem', fontWeight: 600 }}
             >
-              Sun AI
+              AMO AI
             </span>
             <span
               className="block text-[#F1EEEA] uppercase tracking-wider mt-0.5"

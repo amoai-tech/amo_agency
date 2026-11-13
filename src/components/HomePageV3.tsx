@@ -7,7 +7,7 @@ import TechStackSection from './home/TechStackSection';
 import AIAgentSystemsSection from './home/AIAgentSystemsSection';
 
 /* ═══════════════════════════════════════════════════════════════
-   Sun AI Agency — HomePageV3 (BCG Consulting Design System)
+   AMO AI — HomePageV3 (BCG Consulting Design System)
    ═══════════════════════════════════════════════════════════════
    
    Design Language: BCG / McKinsey / Bain consulting editorial

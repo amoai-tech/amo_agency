@@ -50,7 +50,7 @@ Real-world: "Lead completes wizard -> deal auto-created in Qualified stage -> ag
 │  240px      │  [New Business]  [Upsell]  [Renewal]                        │
 │  #1A1A1A    ├──────────────────────────────────────────────────────────────┤
 │             │                                                              │
-│  ☀ Sun AI   │  ┌───────────┐  ┌───────────┐  ┌───────────┐  ┌─────────┐ │
+│  ☀ AMO AI   │  ┌───────────┐  ┌───────────┐  ┌───────────┐  ┌─────────┐ │
 │             │  │ LEAD      │  │ QUALIFIED │  │ PROPOSAL  │  │NEGOTIA- │ │
 │  ──────────│  │ 4 · $32K  │  │ 3 · $28K  │  │ 2 · $18K  │  │TION     │ │
 │  ○ Dashboard│  │           │  │           │  │           │  │1 · $15K │ │

@@ -1,7 +1,7 @@
-# TODO — Sun AI Agency
+# TODO — AMO AI
 
 **Last verified:** 2026-03-28 (deep codebase audit) | **Version:** v0.31.0 | **Overall Completion:** ~72%
-**Production:** https://www.sunai.one | **API:** https://necxcwhuzylsumlkkmlk.supabase.co/functions/v1/make-server-283466b6
+**Production:** https://www.amoai.ca | **API:** https://necxcwhuzylsumlkkmlk.supabase.co/functions/v1/make-server-283466b6
 **Edge Function:** `make-server-283466b6` (19 .tsx files, 74 endpoints, 33/33 auth tests passing)
 **Database:** 57 tables, 233 RLS policies, 270 indexes, 14 migration files
 **Frontend:** 54 routes (30 public, 18 dashboard, 3 auth, 2 wizard, 1 redirect)
@@ -17,7 +17,7 @@
 | Database Schema | 57 tables, 14 migrations, auto-schema | 🟢 Done | 100% | All 14 migrations applied to prod | — | — |
 | RLS Policies | 233 policies, user_id scoping | 🟡 Partial | 90% | 180 user_id-scoped, 2 intentional `USING(true)` | 10 strategy tables have permissive `true` — no user scoping | Add org_id columns to strategy tables |
 | Auth Hardening | requireAuth on all routes, 33/33 tests | 🟢 Done | 100% | `smoke-test-auth.sh prod` passes | — | — |
-| CORS | ALLOWED_ORIGINS whitelist | 🟢 Done | 100% | sunai.one allowed, evil.com blocked | — | — |
+| CORS | ALLOWED_ORIGINS whitelist | 🟢 Done | 100% | amoai.ca allowed, evil.com blocked | — | — |
 | Error Boundary | Global crash recovery UI | 🟢 Done | 100% | ErrorBoundary class in App.tsx (lines 7-40) wraps AuthProvider + RouterProvider | — | — |
 
 ---
@@ -221,7 +221,7 @@
 
 | Task | Description | Status | % | ✅ Confirmed | ⚠️ Missing/Failing | 💡 Next Action |
 |------|-------------|--------|---|-------------|---------------------|----------------|
-| Vercel Deployment | Frontend at www.sunai.one | 🟢 Done | 100% | Project sunaiagencyproject100, team amo100 | — | — |
+| Vercel Deployment | Frontend at www.amoai.ca | 🟢 Done | 100% | Project sunaiagencyproject100, team amo100 | — | — |
 | Edge Function Deploy | make-server-283466b6 | 🟢 Done | 100% | 1.048MB deployed, 33/33 auth tests | Manual deploy only | Automate with CI |
 | Auth Smoke Tests | 33 endpoint verification | 🟢 Done | 100% | scripts/smoke-test-auth.sh | — | — |
 | CI/CD Pipeline | GitHub Actions auto-deploy | 🔴 Not Started | 0% | — | No `.github/workflows/` directory | Create workflow: build + type-check + smoke test |

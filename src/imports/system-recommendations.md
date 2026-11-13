@@ -2,7 +2,7 @@
 
 ## Figma Make Prompt
 
-> Design Step 3 of a 5-step premium wizard for "Sun AI Agency." This is the key decision screen titled "System Recommendations" where AI-generated system proposals are presented for the user to review and select.
+> Design Step 3 of a 5-step premium wizard for "AMO AI." This is the key decision screen titled "System Recommendations" where AI-generated system proposals are presented for the user to review and select.
 >
 > **Layout:** Three-panel layout (1440px desktop). This screen has the richest right panel.
 >

@@ -35,7 +35,7 @@ figma_prompt: prompts/029-ai-insights-dashboard.md
 
 **The situation:** The wizard's 5-step AI analysis generates substantial output: business profiling (Step 1), industry diagnostics with pain points and benchmarks (Step 2), ranked system recommendations with fit scores (Step 3), a 5-dimension readiness assessment (Step 4), and a phased roadmap with timeline and investment (Step 5). All of this is stored as jsonb in `wizard_answers.ai_results` — one row per step. There is no post-wizard view to review, compare, or re-run these analyses. The client sees the results once during the wizard and never again.
 
-**Why it matters:** The AI analysis is the core intellectual property of the platform — it is what differentiates Sun AI from a generic consulting engagement. If clients cannot revisit their analysis, share it with stakeholders, or track how their readiness evolves over time, the analysis becomes a one-time event instead of an ongoing strategic asset. Consultants need to reference the full analysis during strategy calls and proposals. Re-running analysis after Phase 1 delivery should show measurable improvement to justify continued investment.
+**Why it matters:** The AI analysis is the core intellectual property of the platform — it is what differentiates AMO AI from a generic consulting engagement. If clients cannot revisit their analysis, share it with stakeholders, or track how their readiness evolves over time, the analysis becomes a one-time event instead of an ongoing strategic asset. Consultants need to reference the full analysis during strategy calls and proposals. Re-running analysis after Phase 1 delivery should show measurable improvement to justify continued investment.
 
 **What already exists:** The `wizard_answers` table stores `ai_results` jsonb for steps 1-5 per session. The `wizard_sessions` table tracks session metadata and timestamps. The `ai_run_logs` table records model, tokens, duration per AI run. The `ai_cache` table enables cache-aware re-analysis. The `context_snapshots` table is designed for storing historical analysis points. All AI agents (analyze-business, generate-diagnostics, recommend-systems, scorer, generate-roadmap) exist as edge functions. Recharts is available for radar charts and bar charts. shadcn/ui provides Accordion, Tabs, Card, Badge, and Progress components.
 
@@ -659,7 +659,7 @@ interface ReRunResponse {
 │ SIDEBAR (240px)  │  MAIN CONTENT (max-w-[1200px], mx-auto, px-6)          │
 │                  │                                                         │
 │ ┌──────────────┐ │ ┌─────────────────────────────────────────────────────┐ │
-│ │ SUN AI       │ │ │ AI Insights                    [Re-run Analysis ▶] │ │
+│ │ AMO AI       │ │ │ AI Insights                    [Re-run Analysis ▶] │ │
 │ │              │ │ │ Acme Retail Group — Session #a3f...                 │ │
 │ │ Dashboard    │ │ └─────────────────────────────────────────────────────┘ │
 │ │ Projects     │ │                                                         │

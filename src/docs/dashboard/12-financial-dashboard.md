@@ -51,7 +51,7 @@ Real-world: "Agency owner opens Financial dashboard Monday morning. Metrics: $47
 │  SIDEBAR    │  Financials                [This Month ▾] [+ Create Invoice]│
 │  240px      ├──────────────────────────────────────────────────────────────┤
 │             │  ⚠ 2 invoices overdue totaling $4,200             [View →]  │
-│  ☀ Sun AI   ├──────────────────────────────────────────────────────────────┤
+│  ☀ AMO AI   ├──────────────────────────────────────────────────────────────┤
 │             │  ┌────────────┐ ┌────────────┐ ┌────────────┐ ┌──────────┐ │
 │  ──────────│  │ MRR        │ │ Revenue    │ │Outstanding │ │ Overdue  │ │
 │  ○ Dashboard│  │ $47,500    │ │ $62,000    │ │ $18,500    │ │ $4,200   │ │
