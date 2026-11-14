@@ -3,7 +3,8 @@ import { defineConfig, devices } from '@playwright/test';
 // PR/CI tests exercise the freshly built app, never the unrelated live deployment.
 // For a post-release check: PLAYWRIGHT_BASE_URL=https://www.amoai.ca npm run test:e2e
 const externalBaseURL = process.env.PLAYWRIGHT_BASE_URL?.trim();
-const localBaseURL = 'http://127.0.0.1:4173';
+const localPort = process.env.PLAYWRIGHT_PREVIEW_PORT || '4173';
+const localBaseURL = `http://127.0.0.1:${localPort}`;
 
 export default defineConfig({
   testDir: './tests/e2e',
@@ -23,9 +24,10 @@ export default defineConfig({
   webServer: externalBaseURL
     ? undefined
     : {
-        command: 'npx vite preview --host 127.0.0.1 --port 4173 --strictPort',
+        command: `npx vite preview --host 127.0.0.1 --port ${localPort} --strictPort`,
         url: localBaseURL,
-        reuseExistingServer: !process.env.CI,
+        // Do not accidentally test a different checkout already bound to this port.
+        reuseExistingServer: false,
         timeout: 120_000,
       },
   projects: [{ name: 'chromium', use: { ...devices['Desktop Chrome'] } }],
