@@ -40,6 +40,9 @@ test('signup confirms email with mocked Supabase response',async({page})=>{
  await page.getByRole('button',{name:'Create Account'}).last().click();
  await expect(page.getByRole('status')).toContainText('Check your email');
  await expect(page).toHaveURL(/\/auth$/);
+ await page.getByRole('button', { name: 'Go to sign in' }).click();
+ await expect(page.getByRole('status')).toHaveCount(0);
+ await expect(page.getByRole('button', { name: 'Sign In' }).first()).toBeVisible();
 });
 test('robots, sitemap and favicon are real static files',async({request})=>{
  const robots=await request.get('/robots.txt');

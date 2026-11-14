@@ -2,7 +2,8 @@ name: AMO AI PR validation
 on:
   pull_request:
   push:
-    branches: [main]
+    branches: [main, "rebrand/amo-ai"]
+  workflow_dispatch:
 jobs:
   build-and-browser-smoke:
     runs-on: ubuntu-latest

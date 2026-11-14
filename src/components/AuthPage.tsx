@@ -113,7 +113,7 @@ export default function AuthPage() {
 
     if (!validateAll()) return;
 
-    let result: { success: boolean; error?: string; needsEmailConfirmation?: boolean };
+    let result: { success: boolean; error?: string };
     if (mode === 'login') {
       result = await signIn(email, password);
     } else {
@@ -122,7 +122,7 @@ export default function AuthPage() {
 
     if (result.success) {
       setSuccess(true);
-      if (result.needsEmailConfirmation) {
+      if (mode === "signup") {
         setConfirmationSent(true);
       } else {
         setTimeout(() => navigate(returnPath), 800);
