@@ -1,3 +1,4 @@
+import { motion } from 'motion/react';
 import { useNavigate } from 'react-router';
 import { ArrowRight } from 'lucide-react';
 import { ImageWithFallback } from '../figma/ImageWithFallback';

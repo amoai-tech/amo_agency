@@ -1,4 +1,4 @@
-name: Homepage browser smoke
+name: Public page browser smoke
 
 on:
   pull_request:
@@ -9,15 +9,15 @@ permissions:
   contents: read
 
 concurrency:
-  group: homepage-smoke-${{ github.workflow }}-${{ github.ref }}
+  group: public-pages-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  homepage:
+  public-pages:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - name: Checkout
+      - name: Checkout PR code
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
       - name: Set up Node
         uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
@@ -28,16 +28,22 @@ jobs:
         run: npm ci
       - name: Install Chromium
         run: npx playwright install --with-deps chromium
-      - name: Check the public homepage
+      - name: Build PR for public-route checks
+        run: npm run build
+        env:
+          # Public test-only values enable anonymous static route rendering.
+          # Never use a service-role key; no backend writes are performed.
+          VITE_SUPABASE_URL: https://example.supabase.co
+          VITE_SUPABASE_PUBLISHABLE_KEY: sb_publishable_local_public_smoke_only
+      - name: Test the built PR (desktop and mobile)
         run: npm run test:e2e
         env:
           CI: 'true'
-          PLAYWRIGHT_BASE_URL: https://www.amoai.ca
       - name: Upload diagnostics
         if: ${{ !cancelled() }}
         uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5
         with:
-          name: homepage-playwright-report
+          name: public-pages-playwright-report
           path: |
             playwright-report/
             test-results/

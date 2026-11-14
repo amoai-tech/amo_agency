@@ -1,8 +1,14 @@
+import { useRef } from 'react';
+import { motion, useInView } from 'motion/react';
 import { Link } from 'react-router';
 
 export default function MVPv2CTA() {
+  const ref = useRef<HTMLElement>(null);
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
+
   return (
     <section
+      ref={ref}
       className="relative bg-[#0F3D3E] text-white py-32 lg:py-40 overflow-hidden"
     >
       {/* Dot pattern background */}
