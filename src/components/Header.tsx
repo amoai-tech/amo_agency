@@ -13,12 +13,31 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [userMenuOpen, setUserMenuOpen] = useState(false);
   const userMenuRef = useRef<HTMLDivElement>(null);
+  const mobileOverlayRef = useRef<HTMLDivElement>(null);
 
   // Close mobile menu on route change
   useEffect(() => {
     setMobileMenuOpen(false);
     setUserMenuOpen(false);
   }, [location.pathname]);
+
+  // Close the compact navigation when switching to the desktop layout.
+  // Without this, an open tablet drawer can leave body scrolling locked.
+  useEffect(() => {
+    const desktop = window.matchMedia('(min-width: 1024px)');
+    const closeOnDesktop = () => {
+      if (desktop.matches) setMobileMenuOpen(false);
+    };
+    closeOnDesktop();
+    desktop.addEventListener('change', closeOnDesktop);
+    return () => desktop.removeEventListener('change', closeOnDesktop);
+  }, []);
+
+  // React 18 does not reliably serialize a boolean `inert` prop.
+  // Set the native DOM property to exclude the closed drawer from tab order.
+  useEffect(() => {
+    if (mobileOverlayRef.current) mobileOverlayRef.current.inert = !mobileMenuOpen;
+  }, [mobileMenuOpen]);
 
   // Prevent body scroll when menu is open
   useEffect(() => {
@@ -188,6 +207,8 @@ export default function Header() {
 
       {/* Mobile Menu Overlay */}
       <div
+        ref={mobileOverlayRef}
+        aria-hidden={!mobileMenuOpen}
         className={`fixed inset-0 z-40 transition-opacity duration-200 lg:hidden ${
           mobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
