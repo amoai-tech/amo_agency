@@ -62,3 +62,59 @@ for(const path of ['/','/services','/wizard','/auth','/agents','/web-design']){
   expect(overflow,`Horizontal scroll on ${path}`).toBeLessThanOrEqual(1);
  });
 }
+
+/**
+ * Authenticated UI smoke fixtures are intentionally mocked; these do not certify
+ * live Supabase login, tenant isolation, or write operations.
+ */
+for (const [path, expectedText] of [
+  ['/app/dashboard', /Start Your AI Transformation/i],
+  ['/app/crm/pipelines', /No pipelines/i],
+  ['/app/agents', /Total Runs/i],
+] as const) {
+  test(`authenticated fixture renders ${path}`, async ({ page }) => {
+    const userId = 'c6637019-e135-4b55-8e25-3750f95a4732';
+    const payload = { sub: userId, aud: 'authenticated', role: 'authenticated', exp: 9999999999 };
+    const jwt = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.' +
+      Buffer.from(JSON.stringify(payload)).toString('base64url') + '.mock';
+    const session = {
+      access_token: jwt, refresh_token: 'not-a-live-refresh-token',
+      token_type: 'bearer', expires_at: 9999999999, expires_in: 3600,
+      user: {
+        id: userId, email: 'test@example.org', aud: 'authenticated', role: 'authenticated',
+        app_metadata: { provider: 'email', providers: ['email'] },
+        user_metadata: { name: 'Demo User' },
+        created_at: '2026-01-01T00:00:00Z',
+      },
+    };
+
+    await page.addInitScript((fixture) => {
+      for (const project of ['example', 'icpzzsslayhywxoniekw']) {
+        localStorage.setItem(`sb-${project}-auth-token`, JSON.stringify(fixture));
+      }
+    }, session);
+
+    await page.route('**/functions/v1/make-server-283466b6/**', async (route) => {
+      const url = new URL(route.request().url());
+      let result: Record<string, unknown> = {};
+      if (url.pathname.includes('/wizard/list/')) result = { sessions: [] };
+      if (url.pathname.endsWith('/crm/pipelines')) result = { pipelines: [] };
+      if (url.pathname.endsWith('/ai/run-logs')) result = { logs: [], total: 0 };
+      if (url.pathname.endsWith('/ai/cache-stats')) result = { error: 'No per-user cache metrics' };
+      if (url.pathname.endsWith('/ai/aggregate-stats')) result = {
+        totalRuns: 0, successRuns: 0, failedRuns: 0, successRate: 0,
+        totalTokens: 0, avgDuration: 0, activeCacheEntries: 0,
+        cacheMetricsAvailable: false, byType: {}, model: 'mock',
+      };
+      if (url.pathname.includes('/strategy/metrics')) result = { pendingApprovals: 0 };
+      await route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify(result) });
+    });
+
+    const errors: string[] = [];
+    page.on('pageerror', (error) => errors.push(error.message));
+    await page.goto(path);
+    await expect(page).toHaveURL(new RegExp(path.replaceAll('/', '\\/') + '$'));
+    await expect(page.locator('body')).toContainText(expectedText);
+    expect(errors).toEqual([]);
+  });
+}
