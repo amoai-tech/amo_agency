@@ -1,11 +1,11 @@
 import { expect, test } from '@playwright/test';
 
 const publicRoutes = [
-  { path: '/', name: 'Homepage' },
-  { path: '/services', name: 'Services' },
-  { path: '/projects', name: 'Projects' },
-  { path: '/mvp-builder', name: 'MVP Builder' },
-  { path: '/mvp-v2', name: 'MVP v2' },
+  { path: '/', name: 'Homepage', heading: /Build Intelligent AI Products, Agents, and Automation/ },
+  { path: '/services', name: 'Services', heading: /AI services bring speed and impact at any scale/ },
+  { path: '/projects', name: 'Projects', heading: /Real AI Products\. Real Results\./ },
+  { path: '/mvp-builder', name: 'MVP Builder', heading: /Your AI product,\s*live in 6 weeks/ },
+  { path: '/mvp-v2', name: 'MVP v2', heading: /Your AI Product,\s*Live in 6 Weeks/ },
 ] as const;
 
 const viewports = [
@@ -27,6 +27,9 @@ for (const viewport of viewports) {
 
         await expect(page.locator('#root')).not.toBeEmpty();
         await expect(page.getByRole('heading', { level: 1 }).first()).toBeVisible();
+        await expect(page.getByRole('heading', { level: 1 }).first()).toHaveText(route.heading);
+        await expect(page.getByText('Something went wrong', { exact: false })).toHaveCount(0);
+        await expect(page.getByRole('heading', { name: 'Not Found', exact: true })).toHaveCount(0);
         await expect(page.getByText('Unexpected Application Error!', { exact: false })).toHaveCount(0);
         await expect(page.locator('#root')).not.toContainText(
           /is not defined|ReferenceError/,
