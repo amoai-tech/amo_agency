@@ -21,7 +21,6 @@ envbk.md
 
 # Supabase local
 supabase/.temp/
-supabase/.branches/
 
 # OS
 .DS_Store
@@ -58,6 +57,6 @@ system.md
 roadmap.md
 wifi-report.md
 
-# Playwright generated artifacts
-test-results/
+# Playwright test artifacts
 playwright-report/
+test-results/

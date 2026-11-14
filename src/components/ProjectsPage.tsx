@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
 import { pageToPath } from '../lib/navigation';
 import { PROJECTS } from '../lib/data/projectsData';

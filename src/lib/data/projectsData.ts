@@ -98,11 +98,6 @@ export const PROJECTS: Project[] = [
         caption: 'Visual search and product tagging interface',
         type: 'desktop',
       },
-      {
-        url: 'https://images.unsplash.com/photo-1558769132-cb1aea1f1918?w=1200&h=675&fit=crop',
-        caption: 'Size prediction dashboard with analytics',
-        type: 'desktop',
-      },
     ],
   },
   {
@@ -192,11 +187,6 @@ export const PROJECTS: Project[] = [
       { name: 'Redis', icon: '⚡' },
     ],
     screenshots: [
-      {
-        url: 'https://images.unsplash.com/photo-1578579291577-8809afe1d831?w=1200&h=675&fit=crop',
-        caption: 'Personalized itinerary with safety ratings',
-        type: 'desktop',
-      },
       {
         url: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1200&h=675&fit=crop',
         caption: 'Interactive map with AI-curated recommendations',
