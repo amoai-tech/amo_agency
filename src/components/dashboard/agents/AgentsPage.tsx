@@ -25,7 +25,7 @@ const PAGE_SIZE = 20;
 export default function AgentsPage() {
   const { accessToken } = useAuth();
   // Always send a real user token. A public key must never authorize log access.
-  const authToken = accessToken ? 'use-fresh-token' : undefined;
+  const authToken = accessToken || undefined;
 
   const [stats, setStats] = useState<AggregateStats | null>(null);
   const [cacheStats, setCacheStats] = useState<CacheStats | null>(null);

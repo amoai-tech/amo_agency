@@ -12,6 +12,7 @@ This PR keeps GitHub as the deployable source; Figma Make is design/source refer
 - Restricted CRM clients, contacts, deals, moves, interactions and per-pipeline deal counts to the signed-in user. CRM pipelines/stages are shared templates.
 - Validated AI-written Lean Canvas target column names; guarded malformed JSON and stage/client/contact references.
 - Fixed small-phone overflow on web-design page.
+- Removed the misleading static homepage canonical from the SPA shell; client routing now inserts exactly one correct canonical per deep URL. Full server-rendered SEO for deep routes is still not provided by this SPA.
 - Added GitHub Actions PR validation including strict Deno check, static security-contract tests, Vite production build and Playwright browser tests.
 - Added generated Supabase DB schema types to the Edge Function build in `supabase/functions/_shared/database.types.ts`.
 
@@ -22,7 +23,7 @@ This PR keeps GitHub as the deployable source; Figma Make is design/source refer
 | Deno strict check | PASS: **0 diagnostics** (was 86) | Full deployed Edge Function entry graph |
 | Frontend Vite build | PASS, bundle size warning | Local release build |
 | Source-contract tests | PASS: **8/8** | Static code and route assertions |
-| Playwright browser tests | PASS: **19/19** | Public routes, logged-out guards, static assets, 390px mobile, mocked authentication |
+| Playwright browser tests | PASS: **20/20** | Public routes, logged-out guards, static assets, 390px mobile, mocked authentication |
 | PostgreSQL 17 migration test | PASS | 3 users; log ownership, RLS, private broadcasts, RPC grants |
 | Concurrent per-user quotas | PASS | 20 parallel calls: 5 allowed, 15 blocked; other user unaffected |
 | Fresh local Supabase stack | PASS with local bootstrap workaround | Existing migrations + hardened migration |

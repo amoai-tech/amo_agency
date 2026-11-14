@@ -118,3 +118,16 @@ for (const [path, expectedText] of [
     expect(errors).toEqual([]);
   });
 }
+
+test('deep page gets a single route-correct canonical link', async ({ page, request }) => {
+  const raw = await (await request.get('/services')).text();
+  // Vite SPA serves common index.html; never falsely declare the homepage
+  // canonical for every deep URL before JS has rendered the route.
+  expect(raw).not.toContain('<link rel="canonical" href="https://www.amoai.ca/"');
+  await page.goto('/services');
+  await expect(page.locator('link[rel="canonical"]')).toHaveCount(1);
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', 'https://www.amoai.ca/services');
+  await page.goto('/about');
+  await expect(page.locator('link[rel="canonical"]')).toHaveCount(1);
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', 'https://www.amoai.ca/about');
+});

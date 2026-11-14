@@ -294,6 +294,11 @@ export default function AuthPage() {
           {confirmationSent && (
             <div role="status" className="mb-6 rounded border border-green-200 bg-green-50 p-4 text-sm text-green-900">
               Check your email for a confirmation link. Verify your address, then sign in.
+              <button type="button" className="ml-2 underline font-semibold" onClick={() => {
+                setConfirmationSent(false);
+                setSuccess(false);
+                setMode('login');
+              }}>Go to sign in</button>
             </div>
           )}
           {/* ── Tab Toggle: "Sign In" | "Create Account" ── */}
