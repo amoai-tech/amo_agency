@@ -84,7 +84,7 @@ export async function setCachedResult(
 
     const { error } = await db.from("ai_cache").upsert({
       input_hash: hash,
-      response,
+      response: JSON.parse(JSON.stringify(response ?? null)),
       model,
       tokens_used: tokensUsed,
       expires_at: new Date(Date.now() + ttlHours * 3600000).toISOString(),

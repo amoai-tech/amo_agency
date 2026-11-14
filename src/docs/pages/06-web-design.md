@@ -73,7 +73,7 @@ interface ComparisonCardProps {
   highlighted?: boolean;
 }
 ```
-- Traditional vs Sun AI cards
+- Traditional vs AMO AI cards
 - Optional highlighting
 
 ### **4. DeliverableCard Component**
@@ -150,7 +150,7 @@ interface IntelligenceCardProps {
 - [ ] Gantt chart visualization
 - [ ] Timeline bars (animated)
 - [ ] Comparison cards (2 columns)
-- [ ] Highlight Sun AI card
+- [ ] Highlight AMO AI card
 - [ ] Mobile stacked layout
 
 ### **Phase 4: Deliverables (Day 2)**

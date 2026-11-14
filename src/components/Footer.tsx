@@ -71,7 +71,7 @@ export default function Footer() {
             <Link to="/" className="flex items-center gap-2 mb-4">
               <Sun className="w-5 h-5" style={{ color: '#00875A' }} />
               <span style={{ fontFamily: 'Georgia, serif', color: '#1A1A1A', fontSize: '1.05rem' }}>
-                Sun AI Agency
+                AMO AI
               </span>
             </Link>
             <p className="text-sm leading-relaxed" style={{ color: '#6B6B63' }}>
@@ -146,7 +146,7 @@ export default function Footer() {
           style={{ borderColor: '#E8E8E4' }}
         >
           <p className="text-sm" style={{ color: '#9CA39B' }}>
-            &copy; 2026 Sun AI Agency. All rights reserved.
+            &copy; 2026 AMO AI. All rights reserved.
           </p>
           <div className="flex gap-6">
             <button className="text-sm transition-colors" style={{ color: '#9CA39B' }}>

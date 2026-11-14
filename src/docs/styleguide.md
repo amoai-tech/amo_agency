@@ -1,4 +1,4 @@
-# Sun AI Agency — Quick Style Guide
+# AMO AI — Quick Style Guide
 
 **Design System:** Premium luxury consultancy  
 **Source:** `/web-design` page  

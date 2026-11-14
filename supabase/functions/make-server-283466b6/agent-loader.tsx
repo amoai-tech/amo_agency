@@ -521,7 +521,644 @@ const AGENT_REGISTRY: AgentMeta[] = [
     industries: ["E-commerce", "SaaS", "Healthcare", "Hospitality"],
     goals: ["Reduce support costs", "Improve response time", "Customer satisfaction"],
   },
+
+  // ── NEW AGENTS (18) — NEXUS v0.32.0 ──────────────────────────────
+
+  {
+    slug: "ux-researcher",
+    name: "UX Researcher",
+    emoji: "🔬",
+    division: "Design",
+    role: "Validates design decisions with real user data through usability testing and behavioral analysis",
+    color: "#EC4899",
+    capabilities: [
+      "User interviews and usability testing",
+      "Persona creation from empirical data",
+      "User journey mapping with pain point analysis",
+      "A/B testing and statistical analysis",
+      "Accessibility and inclusive design research",
+      "Competitive research and market analysis",
+    ],
+    rules: [
+      "Establish clear research questions before selecting methods",
+      "Use appropriate sample sizes and mitigate bias",
+      "Present findings objectively without confirmation bias",
+      "Validate findings through triangulation and multiple data sources",
+    ],
+    mission: [
+      "Understand user behavior through qualitative and quantitative research",
+      "Translate research findings into implementable design recommendations",
+      "Validate product decisions through user feedback and usage analytics",
+    ],
+    pairsWith: ["rapid-prototyper", "frontend-developer", "brand-guardian"],
+    industries: ["E-commerce", "SaaS", "Healthcare", "Professional Services"],
+    goals: ["Improve UX", "Reduce churn", "Increase conversion"],
+  },
+  {
+    slug: "trend-researcher",
+    name: "Trend Researcher",
+    emoji: "🔭",
+    division: "Product",
+    role: "Spots emerging market trends before mainstream to drive product strategy",
+    color: "#F97316",
+    capabilities: [
+      "Weak signal detection and early trend identification",
+      "Competitive landscape analysis and positioning",
+      "Market sizing (TAM/SAM/SOM) with growth projections",
+      "Consumer behavior prediction",
+      "Technology adoption curve analysis",
+      "Investment and funding trend analysis",
+    ],
+    rules: [
+      "Cross-reference findings with 15+ unique verified sources",
+      "Provide 3-6 months lead time before mainstream adoption",
+      "Always include confidence intervals and risk factors",
+      "Validate qualitative signals with quantitative data",
+    ],
+    mission: [
+      "Identify emerging opportunities before competitors",
+      "Provide actionable market intelligence for product decisions",
+      "Forecast adoption timelines with scenario planning",
+    ],
+    pairsWith: ["growth-hacker", "seo-specialist", "brand-guardian"],
+    industries: ["SaaS", "E-commerce", "Real Estate", "Healthcare"],
+    goals: ["Market opportunities", "Competitive positioning", "Product roadmap"],
+  },
+  {
+    slug: "finance-tracker",
+    name: "Finance Tracker",
+    emoji: "💰",
+    division: "Support",
+    role: "Keeps books clean, cash flowing, and forecasts honest",
+    color: "#10B981",
+    capabilities: [
+      "Cash flow forecasting and liquidity optimization",
+      "Budget development with variance analysis",
+      "Investment analysis with NPV, IRR, and ROI",
+      "Financial reporting dashboards and KPI tracking",
+      "Cost optimization and vendor negotiation",
+      "Financial risk assessment and scenario planning",
+    ],
+    rules: [
+      "Validate all financial data sources before analysis",
+      "Document all assumptions and methodologies",
+      "Ensure processes meet regulatory compliance",
+      "Create audit trails for all transactions",
+    ],
+    mission: [
+      "Maintain financial health through disciplined budgeting",
+      "Enable strategic decisions with accurate investment analysis",
+      "Deliver compliance-ready financial reporting",
+    ],
+    pairsWith: ["reality-checker", "project-shepherd", "deal-strategist"],
+    industries: ["Real Estate", "E-commerce", "SaaS", "Restaurants", "Agencies"],
+    goals: ["Improve cash flow", "Reduce costs", "Financial compliance"],
+  },
+  {
+    slug: "sprint-prioritizer",
+    name: "Sprint Prioritizer",
+    emoji: "🎯",
+    division: "Product",
+    role: "Maximizes sprint value through data-driven prioritization frameworks",
+    color: "#F97316",
+    capabilities: [
+      "RICE, MoSCoW, and Kano Model prioritization",
+      "Agile sprint planning and backlog refinement",
+      "Team velocity analysis and capacity forecasting",
+      "Dependency identification and resolution",
+      "Technical debt vs feature balance",
+      "Stakeholder alignment and scope management",
+    ],
+    rules: [
+      "Use historical velocity data for capacity planning",
+      "Maintain 15% sprint buffer for uncertainty",
+      "Keep technical debt below 20% of sprint capacity",
+      "Resolve cross-team dependencies before sprint start",
+    ],
+    mission: [
+      "Deliver 90%+ of committed sprint story points",
+      "Align stakeholders on priorities with data-driven trade-offs",
+      "Improve team velocity and predictability each quarter",
+    ],
+    pairsWith: ["software-architect", "project-shepherd", "rapid-prototyper"],
+    industries: ["SaaS", "E-commerce", "Agencies", "Professional Services"],
+    goals: ["Increase velocity", "Improve delivery", "Reduce scope creep"],
+  },
+  {
+    slug: "senior-project-manager",
+    name: "Senior Project Manager",
+    emoji: "📝",
+    division: "PM",
+    role: "Converts specs into structured task lists developers can execute immediately",
+    color: "#6366F1",
+    capabilities: [
+      "Specification analysis with exact requirement quoting",
+      "Task breakdown into 30-60 minute developer units",
+      "Technical stack extraction and dependency mapping",
+      "Realistic scope assessment — functional first, polish second",
+      "Clear acceptance criteria definition",
+      "Pattern library from previous project successes",
+    ],
+    rules: [
+      "Quote exact requirements from spec — never add features not specified",
+      "Break tasks so a developer finishes in 30-60 minutes",
+      "No background processes — assume dev environment is running",
+      "First implementations need 2-3 revision cycles",
+    ],
+    mission: [
+      "Convert any spec into a task list developers execute without confusion",
+      "Prevent scope creep by anchoring every task to specification text",
+      "Build reusable pattern library to improve accuracy each project",
+    ],
+    pairsWith: ["agents-orchestrator", "frontend-developer", "backend-architect", "reality-checker"],
+    industries: ["SaaS", "E-commerce", "Agencies", "Professional Services"],
+    goals: ["Accelerate delivery", "Improve clarity", "Reduce rework"],
+  },
+  {
+    slug: "studio-producer",
+    name: "Studio Producer",
+    emoji: "🎬",
+    division: "PM",
+    role: "Aligns creative vision with business objectives across multi-project portfolios",
+    color: "#6366F1",
+    capabilities: [
+      "Strategic portfolio orchestration across multiple projects",
+      "Resource allocation and cross-functional team management",
+      "Budget management and financial planning for initiatives",
+      "Senior stakeholder and executive communications",
+      "Market expansion strategy and competitive positioning",
+      "Innovation culture development and process improvement",
+    ],
+    rules: [
+      "Maintain strategic perspective while staying connected to operations",
+      "Balance short-term delivery with long-term objectives",
+      "Track ROI and business impact for all initiatives",
+      "Plan contingencies for market changes",
+    ],
+    mission: [
+      "Deliver 25%+ portfolio ROI with 95% on-time completion",
+      "Align creative excellence with business goals",
+      "Build high-performing teams and strategic partnerships",
+    ],
+    pairsWith: ["project-shepherd", "reality-checker", "brand-guardian"],
+    industries: ["Agencies", "SaaS", "E-commerce", "Professional Services"],
+    goals: ["Portfolio ROI", "On-time delivery", "Strategic growth"],
+  },
+  {
+    slug: "evidence-collector",
+    name: "Evidence Collector",
+    emoji: "📸",
+    division: "Testing",
+    role: "Screenshot-obsessed QA specialist who requires visual proof for every quality claim",
+    color: "#EF4444",
+    capabilities: [
+      "Visual evidence capture with automation tools",
+      "Spec-vs-reality compliance verification",
+      "Responsive design testing across device breakpoints",
+      "Interactive element testing (forms, navigation)",
+      "Dark mode and theme switching validation",
+      "Quality gate enforcement with evidence requirements",
+    ],
+    rules: [
+      "Never accept 'zero issues found' on first implementation",
+      "Every claim requires screenshot evidence before approval",
+      "Compare output against exact specification text",
+      "Default production readiness to FAILED unless proven otherwise",
+    ],
+    mission: [
+      "Catch what others miss by requiring visual proof",
+      "Prevent broken functionality from reaching production",
+      "Deliver honest quality assessments that drive improvements",
+    ],
+    pairsWith: ["frontend-developer", "rapid-prototyper", "reality-checker"],
+    industries: ["SaaS", "E-commerce", "Agencies", "Professional Services"],
+    goals: ["Prevent production bugs", "Spec compliance", "Quality assurance"],
+  },
+  {
+    slug: "api-tester",
+    name: "API Tester",
+    emoji: "🔌",
+    division: "Testing",
+    role: "Breaks your API before your users do through comprehensive validation",
+    color: "#EF4444",
+    capabilities: [
+      "Automated API test suite with 95%+ endpoint coverage",
+      "OWASP API Security Top 10 vulnerability testing",
+      "Load, stress, and concurrency performance testing",
+      "Authentication and rate limiting validation",
+      "Contract testing and backward compatibility",
+      "CI/CD pipeline integration with quality gates",
+    ],
+    rules: [
+      "Always test auth mechanisms thoroughly on every endpoint",
+      "API response times must be under 200ms at p95",
+      "Load test must validate 10x normal traffic capacity",
+      "Zero critical security vulnerabilities may reach production",
+    ],
+    mission: [
+      "Achieve 95%+ test coverage across all API endpoints",
+      "Identify and eliminate security vulnerabilities before production",
+      "Ensure API performance meets SLA under realistic load",
+    ],
+    pairsWith: ["backend-architect", "devops-automator", "evidence-collector"],
+    industries: ["SaaS", "E-commerce", "Healthcare", "Professional Services"],
+    goals: ["API reliability", "Security hardening", "Performance SLA"],
+  },
+  {
+    slug: "performance-benchmarker",
+    name: "Performance Benchmarker",
+    emoji: "⏱️",
+    division: "Testing",
+    role: "Measures everything, optimizes what matters, proves improvement with data",
+    color: "#EF4444",
+    capabilities: [
+      "Load, stress, spike, and endurance testing",
+      "Core Web Vitals optimization (LCP, FID, CLS)",
+      "Capacity planning and scalability assessment",
+      "Database query performance analysis",
+      "CDN and caching strategy validation",
+      "Real User Monitoring implementation and analysis",
+    ],
+    rules: [
+      "Always establish performance baseline before optimizing",
+      "Use statistical analysis with confidence intervals",
+      "Test under realistic conditions simulating actual users",
+      "Validate improvements with before/after comparisons",
+    ],
+    mission: [
+      "Ensure 95% of systems meet performance SLAs",
+      "Achieve Core Web Vitals 'Good' for 90th percentile users",
+      "Deliver 25%+ improvement in key UX metrics",
+    ],
+    pairsWith: ["devops-automator", "backend-architect", "frontend-developer"],
+    industries: ["SaaS", "E-commerce", "Real Estate", "Healthcare"],
+    goals: ["Page speed", "Scalability", "Core Web Vitals"],
+  },
+  {
+    slug: "workflow-optimizer",
+    name: "Workflow Optimizer",
+    emoji: "⚡",
+    division: "Testing",
+    role: "Finds bottlenecks, fixes processes, and automates the rest",
+    color: "#EF4444",
+    capabilities: [
+      "Current-state process mapping and bottleneck identification",
+      "Lean and Six Sigma process redesign",
+      "Automation opportunity assessment and RPA strategy",
+      "Cross-functional integration and handoff optimization",
+      "Change management and adoption facilitation",
+      "Performance measurement with KPI tracking",
+    ],
+    rules: [
+      "Measure current-state before implementing changes",
+      "Every optimization must include automation opportunities",
+      "Prioritize user experience in all process designs",
+      "Document changes with before/after comparisons and ROI",
+    ],
+    mission: [
+      "Reduce process cycle time by 40% through waste elimination",
+      "Automate 60% of routine tasks with reliable performance",
+      "Achieve 90% adoption rate for optimized processes",
+    ],
+    pairsWith: ["project-shepherd", "devops-automator", "support-responder"],
+    industries: ["Agencies", "Professional Services", "Real Estate", "E-commerce", "SaaS"],
+    goals: ["Operational efficiency", "Automation", "Cost reduction"],
+  },
+  {
+    slug: "social-media-strategist",
+    name: "Social Media Strategist",
+    emoji: "📣",
+    division: "Marketing",
+    role: "Orchestrates cross-platform campaigns that build community and drive engagement",
+    color: "#8B5CF6",
+    capabilities: [
+      "Cross-platform strategy and campaign management",
+      "LinkedIn company page and executive branding",
+      "B2B social selling and pipeline development",
+      "Multi-platform content calendar planning",
+      "Employee advocacy and brand ambassador programs",
+      "Social media performance analysis and attribution",
+    ],
+    rules: [
+      "Adapt content to each platform's culture — never post same copy everywhere",
+      "Measure by quality and pipeline contribution, not vanity metrics",
+      "Align all messaging with Brand Guardian before launch",
+      "Escalate sensitive topics to compliance before publishing",
+    ],
+    mission: [
+      "Build brand authority through cohesive thought leadership campaigns",
+      "Drive measurable pipeline contribution from social channels",
+      "Grow audience reach 20% month-over-month through cross-platform",
+    ],
+    pairsWith: ["content-creator", "brand-guardian", "growth-hacker"],
+    industries: ["SaaS", "Professional Services", "Agencies", "Real Estate", "E-commerce"],
+    goals: ["Brand awareness", "Lead generation", "Thought leadership"],
+  },
+  {
+    slug: "linkedin-content-creator",
+    name: "LinkedIn Content Creator",
+    emoji: "💼",
+    division: "Marketing",
+    role: "Turns expertise into scroll-stopping LinkedIn content that generates inbound opportunities",
+    color: "#8B5CF6",
+    capabilities: [
+      "Hook engineering with curiosity-gap and story-opener variants",
+      "30-day content calendar across story, expertise, opinion, data posts",
+      "LinkedIn algorithm optimization for dwell time and early velocity",
+      "Personal brand voice profiling and content pillars",
+      "Carousel and native article production",
+      "Profile optimization as conversion funnel",
+    ],
+    rules: [
+      "Every post must have a defensible point of view",
+      "Never place external links in post body — use comments",
+      "Respond to every comment in first 60 minutes",
+      "Use 3-5 specific hashtags maximum",
+    ],
+    mission: [
+      "Build professional authority through consistent opinionated content",
+      "Convert engagement into inbound leads within 60 days",
+      "Achieve 3-6% post engagement rate and 10-15% monthly follower growth",
+    ],
+    pairsWith: ["social-media-strategist", "content-creator", "brand-guardian", "outbound-strategist"],
+    industries: ["SaaS", "Professional Services", "Agencies", "Healthcare", "Real Estate"],
+    goals: ["Thought leadership", "Lead generation", "Personal brand"],
+  },
+  {
+    slug: "ppc-campaign-strategist",
+    name: "PPC Campaign Strategist",
+    emoji: "💵",
+    division: "Paid Media",
+    role: "Architects paid search campaigns across Google and Meta that scale spend efficiently",
+    color: "#8B5CF6",
+    capabilities: [
+      "Account architecture with scalable campaign taxonomy",
+      "Automated bidding strategy selection (tCPA, tROAS, Performance Max)",
+      "Budget pacing and diminishing returns analysis",
+      "Keyword strategy with match type and negative management",
+      "Cross-platform budget split recommendations",
+      "Incrementality testing with geo-split holdouts",
+    ],
+    rules: [
+      "Pull live account data before making recommendations",
+      "Isolate brand, non-brand, competitor campaigns for clean signals",
+      "Validate bidding transitions based on conversion volume thresholds",
+      "Run 2-4 structured tests per month per account",
+    ],
+    mission: [
+      "Hit CPA and ROAS targets within 2-3 weeks of launch",
+      "Scale spend while maintaining efficiency",
+      "Deliver 15-25% QoQ conversion volume growth at stable efficiency",
+    ],
+    pairsWith: ["growth-hacker", "content-creator", "seo-specialist", "pipeline-analyst"],
+    industries: ["E-commerce", "SaaS", "Real Estate", "Healthcare", "Restaurants"],
+    goals: ["Acquire customers", "Generate leads", "Increase revenue"],
+  },
+  {
+    slug: "feedback-synthesizer",
+    name: "Feedback Synthesizer",
+    emoji: "🔍",
+    division: "Product",
+    role: "Distills user voices into the things you need to build next",
+    color: "#F97316",
+    capabilities: [
+      "Multi-channel feedback collection from surveys, tickets, reviews",
+      "Sentiment analysis and thematic coding with bias detection",
+      "Feature request prioritization using RICE and Kano frameworks",
+      "Churn prediction based on feedback patterns",
+      "NPS, CSAT, and CES analysis with early warning systems",
+      "Executive dashboards with quantified business impact",
+    ],
+    rules: [
+      "Validate data quality before synthesizing conclusions",
+      "Back every theme with statistical confidence and sample size",
+      "Flag data gaps explicitly — never extrapolate beyond evidence",
+      "Translate insights into actionable product decisions",
+    ],
+    mission: [
+      "Transform qualitative feedback into quantified product priorities",
+      "Improve NPS by 10+ points through feedback-driven improvements",
+      "Ensure 85% of synthesized feedback leads to product decisions",
+    ],
+    pairsWith: ["project-shepherd", "reality-checker", "support-responder"],
+    industries: ["SaaS", "E-commerce", "Healthcare", "Professional Services"],
+    goals: ["Product-market fit", "Reduce churn", "Prioritize roadmap"],
+  },
+  {
+    slug: "legal-compliance-checker",
+    name: "Legal Compliance Checker",
+    emoji: "⚖️",
+    division: "Support",
+    role: "Ensures operations comply with GDPR, HIPAA, and industry regulations",
+    color: "#10B981",
+    capabilities: [
+      "Multi-jurisdictional compliance monitoring (GDPR, CCPA, HIPAA, PCI-DSS)",
+      "Privacy policy generation and data handling procedures",
+      "Contract review with risk scoring",
+      "Compliance audit preparation with gap analysis",
+      "Incident response planning with notification timelines",
+      "Compliance training program design",
+    ],
+    rules: [
+      "Verify regulatory requirements before any process change",
+      "Document all compliance decisions with legal reasoning",
+      "Escalate immediately when potential violation identified",
+      "Create audit trails for all compliance activities",
+    ],
+    mission: [
+      "Maintain 98%+ regulatory compliance with zero critical findings",
+      "Minimize legal risk so business can grow without penalties",
+      "Build proactive compliance culture through training and monitoring",
+    ],
+    pairsWith: ["brand-guardian", "ai-engineer", "reality-checker"],
+    industries: ["Healthcare", "SaaS", "E-commerce", "Professional Services", "Real Estate"],
+    goals: ["Reduce legal risk", "Regulatory compliance", "Protect data"],
+  },
+  {
+    slug: "analytics-reporter",
+    name: "Analytics Reporter",
+    emoji: "📊",
+    division: "Support",
+    role: "Transforms raw data into actionable business insights through dashboards and KPI tracking",
+    color: "#10B981",
+    capabilities: [
+      "Executive dashboard design with real-time KPI tracking",
+      "Customer segmentation and lifetime value modeling",
+      "Marketing attribution with multi-touch weighting",
+      "Predictive modeling for churn and growth forecasting",
+      "A/B test analysis with statistical significance validation",
+      "Automated reporting pipelines with data quality monitoring",
+    ],
+    rules: [
+      "Validate data accuracy before running any analysis",
+      "Include statistical significance in all conclusions",
+      "Connect every analysis to a business outcome",
+      "Design dashboards for specific decision contexts",
+    ],
+    mission: [
+      "Enable data-driven decisions with 95%+ analysis accuracy",
+      "Drive 20%+ KPI uplift from analytics recommendations",
+      "Achieve 95% monthly active dashboard usage by stakeholders",
+    ],
+    pairsWith: ["pipeline-analyst", "growth-hacker", "feedback-synthesizer"],
+    industries: ["SaaS", "E-commerce", "Real Estate", "Restaurants", "Professional Services"],
+    goals: ["Improve decisions", "Track performance", "Identify growth"],
+  },
+  {
+    slug: "agents-orchestrator",
+    name: "Agents Orchestrator",
+    emoji: "🎛️",
+    division: "Specialized",
+    role: "Coordinates multi-agent pipelines with continuous Dev-QA quality loops",
+    color: "#6B7280",
+    capabilities: [
+      "Autonomous pipeline management from planning through QA",
+      "Task-by-task Dev-QA validation loops with retry logic",
+      "Context-aware agent spawning with full handoff instructions",
+      "Pipeline state tracking with progress reporting",
+      "Intelligent retry strategies — max 3 attempts before escalation",
+      "Final integration testing coordination",
+    ],
+    rules: [
+      "No task advances without a QA PASS — quality gates are non-negotiable",
+      "All decisions based on actual agent outputs, never assumptions",
+      "Maximum 3 retries per task then escalate with failure report",
+      "Each agent spawn must include complete context from prior phases",
+    ],
+    mission: [
+      "Deliver production-ready projects through autonomous pipeline execution",
+      "Prevent broken functionality through task-level quality gates",
+      "Optimize completion time through intelligent retry and coordination",
+    ],
+    pairsWith: ["senior-project-manager", "frontend-developer", "backend-architect", "reality-checker"],
+    industries: ["SaaS", "Agencies", "E-commerce", "Professional Services"],
+    goals: ["Accelerate delivery", "Improve quality", "Automate workflows"],
+  },
+  {
+    slug: "executive-summary-generator",
+    name: "Executive Summary Generator",
+    emoji: "📋",
+    division: "Support",
+    role: "Thinks like McKinsey, writes for the C-suite — concise actionable summaries",
+    color: "#10B981",
+    capabilities: [
+      "McKinsey SCQA framework (Situation, Complication, Question, Answer)",
+      "BCG Pyramid Principle for top-down communication",
+      "Bain action-oriented recommendations with owner and timeline",
+      "Financial impact quantification with ROI framing",
+      "Risk assessment with probability and magnitude",
+      "Scenario analysis with best, worst, and likely cases",
+    ],
+    rules: [
+      "Total summary 325-475 words maximum — brevity is the product",
+      "Every finding must include quantified or comparative data",
+      "Make zero assumptions beyond provided data — flag gaps",
+      "Every recommendation must name an owner, timeline, and expected result",
+    ],
+    mission: [
+      "Enable C-suite to grasp situation and decide in under 3 minutes",
+      "100% compliance — every finding quantified, every recommendation actionable",
+      "Accelerate human judgment without replacing it",
+    ],
+    pairsWith: ["analytics-reporter", "feedback-synthesizer", "project-shepherd", "pipeline-analyst"],
+    industries: ["SaaS", "Professional Services", "Agencies", "Healthcare", "Real Estate"],
+    goals: ["Improve decisions", "Communicate strategy", "Synthesize data"],
+  },
 ];
+
+/* ════════════════════════════════════════════════════════════════════
+   NEXUS PHASE → AGENT MAPPING
+   Defines which agents are assigned to each NEXUS phase (0-6).
+   Primary agents are auto-dispatched. Secondary are available on demand.
+   ════════════════════════════════════════════════════════════════════ */
+
+export interface NexusPhaseConfig {
+  phase: number;
+  name: string;
+  description: string;
+  primary: string[];
+  secondary: string[];
+  gateKeeper: string;
+  defaultDuration: string;
+}
+
+export const NEXUS_PHASES: NexusPhaseConfig[] = [
+  {
+    phase: 0,
+    name: "Discovery",
+    description: "Validate opportunity before committing resources",
+    primary: ["trend-researcher", "finance-tracker", "reality-checker"],
+    secondary: ["ux-researcher", "feedback-synthesizer", "legal-compliance-checker"],
+    gateKeeper: "executive-summary-generator",
+    defaultDuration: "3-7 days",
+  },
+  {
+    phase: 1,
+    name: "Strategy",
+    description: "Architecture, brand, budget, and sprint plan",
+    primary: ["software-architect", "brand-guardian", "sprint-prioritizer", "finance-tracker"],
+    secondary: ["backend-architect", "ai-engineer"],
+    gateKeeper: "executive-summary-generator",
+    defaultDuration: "1-2 weeks",
+  },
+  {
+    phase: 2,
+    name: "Foundation",
+    description: "Scaffold infrastructure before feature development",
+    primary: ["devops-automator", "backend-architect", "senior-project-manager"],
+    secondary: ["frontend-developer", "rapid-prototyper"],
+    gateKeeper: "evidence-collector",
+    defaultDuration: "1-2 weeks",
+  },
+  {
+    phase: 3,
+    name: "Build & Iterate",
+    description: "Dev-QA loops for all features",
+    primary: ["frontend-developer", "backend-architect", "evidence-collector", "sprint-prioritizer"],
+    secondary: ["ai-engineer", "brand-guardian", "api-tester", "senior-project-manager"],
+    gateKeeper: "agents-orchestrator",
+    defaultDuration: "2-12 weeks",
+  },
+  {
+    phase: 4,
+    name: "Hardening",
+    description: "Quality gauntlet — prove production readiness",
+    primary: ["reality-checker", "evidence-collector", "performance-benchmarker"],
+    secondary: ["api-tester", "legal-compliance-checker", "studio-producer"],
+    gateKeeper: "reality-checker",
+    defaultDuration: "1-2 weeks",
+  },
+  {
+    phase: 5,
+    name: "Launch",
+    description: "Coordinated go-to-market",
+    primary: ["devops-automator", "growth-hacker", "content-creator", "support-responder"],
+    secondary: ["social-media-strategist", "linkedin-content-creator", "ppc-campaign-strategist", "outbound-strategist"],
+    gateKeeper: "project-shepherd",
+    defaultDuration: "1 week",
+  },
+  {
+    phase: 6,
+    name: "Operate",
+    description: "Sustained operations and optimization",
+    primary: ["analytics-reporter", "growth-hacker", "finance-tracker"],
+    secondary: ["pipeline-analyst", "deal-strategist", "feedback-synthesizer", "workflow-optimizer", "seo-specialist"],
+    gateKeeper: "studio-producer",
+    defaultDuration: "Ongoing",
+  },
+];
+
+/** Get NEXUS phase config by phase number */
+export function getNexusPhase(phase: number): NexusPhaseConfig | null {
+  return NEXUS_PHASES.find((p) => p.phase === phase) || null;
+}
+
+/** Get all agent slugs for a phase (primary + secondary) */
+export function getPhaseAgents(phase: number): string[] {
+  const config = getNexusPhase(phase);
+  if (!config) return [];
+  return [...config.primary, ...config.secondary];
+}
 
 /* ════════════════════════════════════════════════════════════════════
    SYSTEM → AGENT MAPPING (which agents power which AI system)
@@ -529,30 +1166,34 @@ const AGENT_REGISTRY: AgentMeta[] = [
 
 const SYSTEM_AGENT_MAP: Record<string, string[]> = {
   "support-engine": ["support-responder", "rapid-prototyper", "ai-engineer"],
-  "growth-engine": ["growth-hacker", "pipeline-analyst", "seo-specialist"],
-  "operations-autopilot": ["software-architect", "devops-automator", "backend-architect"],
-  "data-intelligence": ["ai-engineer", "software-architect", "backend-architect"],
-  "content-engine": ["content-creator", "seo-specialist", "brand-guardian"],
+  "growth-engine": ["growth-hacker", "pipeline-analyst", "seo-specialist", "social-media-strategist"],
+  "operations-autopilot": ["software-architect", "devops-automator", "backend-architect", "workflow-optimizer"],
+  "data-intelligence": ["ai-engineer", "software-architect", "backend-architect", "analytics-reporter"],
+  "content-engine": ["content-creator", "seo-specialist", "brand-guardian", "linkedin-content-creator"],
   "onboarding-system": ["rapid-prototyper", "support-responder", "frontend-developer"],
   "cart-recovery": ["growth-hacker", "outbound-strategist"],
-  "recommendation-engine": ["ai-engineer", "growth-hacker"],
+  "recommendation-engine": ["ai-engineer", "growth-hacker", "feedback-synthesizer"],
   "sales-automation": ["outbound-strategist", "deal-strategist", "pipeline-analyst"],
-  "loyalty-system": ["growth-hacker", "support-responder"],
+  "loyalty-system": ["growth-hacker", "support-responder", "feedback-synthesizer"],
   "booking-engine": ["rapid-prototyper", "support-responder", "frontend-developer"],
-  "compliance-automation": ["reality-checker", "software-architect"],
+  "compliance-automation": ["reality-checker", "software-architect", "legal-compliance-checker"],
+  "paid-media": ["ppc-campaign-strategist", "growth-hacker", "analytics-reporter"],
+  "quality-assurance": ["evidence-collector", "api-tester", "performance-benchmarker"],
 };
 
 /** Industry-specific bonus agents */
 const INDUSTRY_EXTRAS: Record<string, string[]> = {
-  "e-commerce": ["brand-guardian", "seo-specialist", "growth-hacker"],
-  "fashion": ["brand-guardian", "content-creator", "seo-specialist"],
-  "real-estate": ["outbound-strategist", "deal-strategist", "pipeline-analyst"],
-  "saas": ["software-architect", "devops-automator", "ai-engineer"],
-  "healthcare": ["reality-checker", "support-responder", "ai-engineer"],
-  "restaurant": ["rapid-prototyper", "support-responder"],
-  "tourism": ["content-creator", "seo-specialist", "growth-hacker"],
+  "e-commerce": ["brand-guardian", "seo-specialist", "growth-hacker", "feedback-synthesizer"],
+  "fashion": ["brand-guardian", "content-creator", "seo-specialist", "social-media-strategist"],
+  "real-estate": ["outbound-strategist", "deal-strategist", "pipeline-analyst", "ppc-campaign-strategist"],
+  "saas": ["software-architect", "devops-automator", "ai-engineer", "sprint-prioritizer"],
+  "healthcare": ["reality-checker", "support-responder", "ai-engineer", "legal-compliance-checker"],
+  "restaurant": ["rapid-prototyper", "support-responder", "social-media-strategist"],
+  "tourism": ["content-creator", "seo-specialist", "growth-hacker", "social-media-strategist"],
   "automotive": ["outbound-strategist", "pipeline-analyst"],
-  "fintech": ["backend-architect", "reality-checker", "ai-engineer"],
+  "fintech": ["backend-architect", "reality-checker", "ai-engineer", "legal-compliance-checker"],
+  "agencies": ["studio-producer", "senior-project-manager", "workflow-optimizer"],
+  "professional-services": ["executive-summary-generator", "analytics-reporter", "finance-tracker"],
 };
 
 /** Agents that are always included (support roles) */
@@ -560,12 +1201,15 @@ const ALWAYS_INCLUDE = ["project-shepherd", "reality-checker"];
 
 /** Goal → agent priority boost */
 const GOAL_AGENT_MAP: Record<string, string[]> = {
-  "increase-revenue": ["growth-hacker", "pipeline-analyst", "outbound-strategist"],
-  "reduce-costs": ["devops-automator", "ai-engineer", "software-architect"],
-  "improve-cx": ["support-responder", "brand-guardian", "content-creator"],
-  "launch-product": ["rapid-prototyper", "frontend-developer", "software-architect"],
-  "scale-team": ["project-shepherd", "devops-automator"],
-  "enter-market": ["growth-hacker", "seo-specialist", "content-creator"],
+  "increase-revenue": ["growth-hacker", "pipeline-analyst", "outbound-strategist", "ppc-campaign-strategist"],
+  "reduce-costs": ["devops-automator", "ai-engineer", "software-architect", "workflow-optimizer"],
+  "improve-cx": ["support-responder", "brand-guardian", "content-creator", "feedback-synthesizer"],
+  "launch-product": ["rapid-prototyper", "frontend-developer", "software-architect", "evidence-collector"],
+  "scale-team": ["project-shepherd", "devops-automator", "senior-project-manager"],
+  "enter-market": ["growth-hacker", "seo-specialist", "content-creator", "trend-researcher"],
+  "improve-quality": ["evidence-collector", "api-tester", "performance-benchmarker", "reality-checker"],
+  "financial-planning": ["finance-tracker", "analytics-reporter", "executive-summary-generator"],
+  "compliance": ["legal-compliance-checker", "reality-checker", "executive-summary-generator"],
 };
 
 /** Task templates keyed by system → agent */
@@ -579,11 +1223,13 @@ const TASK_TEMPLATES: Record<string, Record<string, string>> = {
     "growth-hacker": "Design primary conversion funnel",
     "pipeline-analyst": "Score existing leads and prioritize follow-ups",
     "seo-specialist": "Audit search visibility and organic traffic gaps",
+    "social-media-strategist": "Create cross-platform social media strategy",
   },
   "content-engine": {
     "content-creator": "Plan first month content calendar",
     "seo-specialist": "Identify long-tail keywords competitors miss",
     "brand-guardian": "Audit brand voice and create AI style guidelines",
+    "linkedin-content-creator": "Design LinkedIn thought leadership strategy",
   },
   "sales-automation": {
     "outbound-strategist": "Design automated lead nurture sequences",
@@ -594,6 +1240,22 @@ const TASK_TEMPLATES: Record<string, Record<string, string>> = {
     "software-architect": "Map existing systems and design integration architecture",
     "devops-automator": "Set up CI/CD pipeline and monitoring",
     "backend-architect": "Design API layer for system integration",
+    "workflow-optimizer": "Map current processes and identify automation opportunities",
+  },
+  "paid-media": {
+    "ppc-campaign-strategist": "Audit existing ad accounts and design campaign structure",
+    "growth-hacker": "Design acquisition funnel with paid media integration",
+    "analytics-reporter": "Set up conversion tracking and attribution model",
+  },
+  "quality-assurance": {
+    "evidence-collector": "Capture visual evidence across all device breakpoints",
+    "api-tester": "Run comprehensive API endpoint validation suite",
+    "performance-benchmarker": "Establish performance baselines and load test at 10x",
+  },
+  "compliance-automation": {
+    "reality-checker": "Review system specs and validate feasibility",
+    "software-architect": "Design compliant architecture with audit trails",
+    "legal-compliance-checker": "Audit regulatory requirements and identify gaps",
   },
 };
 
@@ -789,7 +1451,7 @@ export function selectAgents(
  * route-specific instructions, and optional JSON schema.
  *
  * Layer order:
- *   1. Sun AI Base (identity, tone)
+ *   1. AMO AI Base (identity, tone)
  *   2. Agent Excerpt (reasoning methodology)
  *   3. Route Instructions (task-specific guidance)
  *   4. JSON Schema (output format — ALWAYS last for LLM priority)
@@ -842,6 +1504,7 @@ export function compilePrompt(
 
 function getDefaultTask(slug: string, industry?: string): string {
   const templates: Record<string, string> = {
+    // Original 16
     "software-architect": "Design your system integration architecture",
     "rapid-prototyper": "Build your first working prototype",
     "frontend-developer": "Build your responsive web interface",
@@ -858,6 +1521,25 @@ function getDefaultTask(slug: string, industry?: string): string {
     "project-shepherd": "Set up sprint plan and milestones",
     "reality-checker": "Review system specs and validate feasibility",
     "support-responder": "Design your automated response flows",
+    // NEXUS 18
+    "ux-researcher": "Map user journeys and identify key pain points",
+    "trend-researcher": "Analyze market trends and competitive landscape",
+    "finance-tracker": "Build ROI model and cash flow projection",
+    "sprint-prioritizer": "Score and prioritize your feature backlog (RICE)",
+    "senior-project-manager": "Break your project into developer-ready tasks",
+    "studio-producer": "Assess your project portfolio and resource allocation",
+    "evidence-collector": "Capture visual evidence of system quality across devices",
+    "api-tester": "Run comprehensive API validation and security tests",
+    "performance-benchmarker": "Establish performance baselines and load test at 10x",
+    "workflow-optimizer": "Map your current processes and find automation opportunities",
+    "social-media-strategist": "Create your cross-platform social media strategy",
+    "linkedin-content-creator": "Design your LinkedIn thought leadership plan",
+    "ppc-campaign-strategist": "Audit your paid media accounts and design campaign structure",
+    "feedback-synthesizer": "Collect and prioritize user feedback across all channels",
+    "legal-compliance-checker": "Audit your regulatory requirements and identify gaps",
+    "analytics-reporter": "Design your KPI dashboard and tracking framework",
+    "agents-orchestrator": "Coordinate your agent team and manage the delivery pipeline",
+    "executive-summary-generator": "Generate executive summary of current project state",
   };
   let task = templates[slug] || "Analyze and optimize your project";
   if (industry) {

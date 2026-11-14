@@ -33,7 +33,7 @@ McKinsey engagement letter meets modern SaaS.
 ```
 ┌────────────────────────────────────────────────────────────────��─────────┐
 │                                                                          │
-│  ☀ Sun AI    Step 4: Executive Summary                   ✓ All saved    │
+│  ☀ AMO AI    Step 4: Executive Summary                   ✓ All saved    │
 │                                                                          │
 ├───────────┬───────────────────────────────────────────┬──────────────────┤
 │           │                   #F1EEEA bg              │                  │
@@ -48,7 +48,7 @@ McKinsey engagement letter meets modern SaaS.
 │ │ ✓ 2   │ │    │  Acme Retail Group                │   │ │              │ │
 │ │ Diag. │ │    │  ← 32px Playfair Display          │   │ │  ◉ Executive │ │
 │ │       │ │    │                                   │   │ │    Summary   │ │
-│ │ ✓ 3   │ │    │  Prepared by Sun AI Agency        │   │ │  ○ Company   │ │
+│ │ ✓ 3   │ │    │  Prepared by AMO AI        │   │ │  ○ Company   │ │
 │ │ Recs. │ │    │  March 7, 2026                    │   │ │    Profile   │ │
 │ │       │ │    │  ════ ← 60px lime green rule      │   │ │  ○ Industry  │ │
 │ │ ◉ 4   │ │    │                                   │   │ │    Analysis  │ │
@@ -210,7 +210,7 @@ McKinsey engagement letter meets modern SaaS.
 │  STRATEGY BRIEF             │
 │  ────────────────           │
 │  Acme Retail Group          │
-│  Prepared by Sun AI Agency  │
+│  Prepared by AMO AI  │
 │  March 7, 2026              │
 │  ════ (green rule)          │
 │                             │
@@ -317,7 +317,7 @@ Step 4 center panel:  #F1EEEA background REMAINS
 ```
 STRATEGY BRIEF ................ 12px uppercase, letter-spacing 0.1em, #84CC16
 Company Name .................. 32px Playfair Display, 600 weight, #0A211F
-Prepared by Sun AI Agency ..... 14px Lora, 400 weight, #9CA3AF
+Prepared by AMO AI ..... 14px Lora, 400 weight, #9CA3AF
 Date .......................... 14px Lora, 400 weight, #9CA3AF
 Green rule .................... 2px height, 60px width, #84CC16, centered-left
 ```
@@ -460,7 +460,7 @@ Checklist of what approval triggers:
 ├── Opens a notes textarea modal: "What would you like changed?"
 ├── Sets brief status: "In Review" (blue badge)
 ├── Stores change request in WizardState.changeRequest
-├── Future: notifies Sun AI team
+├── Future: notifies AMO AI team
 └── User can continue editing and re-approve
 
 "APPROVE BRIEF" FLOW:
@@ -713,7 +713,7 @@ MODEL:   Gemini 3
 
 PROMPT:
 ────────
-System: You are a senior AI strategy consultant at Sun AI Agency.
+System: You are a senior AI strategy consultant at AMO AI.
         Generate a comprehensive strategy brief for a prospective 
         client based on their business context, industry diagnostics,
         and system selections. Write in a professional, consultative

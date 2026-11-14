@@ -2,7 +2,7 @@
 
 ## Figma Make Prompt
 
-> Design Step 2 of a 5-step premium wizard for "Sun AI Agency." This screen is titled "Industry Diagnostics" and presents targeted questions based on the industry selected in Step 1.
+> Design Step 2 of a 5-step premium wizard for "AMO AI." This screen is titled "Industry Diagnostics" and presents targeted questions based on the industry selected in Step 1.
 >
 > **Layout:** Same three-panel layout as Step 1 (1440px desktop).
 >

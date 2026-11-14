@@ -1,4 +1,4 @@
-# Sun AI Agency — AI Infographics & Visual Intelligence Page
+# AMO AI — AI Infographics & Visual Intelligence Page
 
 **Route:** `/services/infographics`
 **Component:** `/components/services/InfographicsPage.tsx`
@@ -9,7 +9,7 @@
 
 ## 1. Overview
 
-A premium editorial-style landing page positioning Sun AI as the company that turns complex AI strategy, automation, systems, and results into clear visual content: infographics, animated explainers, process diagrams, AI system maps, dashboard visuals, ROI storyboards, and motion-based business presentations.
+A premium editorial-style landing page positioning AMO AI as the company that turns complex AI strategy, automation, systems, and results into clear visual content: infographics, animated explainers, process diagrams, AI system maps, dashboard visuals, ROI storyboards, and motion-based business presentations.
 
 **Design Direction:** Luxury editorial + modern SaaS aesthetic — dark/refined, strategic, premium consulting feel, elegant typography (Playfair Display headlines, system sans-serif body), strong whitespace, subtle motion, sharp diagrams, structured grids. NOT playful, cartoonish, or neon sci-fi.
 

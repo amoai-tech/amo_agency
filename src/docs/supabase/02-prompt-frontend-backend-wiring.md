@@ -6,7 +6,7 @@
 
 ## Current State
 
-The Sun AI Agency platform has a three-tier architecture: React frontend, Hono edge functions on Supabase, and a Postgres database with four active tables (wizard_sessions, wizard_answers, ai_cache, ai_run_logs).
+The AMO AI platform has a three-tier architecture: React frontend, Hono edge functions on Supabase, and a Postgres database with four active tables (wizard_sessions, wizard_answers, ai_cache, ai_run_logs).
 
 The frontend API layer lives in lib/supabase.ts with three modules: wizardApi, aiApi, and authApi. All calls go through a shared api helper that sets Authorization headers with either the user's access token or the public anon key.
 

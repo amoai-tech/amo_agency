@@ -5,7 +5,7 @@ import { ArrowRight, Sparkles, CheckCircle2, Clock, TrendingUp } from 'lucide-re
    Process Hero — Luxury Editorial Edition
    ═══════════════════════════════════════════════════════════════ 
    
-   Design: Premium light hero with Sun AI Spruced palette
+   Design: Premium light hero with AMO AI Spruced palette
    Focus: 8-week velocity system with sophistication
    
    Color Palette:
@@ -86,7 +86,7 @@ export function ProcessHero({ onNavigateToWizard, onNavigateToProjects }: Proces
                   fontFamily: 'Inter, system-ui, sans-serif',
                 }}
               >
-                The Sun AI Process
+                The AMO AI Process
               </span>
             </motion.div>
             

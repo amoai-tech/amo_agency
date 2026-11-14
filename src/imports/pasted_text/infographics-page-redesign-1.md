@@ -1,5 +1,5 @@
 # Project
-Redesign the "Infographics Page" for Sun AI Agency.
+Redesign the "Infographics Page" for AMO AI.
 
 The current design is too dark, repetitive, and feels like UI blocks instead of real infographics.
 

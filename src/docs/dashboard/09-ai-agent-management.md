@@ -118,7 +118,7 @@ Real-world: "Agency owner checks AI costs: 1,247 runs this week, $12.40 total, 9
 │  SIDEBAR    │  AI Agent Management                                        │
 │  240px      ├──────────────────────────────────────────────────────────────┤
 │             │  ┌────────────┐ ┌────────────┐ ┌────────────┐ ┌──────────┐ │
-│  ☀ Sun AI   │  │ Total Runs │ │ Success %  │ │ Cache Hit  │ │ Est. Cost│ │
+│  ☀ AMO AI   │  │ Total Runs │ │ Success %  │ │ Cache Hit  │ │ Est. Cost│ │
 │             │  │   1,247    │ │   94.2%    │ │    67%     │ │  $12.40  │ │
 │  ──────────│  │   ▲ +12%   │ │   ▼ -1.3%  │ │   ▲ +5%    │ │  ▲+$2.10 │ │
 │  ○ Dashboard│  └────────────┘ └────────────┘ └────────────┘ └──────────┘ │

@@ -8,7 +8,7 @@
 
 ## 📋 Executive Summary
 
-The current Agents page (`/components/AgentsPage.tsx`) **does not follow the Sun AI Style Guide**. It uses incompatible colors (`#1A1A1A` background, `#F59E0B` orange accents), wrong typography, and violates the established brand system.
+The current Agents page (`/components/AgentsPage.tsx`) **does not follow the AMO AI Style Guide**. It uses incompatible colors (`#1A1A1A` background, `#F59E0B` orange accents), wrong typography, and violates the established brand system.
 
 **Style Guide Reference:** `/style-guide`
 

@@ -8,7 +8,7 @@
 
 ## 📋 Executive Summary
 
-The current Process page (`/components/process/v12/ProcessPageV12.tsx`) **does not follow the Sun AI Style Guide**. It uses incompatible colors, wrong typography, rounded corners, and shadows—all of which violate the established brand system.
+The current Process page (`/components/process/v12/ProcessPageV12.tsx`) **does not follow the AMO AI Style Guide**. It uses incompatible colors, wrong typography, rounded corners, and shadows—all of which violate the established brand system.
 
 **Style Guide Reference:** `/style-guide`
 
@@ -331,7 +331,7 @@ The Process page will be **compliant** when:
 
 ## 📝 Notes
 
-- The newly created `/components/process/ProcessHero.tsx` follows the Sun AI Spruced palette (different from style guide), which uses `#F4F3EE`, `#1E3D36`, `#2E6F5E`, etc. **This needs clarification on which palette to use.**
+- The newly created `/components/process/ProcessHero.tsx` follows the AMO AI Spruced palette (different from style guide), which uses `#F4F3EE`, `#1E3D36`, `#2E6F5E`, etc. **This needs clarification on which palette to use.**
 - The style guide shows Dark Teal + Lime, but HomePageV3 uses Sage + Beige (Spruced)
 - **Decision needed:** Should Process page follow Style Guide (Dark Teal/Lime) or HomePageV3 aesthetic (Sage/Beige)?
 

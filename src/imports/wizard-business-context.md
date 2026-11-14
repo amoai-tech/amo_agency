@@ -2,12 +2,12 @@
 
 ## Figma Make Prompt
 
-> Design a premium, editorial-style wizard screen for "Sun AI Agency" — an AI consulting platform. This is Step 1 of a 5-step onboarding wizard titled "Business Context."
+> Design a premium, editorial-style wizard screen for "AMO AI" — an AI consulting platform. This is Step 1 of a 5-step onboarding wizard titled "Business Context."
 >
 > **Layout:** Three-panel layout on desktop (1440px wide).
 >
 > **Left Panel (240px, white background):**
-> - Sun AI Agency logo at top (small, minimal)
+> - AMO AI logo at top (small, minimal)
 > - Vertical step progress indicator with 5 steps:
 >   1. "Business Context" — active (lime green dot, bold label)
 >   2. "Industry Diagnostics" — inactive (gray dot)

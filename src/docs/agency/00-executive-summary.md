@@ -9,7 +9,7 @@
 
 ## What We Are Building
 
-Sun AI Agency gets an AI agent layer. Instead of one generic AI generating recommendations, each client gets a curated team of specialist AI agents matched to their industry, goals, and company size.
+AMO AI gets an AI agent layer. Instead of one generic AI generating recommendations, each client gets a curated team of specialist AI agents matched to their industry, goals, and company size.
 
 The integration touches 3 areas:
 

@@ -47,7 +47,7 @@ BACKGROUND: #F1EEEA (warm beige) — or optional fine linen texture at 2% opacit
 ```
 ┌──────────────────────────────────────────────────────────────────────────┐
 │                                                          #F1EEEA bg     │
-│  ☀ Sun AI Agency                                                        │
+│  ☀ AMO AI                                                        │
 │                                                                          │
 │  ─── COMPLETION HEADER ─────────────────────────────────────────────── │
 │                                                                          │
@@ -179,7 +179,7 @@ BACKGROUND: #F1EEEA (warm beige) — or optional fine linen texture at 2% opacit
 ```
 ┌─────────────────────────────┐
 │                  #F1EEEA bg │
-│  ☀ Sun AI Agency            │
+│  ☀ AMO AI            │
 │                             │
 │  ✓ ─ ✓ ─ ✓ ─ ✓ ─ ✓         │
 │  (all 5 steps complete)     │
@@ -562,7 +562,7 @@ ENTRY
 │   │
 │   │   3. GENERATE INITIAL TASKS (via Gemini 3)
 │   │      ├── 3-5 tasks per phase (contextual to selected systems)
-│   │      ├── Mix of owners: "Client", "Sun AI", "Automated"
+│   │      ├── Mix of owners: "Client", "AMO AI", "Automated"
 │   │      ├── All status: "todo"
 │   │      ├── AI-generated with suggestion field
 │   │      └── ~12 total tasks
@@ -619,7 +619,7 @@ MODEL:   Gemini 3
 
 PROMPT:
 ────────
-System: You are a project manager at Sun AI Agency. Given a client's
+System: You are a project manager at AMO AI. Given a client's
         approved strategy brief and selected AI systems, generate
         initial tasks for Phase 1 of the project. Tasks should be
         specific, actionable, and assigned to the appropriate party.
@@ -639,13 +639,13 @@ Output: {
       title: "Complete technical requirements document",
       description: "Define API specs, data flows, and integration points for all 3 systems",
       phase: 1,
-      owner: "Sun AI",
+      owner: "AMO AI",
       priority: "high",
       estimated_hours: 8
     },
     {
       title: "Provide Shopify API credentials and access",
-      description: "Grant Sun AI team access to your Shopify admin and API",
+      description: "Grant AMO AI team access to your Shopify admin and API",
       phase: 1,
       owner: "Client",
       priority: "high",
@@ -663,7 +663,7 @@ Output: {
       title: "Design chatbot conversation flows",
       description: "Map out primary conversation paths for top 10 support scenarios",
       phase: 1,
-      owner: "Sun AI",
+      owner: "AMO AI",
       priority: "high",
       estimated_hours: 12
     },
@@ -671,7 +671,7 @@ Output: {
       title: "Set up development environment and CI/CD pipeline",
       description: "Configure staging environment with Shopify test store",
       phase: 1,
-      owner: "Sun AI",
+      owner: "AMO AI",
       priority: "medium",
       estimated_hours: 4
     },
@@ -679,14 +679,14 @@ Output: {
     {
       title: "Deploy AI support engine to staging",
       phase: 2,
-      owner: "Sun AI",
+      owner: "AMO AI",
       priority: "high",
       estimated_hours: 20
     },
     {
       title: "Build cart recovery trigger system",
       phase: 2,
-      owner: "Sun AI",
+      owner: "AMO AI",
       priority: "high",
       estimated_hours: 16
     },
@@ -708,7 +708,7 @@ Output: {
     {
       title: "Analyze first 2 weeks of chatbot performance",
       phase: 3,
-      owner: "Sun AI",
+      owner: "AMO AI",
       priority: "medium",
       estimated_hours: 6
     },
@@ -722,7 +722,7 @@ Output: {
     {
       title: "Final handoff: documentation + team training",
       phase: 3,
-      owner: "Sun AI",
+      owner: "AMO AI",
       priority: "high",
       estimated_hours: 8
     }
@@ -760,7 +760,7 @@ PROJECT CREATION FAILS:
 │  └────────────────────┘                 │
 │                                         │
 │  If this persists, contact us at        │
-│  hello@sunaiagency.com                  │
+│  Contact via www.amoai.ca                  │
 │                                         │
 └─────────────────────────────────────────┘
 

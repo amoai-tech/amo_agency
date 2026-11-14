@@ -403,7 +403,7 @@
 ### **Production Status**
 🟢 **READY FOR DEPLOYMENT**
 
-All pages are tested, verified, and ready for production release with luxury, premium, sophisticated design that follows the Sun AI Style Guide 100%.
+All pages are tested, verified, and ready for production release with luxury, premium, sophisticated design that follows the AMO AI Style Guide 100%.
 
 ---
 

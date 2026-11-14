@@ -65,7 +65,7 @@ export function ServicesPage() {
                 </span>
               </h1>
               <p className="text-[16px] text-white/70 leading-[1.6] mb-10 max-w-[540px]">
-                <strong className="text-white font-semibold">Still starting from scratch with every AI project?</strong> Sun AI specialists design, build, and deploy AI systems that scale with your business—delivering measurable results without the overhead of building in-house.
+                <strong className="text-white font-semibold">Still starting from scratch with every AI project?</strong> AMO AI specialists design, build, and deploy AI systems that scale with your business—delivering measurable results without the overhead of building in-house.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
@@ -662,7 +662,7 @@ export function ServicesPage() {
         </div>
       </section>
 
-      {/* 8. WHY SUN AI */}
+      {/* 8. WHY AMO AI */}
       <section className="py-32 px-6 md:px-16 bg-white">
         <div className="max-w-[1280px] mx-auto">
           <div className="text-center mb-20">
@@ -670,7 +670,7 @@ export function ServicesPage() {
               className="text-[48px] leading-[1.1] font-normal text-[#1F2421] mb-6"
               style={{ fontFamily: 'Georgia, serif' }}
             >
-              Why Sun AI
+              Why AMO AI
             </h2>
             <p className="text-[18px] text-[#6B7370] max-w-[640px] mx-auto">
               We bring deep expertise, systems thinking, and a commitment to your long-term success.

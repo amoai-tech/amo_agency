@@ -1,4 +1,4 @@
-# HOME PAGE PLAN — Sun AI Agency
+# HOME PAGE PLAN — AMO AI
 **Calm Luxury Editorial Design**
 
 ---

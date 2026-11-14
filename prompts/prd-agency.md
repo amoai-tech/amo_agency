@@ -3,19 +3,19 @@
 **Version:** 1.0
 **Date:** 2026-03-12
 **Status:** Active
-**Parent PRD:** `/prd.md` (Sun AI Agency v3.0)
+**Parent PRD:** `/prd.md` (AMO AI v3.0)
 **Source Repo:** [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents) (MIT License)
 
 ---
 
 ## 1. Product Vision
 
-Sun AI Agency becomes an **AI team platform** — not just an AI tool. Every client gets a curated team of named AI specialists matched to their industry, goals, and company size. Agents are structured prompt templates (Markdown files with YAML frontmatter) that turn generic Gemini output into domain-expert reasoning.
+AMO AI becomes an **AI team platform** — not just an AI tool. Every client gets a curated team of named AI specialists matched to their industry, goals, and company size. Agents are structured prompt templates (Markdown files with YAML frontmatter) that turn generic Gemini output into domain-expert reasoning.
 
 **Before:** One AI generates everything. Output feels generic.
 **After:** Named specialists power every recommendation. Output feels like a $10K consulting engagement.
 
-**Core principle:** Agents augment — they never replace Sun AI's product logic. The 4-layer Prompt Compiler pattern ensures Sun AI's voice, JSON schemas, and guardrails always take precedence.
+**Core principle:** Agents augment — they never replace AMO AI's product logic. The 4-layer Prompt Compiler pattern ensures AMO AI's voice, JSON schemas, and guardrails always take precedence.
 
 ---
 
@@ -54,7 +54,7 @@ Every AI call assembles a prompt from 4 layers:
 
 ```
 ┌─────────────────────────────────────────────┐
-│ Layer 1: Sun AI Base Role (ALWAYS FIRST)    │
+│ Layer 1: AMO AI Base Role (ALWAYS FIRST)    │
 │ Consistent voice, brand, constraints        │
 │ "Never claim >3x improvement without proof" │
 ├─────────────────────────────────────────────┤
@@ -73,7 +73,7 @@ Every AI call assembles a prompt from 4 layers:
 ```
 
 **Critical rules:**
-- Layer 1 is never omitted — Sun AI identity always present
+- Layer 1 is never omitted — AMO AI identity always present
 - Layer 4 is always last — JSON compliance depends on it
 - Agent excerpts are max 2,000 tokens — truncated if longer
 - If agent load fails, skip Layer 2 — degrade gracefully to current behavior
@@ -125,7 +125,7 @@ extractExcerpt(agentFile, sections, maxTokens=2000)
 ### 4.5 Fallback & Error Handling
 
 ```
-Agent .md file not found?     → Skip agent excerpt, use Sun AI base prompt only
+Agent .md file not found?     → Skip agent excerpt, use AMO AI base prompt only
 Agent excerpt empty?          → Same fallback
 AI call fails?                → Existing retry logic (3 retries, 1s/2s/4s backoff)
 All retries exhausted?        → Return error + log failure
@@ -593,7 +593,7 @@ All new tables follow existing patterns:
 |---|---|---|
 | Token budget | agent-loader | Max 2,000 tokens per agent excerpt. Truncate at sentence boundary. |
 | ROI claims | compilePrompt | "Never claim more than 3x improvement without citing evidence. Use ranges, not exact numbers." |
-| Fallback prompt | ai-routes | If agent file load fails or excerpt is empty, use existing Sun AI prompt unchanged. |
+| Fallback prompt | ai-routes | If agent file load fails or excerpt is empty, use existing AMO AI prompt unchanged. |
 | JSON last | compilePrompt | JSON schema is always the LAST section. Agent excerpt goes in the MIDDLE. |
 | Agent cap | Catalog | Default view: 15-20 curated agents. Full catalog behind "Show all" toggle. |
 | Output QA | Proposals only | Reality Checker excerpt reviews proposal output before display. |
@@ -679,7 +679,7 @@ All new tables follow existing patterns:
 - Wizard shows "Your AI Team" for every completed session
 - Dashboard agent widget shows real status
 - Catalog loads in < 2 seconds
-- At least 15 agents curated with Sun AI descriptions
+- At least 15 agents curated with AMO AI descriptions
 
 **Dependencies:** Phase 1 complete (agent-loader working)
 
@@ -767,7 +767,7 @@ Visitor → Sign Up → Wizard Steps 1-2 (no agents)
 | Unrealistic ROI claims | MEDIUM | HIGH | "Use ranges, cite evidence, never claim 3x+ without proof" |
 | Wrong agent selected | MEDIUM | HIGH | Multi-dimensional selection (goal + industry + size + challenge) |
 | Too many agents overwhelm users | MEDIUM | MEDIUM | Curate 15-20. Full catalog behind toggle. |
-| Agent tone conflicts with brand | MEDIUM | MEDIUM | Sun AI base prompt always Layer 1. Agent never overrides. |
+| Agent tone conflicts with brand | MEDIUM | MEDIUM | AMO AI base prompt always Layer 1. Agent never overrides. |
 | Users don't understand agents | MEDIUM | LOW | "Your AI Team" language. Show role + task, not technical details. |
 
 ### Business
@@ -853,7 +853,7 @@ All new components follow the parent PRD design system:
 | `prompts/plan/04-risks-and-limitations.md` | Risk assessment |
 | `summary.md` | Integration summary with 10 real-world examples |
 | `agency/` | Cloned agency-agents repo (120+ .md files) |
-| `prd.md` | Parent PRD (Sun AI Agency v3.0) |
+| `prd.md` | Parent PRD (AMO AI v3.0) |
 
 ---
 

@@ -8,7 +8,7 @@ export function SystemArchitectureDiagram() {
       <SectionTitle
         number="01"
         title="System Architecture"
-        subtitle="High-level overview of the Sun AI Agency three-tier architecture"
+        subtitle="High-level overview of the AMO AI three-tier architecture"
       />
 
       <DiagramContainer>

@@ -1,6 +1,6 @@
 You are a senior product architect and Supabase expert.
 
-Create a **visual reference document** that explains how the Sun AI Agency platform connects the frontend, backend, and Supabase database.
+Create a **visual reference document** that explains how the AMO AI platform connects the frontend, backend, and Supabase database.
 
 The goal is to produce a **clear system reference for developers** showing how data flows between:
 
@@ -21,7 +21,7 @@ Use clean consulting-style diagrams and developer reference tables.
 PROJECT CONTEXT
 
 Product:
-Sun AI Agency
+AMO AI
 
 Platform Type:
 AI Business Operating System

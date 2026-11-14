@@ -5,7 +5,7 @@ export default function AboutPage() {
         <h1 className="text-4xl md:text-5xl tracking-tight mb-6">About</h1>
         <div className="space-y-6 text-lg text-gray-600">
           <p>
-            Sun AI Agency is a premium AI services company focused on building
+            AMO AI is a premium AI services company focused on building
             real systems for real businesses.
           </p>
           <p>

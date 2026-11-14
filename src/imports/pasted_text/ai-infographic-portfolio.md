@@ -1,5 +1,5 @@
 # Project
-Design a **high-end infographic portfolio page** for Sun AI Agency.
+Design a **high-end infographic portfolio page** for AMO AI.
 
 This is NOT a standard SaaS page.
 

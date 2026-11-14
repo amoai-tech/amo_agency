@@ -28,7 +28,7 @@ This screen builds trust through transparency and makes the wait feel productive
 ```
 ┌──────────────────────────────────────────────────────────────────────────┐
 │                                                          #1A1A1A bg     │
-│  ☀ Sun AI Agency                                                        │
+│  ☀ AMO AI                                                        │
 │                                                                          │
 │                                                                          │
 │                                                                          │
@@ -157,7 +157,7 @@ Phase 6 (14-15s): COMPLETE
 ```
 ┌─────────────────────────────┐
 │                  #1A1A1A bg │
-│  ☀ Sun AI Agency            │
+│  ☀ AMO AI            │
 │                             │
 │                             │
 │                             │
@@ -534,7 +534,7 @@ TRIGGER: Page mount (immediately when /wizard/processing loads)
 
 PROMPT:
 ────────
-System: You are the Sun AI Agency proposal generation system.
+System: You are the AMO AI proposal generation system.
         Given a complete client brief (business context, industry
         diagnostics, system selections, and contact details),
         generate a detailed project proposal including scope,

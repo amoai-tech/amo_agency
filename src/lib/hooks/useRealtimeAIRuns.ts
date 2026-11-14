@@ -16,6 +16,7 @@
 //   - AgentsPage keeps manual Refresh as fallback
 
 import { useCallback, useRef } from 'react';
+import { useAuth } from '../../components/AuthContext';
 import {
   useSupabaseBroadcast,
   type BroadcastStatus,
@@ -44,6 +45,7 @@ export interface UseRealtimeAIRunsReturn {
 
 export function useRealtimeAIRuns(options: UseRealtimeAIRunsOptions): UseRealtimeAIRunsReturn {
   const { onNewRun, enabled = true, throttleMs = 3000 } = options;
+  const { user } = useAuth();
 
   // Throttle: don't fire onNewRun more than once per throttleMs
   const lastRefreshRef = useRef(0);
@@ -68,12 +70,12 @@ export function useRealtimeAIRuns(options: UseRealtimeAIRunsOptions): UseRealtim
     [throttleMs]
   );
 
-  // Global topic — all AI runs broadcast here (not scoped to a specific entity)
+  // Each account receives only its own AI run events (tenant-scoped RLS).
   const { status, eventCount, reconnect } = useSupabaseBroadcast({
-    topic: 'ai-runs:global',
+    topic: `ai-runs:${user?.id || 'unauthenticated'}`,
     events: ['INSERT'],
     onEvent: handleEvent,
-    enabled,
+    enabled: enabled && !!user?.id,
     isPrivate: true,
     selfBroadcast: false,
   });

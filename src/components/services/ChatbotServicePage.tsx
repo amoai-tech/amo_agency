@@ -164,7 +164,7 @@ function HeroSection() {
               <div className="px-6 py-4 flex items-center gap-3" style={{ background: cx.emerald }}>
                 <Bot className="w-6 h-6 text-white" />
                 <div>
-                  <p style={{ fontFamily: sans, fontWeight: 600, fontSize: '0.85rem', color: cx.white }}>Sun AI Assistant</p>
+                  <p style={{ fontFamily: sans, fontWeight: 600, fontSize: '0.85rem', color: cx.white }}>AMO AI Assistant</p>
                   <p style={{ fontFamily: sans, fontSize: '0.7rem', color: 'rgba(255,255,255,0.7)' }}>Online now</p>
                 </div>
                 <div className="ml-auto w-2.5 h-2.5 rounded-full bg-green-400 animate-pulse" />
@@ -346,7 +346,7 @@ function ProblemSolutionSplit() {
               className="uppercase tracking-[0.2em] mb-8"
               style={{ fontFamily: sans, fontSize: '0.65rem', fontWeight: 600, color: cx.bright }}
             >
-              Sun AI Approach
+              AMO AI Approach
             </p>
             <div className="space-y-0">
               {solutions.map((s, i) => (

@@ -108,7 +108,7 @@ export default function Header() {
               >
                 <Sun className="w-5 h-5" style={{ color: '#00875A' }} />
                 <span style={{ fontFamily: 'Georgia, serif', fontSize: '1.05rem' }}>
-                  Sun AI Agency
+                  AMO AI
                 </span>
               </Link>
             </div>

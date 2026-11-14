@@ -1,7 +1,7 @@
 
-  # Sun AI Agency Project
+  # AMO AI
 
-  This is a code bundle for Sun AI Agency Project. The original project is available at https://www.figma.com/design/JQthIKI0O3aBtgKKvR2Hv9/Sun-AI-Agency-Project.
+  This is the web application repository for AMO AI (https://www.amoai.ca/). The original project is available at https://www.figma.com/design/JQthIKI0O3aBtgKKvR2Hv9/Sun-AI-Agency-Project.
 
   ## Running the code
 

@@ -205,7 +205,7 @@ Behavior:
 6. Cache with 4-hour TTL
 7. Return the insights array
 
-System prompt: "You are a senior project advisor at Sun AI Agency. The client has completed a discovery wizard and has an active AI transformation project. Based on their readiness score, diagnostic findings, selected systems, and roadmap progress, recommend 2-4 specific next actions they should take this week. Each recommendation must be actionable, specific (include numbers and data points from their analysis), and prioritized. Return JSON."
+System prompt: "You are a senior project advisor at AMO AI. The client has completed a discovery wizard and has an active AI transformation project. Based on their readiness score, diagnostic findings, selected systems, and roadmap progress, recommend 2-4 specific next actions they should take this week. Each recommendation must be actionable, specific (include numbers and data points from their analysis), and prioritized. Return JSON."
 
 Response JSON structure: array of objects each with id (string), priority (high, medium, suggestion), title (string, max 60 chars), description (string, 2-3 sentences with specific data), actionLabel (string, button text), actionRoute (string, relative URL).
 

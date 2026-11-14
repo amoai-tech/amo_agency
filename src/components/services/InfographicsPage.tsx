@@ -507,7 +507,7 @@ function Sample7() {
               <div className="w-2 h-2 rounded-full" style={{ background: '#FF605C' }} />
               <div className="w-2 h-2 rounded-full" style={{ background: '#FFBD44' }} />
               <div className="w-2 h-2 rounded-full" style={{ background: '#00CA4E' }} />
-              <span className="text-[10px] ml-2" style={{ color: '#ccc' }}>Sun AI — Dashboard</span>
+              <span className="text-[10px] ml-2" style={{ color: '#ccc' }}>AMO AI — Dashboard</span>
             </div>
             <div className="p-5 md:p-8">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">

@@ -62,7 +62,7 @@ Real-world: "A client completes the wizard at 3:47 PM. The 'Wizard Complete -> P
 │  SIDEBAR    │  Workflow Automation                                         │
 │  240px      ├──────────────────────────────────────────────────────────────┤
 │             │  ┌────────────┐ ┌────────────┐ ┌────────────┐ ┌──────────┐ │
-│  ☀ Sun AI   │  │ Runs Today │ │ Success %  │ │ Avg Time   │ │ Active   │ │
+│  ☀ AMO AI   │  │ Runs Today │ │ Success %  │ │ Avg Time   │ │ Active   │ │
 │             │  │     23     │ │   96.5%    │ │   4.2s     │ │  5 / 7   │ │
 │  ──────────│  │   ▲ +8     │ │   ▲ +2.1%  │ │   ▼ +0.3s  │ │          │ │
 │  ○ Dashboard│  └────────────┘ └────────────┘ └────────────┘ └──────────┘ │

@@ -67,6 +67,7 @@ export default function AuthPage() {
   const [name, setName] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [confirmationSent, setConfirmationSent] = useState(false);
   const [localError, setLocalError] = useState<string | null>(null);
   const [googleRedirecting, setGoogleRedirecting] = useState(false);
   const [linkedinRedirecting, setLinkedinRedirecting] = useState(false);
@@ -121,7 +122,11 @@ export default function AuthPage() {
 
     if (result.success) {
       setSuccess(true);
-      setTimeout(() => navigate(returnPath), 800);
+      if (mode === "signup") {
+        setConfirmationSent(true);
+      } else {
+        setTimeout(() => navigate(returnPath), 800);
+      }
     } else {
       setLocalError(result.error || 'Something went wrong');
     }
@@ -148,6 +153,7 @@ export default function AuthPage() {
     setLocalError(null);
     clearError();
     setSuccess(false);
+    setConfirmationSent(false);
     setFieldErrors({});
     setTouched({});
   };
@@ -218,7 +224,7 @@ export default function AuthPage() {
               className="text-base md:text-lg"
               style={{ fontFamily: "'Playfair Display', Georgia, serif", color: '#FFFFFF' }}
             >
-              Sun AI Agency
+              AMO AI
             </span>
           </Link>
 
@@ -268,7 +274,7 @@ export default function AuthPage() {
         {/* Footer — desktop/tablet only */}
         <div className="hidden md:block relative z-10 p-10 lg:p-12">
           <p className="text-xs" style={{ fontFamily: "'Lora', Georgia, serif", color: '#6B6B63' }}>
-            &copy; 2026 Sun AI Agency. All rights reserved.
+            &copy; 2026 AMO AI. All rights reserved.
           </p>
         </div>
       </div>
@@ -285,6 +291,16 @@ export default function AuthPage() {
         style={{ backgroundColor: '#FFFFFF' }}
       >
         <div className="w-full" style={{ maxWidth: '380px' }}>
+          {confirmationSent && (
+            <div role="status" className="mb-6 rounded border border-green-200 bg-green-50 p-4 text-sm text-green-900">
+              Check your email for a confirmation link. Verify your address, then sign in.
+              <button type="button" className="ml-2 underline font-semibold" onClick={() => {
+                setConfirmationSent(false);
+                setSuccess(false);
+                setMode('login');
+              }}>Go to sign in</button>
+            </div>
+          )}
           {/* ── Tab Toggle: "Sign In" | "Create Account" ── */}
           <div
             className="flex mb-8"
@@ -624,7 +640,7 @@ export default function AuthPage() {
                   }}
                 >
                   {success ? (
-                    <><Check className="w-4 h-4" /> Success</>
+                    <><Check className="w-4 h-4" /> {confirmationSent ? "Email sent" : "Success"}</>
                   ) : loading && !googleRedirecting && !linkedinRedirecting ? (
                     <><Loader2 className="w-4 h-4 animate-spin" /> Processing…</>
                   ) : (

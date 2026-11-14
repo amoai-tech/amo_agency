@@ -61,7 +61,7 @@ insights.get(`${PREFIX}/insights/:projectId`, async (c) => {
         .in("slug", slugs);
 
       for (const a of agentData || []) {
-        agentMap[a.slug] = { name: a.name, emoji: a.emoji };
+        agentMap[a.slug] = { name: a.name, emoji: a.emoji ?? "" };
       }
     }
 
@@ -202,7 +202,7 @@ insights.post(`${PREFIX}/insights/:projectId/generate`, async (c) => {
     ];
 
     // Run all agents in parallel
-    const basePrompt = `You are a specialist insight generator at Sun AI Agency. Analyze project data and produce one high-value business insight.
+    const basePrompt = `You are a specialist insight generator at AMO AI. Analyze project data and produce one high-value business insight.
 
 RULES:
 - Be specific and actionable — reference concrete data from the project context

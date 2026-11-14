@@ -1,4 +1,4 @@
-# How We Deliver Section — Sun AI HomePageV3
+# How We Deliver Section — AMO AI HomePageV3
 
 **Purpose:** Premium 3-card delivery process section showcasing strategy, execution, and optimization  
 **Style:** Luxury Editorial with Spruced-inspired aesthetic  
@@ -411,7 +411,7 @@ See the 4-step process →
 
 ### Concept: Horizontal Timeline + Cards
 
-If you want to expand this into a more elaborate "8-Week Process" section similar to your reference doc, here's how to adapt it to the Sun AI V3 style:
+If you want to expand this into a more elaborate "8-Week Process" section similar to your reference doc, here's how to adapt it to the AMO AI V3 style:
 
 #### Layout Changes
 - **Background:** Keep Sage (#DCE5DD) OR use White (#FFFFFF) with subtle texture
@@ -1259,7 +1259,7 @@ Style: Minimal, elegant, with subtle playful energy on interaction
 
 ## 20. Brand Alignment Check
 
-### Sun AI V3 Style ✅
+### AMO AI V3 Style ✅
 - [x] Warm, sophisticated color palette (sage, deep green, white)
 - [x] Luxury editorial typography (Playfair + Lora)
 - [x] Generous whitespace and breathing room
@@ -1492,7 +1492,7 @@ function MiniTimeline() {
 If you need to regenerate or export this section design:
 
 ```
-Create a premium 4-phase delivery process section for Sun AI Agency.
+Create a premium 4-phase delivery process section for AMO AI.
 
 SECTION SPECS:
 - Background: Sage green #DCE5DD
@@ -1538,7 +1538,7 @@ BOTTOM CTA:
 - Lora Medium 16px, #2E6F5E
 - Hover: underline + arrow slides right
 
-Export as: HowWeDeliver_4Phase_SunAI_V3
+Export as: HowWeDeliver_4Phase_AMO AI_V3
 ```
 
 ---

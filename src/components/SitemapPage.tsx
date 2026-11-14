@@ -17,7 +17,7 @@ interface SitemapCategory {
   pages: SitemapCard[];
 }
 
-const BASE_URL = 'https://sunaiagency.com';
+const BASE_URL = 'https://www.amoai.ca';
 
 const categories: SitemapCategory[] = [
   {
@@ -164,7 +164,7 @@ export default function SitemapPage() {
               Sitemap
             </h1>
             <p className="text-[#1A1A1A]/50 max-w-xl leading-relaxed">
-              A complete visual map of every page on the Sun AI Agency website.
+              A complete visual map of every page on the AMO AI website.
               {' '}<span className="text-[#1A1A1A]/35">{totalPages} pages across {categories.length} categories.</span>
             </p>
           </motion.div>

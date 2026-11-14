@@ -1,7 +1,8 @@
-import { Component, type ReactNode } from 'react';
+import { Component, useEffect, type ReactNode } from 'react';
 import { RouterProvider } from 'react-router';
 import { router } from './routes';
 import { AuthProvider } from './components/AuthContext';
+import { updateSeo } from './lib/seo';
 
 /** Global error boundary — prevents white screen on uncaught errors */
 class ErrorBoundary extends Component<{ children: ReactNode }, { hasError: boolean; error: Error | null }> {
@@ -40,6 +41,11 @@ class ErrorBoundary extends Component<{ children: ReactNode }, { hasError: boole
 }
 
 export default function App() {
+  useEffect(() => {
+    updateSeo(router.state.location.pathname);
+    return router.subscribe((state) => updateSeo(state.location.pathname));
+  }, []);
+
   return (
     <ErrorBoundary>
       <AuthProvider>

@@ -94,7 +94,7 @@ User data -------> | Proposal          | -----+
                                                |     +-----------+
                     +-------------------+      +---> | Merge     |
 User data -------> | Domain Agent      | -----+     | Engine    | ---> Final
-                    | (varies)          |      |     | (Sun AI)  |     Proposal
+                    | (varies)          |      |     | (AMO AI)  |     Proposal
                     +-------------------+      |     +-----------+
                                                |
                     +-------------------+      |

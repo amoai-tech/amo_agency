@@ -1,4 +1,4 @@
-# Sun AI Agency — Official Style Guide v2.0
+# AMO AI — Official Style Guide v2.0
 
 **Last Updated:** 2026-02-28  
 **Design System Source:** `/web-design` page  
@@ -8,7 +8,7 @@
 
 ## 1. DESIGN PHILOSOPHY
 
-Sun AI uses a **premium luxury design system** that positions us as a high-end technology consultancy. We favor:
+AMO AI uses a **premium luxury design system** that positions us as a high-end technology consultancy. We favor:
 
 - **Rounded corners** over sharp edges
 - **Soft shadows** over flat design

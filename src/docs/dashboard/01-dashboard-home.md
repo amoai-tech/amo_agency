@@ -24,7 +24,7 @@ The command center. First screen after login for users who completed the wizard.
 │  240px      │  ┌──────────────────────────────────────────────────────┐    │
 │  #1A1A1A    │  │ Dashboard                              🔔    JD ▾   │    │
 │             │  └──────────────────────────────────────────────────────┘    │
-│  ☀ Sun AI   │                                                              │
+│  ☀ AMO AI   │                                                              │
 │  Agency     │  MAIN CONTENT — max-w-[1200px] mx-auto px-8 py-8            │
 │             │  #F5F5F0 background                                          │
 │  ──────────│                                                              │

@@ -2,7 +2,7 @@
 **Last Updated:** February 4, 2026
 
 ## Overview
-Home V2 is a complete redesign of the Sun AI Agency homepage featuring a luxury editorial design system inspired by premium digital agencies and design studios. The page emphasizes visual storytelling, sophisticated typography, and high-quality photography to create a premium, intelligent brand experience.
+Home V2 is a complete redesign of the AMO AI homepage featuring a luxury editorial design system inspired by premium digital agencies and design studios. The page emphasizes visual storytelling, sophisticated typography, and high-quality photography to create a premium, intelligent brand experience.
 
 ---
 

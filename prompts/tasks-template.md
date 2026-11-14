@@ -1,9 +1,9 @@
-# Sun AI Agency — Task Template
+# AMO AI — Task Template
 
 > **Purpose:** Generate implementation tasks from wizard specs, diagrams, and PRD
 > **Rule:** PRD → Diagrams → Tasks → Implementation
 > **Updated:** 2026-03-07 | **Version:** 1.0
-> Adapted for Sun AI Agency wizard-first platform. 5-part structured descriptions, real-world examples, outcomes.
+> Adapted for AMO AI wizard-first platform. 5-part structured descriptions, real-world examples, outcomes.
 
 ---
 

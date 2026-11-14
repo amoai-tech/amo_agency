@@ -10,27 +10,6 @@ function getServiceClient() {
   );
 }
 
-/** Create a new user account with auto-confirmed email */
-export async function createUser(params: {
-  email: string;
-  password: string;
-  name?: string;
-}): Promise<{ user: any; error: string | null }> {
-  const supabase = getServiceClient();
-  const { data, error } = await supabase.auth.admin.createUser({
-    email: params.email,
-    password: params.password,
-    user_metadata: { name: params.name || "" },
-    // Automatically confirm — no email server configured
-    email_confirm: true,
-  });
-
-  if (error) {
-    return { user: null, error: `Signup error: ${error.message}` };
-  }
-  return { user: data.user, error: null };
-}
-
 /** Extract user ID from Authorization header */
 export async function getUserFromToken(
   authHeader: string | null

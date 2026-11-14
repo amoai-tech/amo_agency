@@ -1,8 +1,8 @@
-Here is the complete design prompt for building a Sun AI service page with the Superside layout pattern:
+Here is the complete design prompt for building an AMO AI service page with the Superside layout pattern:
 
 ---
 
-# Design Prompt — Sun AI Service Page (Superside Layout System)
+# Design Prompt — AMO AI Service Page (Superside Layout System)
 
 ## Reference
 Modeled on Superside's service page layout: full-bleed sections, editorial typography, dark/light alternating bands, large metrics, image-left/text-right compositions, and a consistent forest green + off-white + charcoal palette.
@@ -103,8 +103,8 @@ Shopify · HubSpot · Salesforce · Typeform · Intercom · [placeholder logos]
 - 4–5 bullet points with ✗ icons (muted red/gray)
 - Each bullet: 14px Jost 400
 
-**Right column — "What Sun AI chatbots do instead":**
-- Section label: `SUN AI APPROACH` in small caps, emerald
+**Right column — "What AMO AI chatbots do instead":**
+- Section label: `AMO AI APPROACH` in small caps, emerald
 - 5 rows, each row: icon (small, emerald line icon) + bold outcome + supporting micro-text
 - Each row separated by a 1px hairline rule
 
@@ -273,8 +273,8 @@ Last 5 rows: labeled "GROWTH" — blue/teal tag
 
 **Layout:** 3 person cards, image + name + role. Mirrors Superside's "experts" section.
 
-**Content for Sun AI:**
-Replace with client logos + testimonial quotes, or Sun AI team headshots if available. Alternatively: 3 case study outcome cards.
+**Content for AMO AI:**
+Replace with client logos + testimonial quotes, or AMO AI team headshots if available. Alternatively: 3 case study outcome cards.
 
 ---
 
@@ -331,4 +331,4 @@ One sentence on what they get from booking a call.
 
 ---
 
-This prompt is ready to paste directly into Google AI Studio, Lovable, Cursor, or any AI-assisted frontend builder. It specifies every section, every layout pattern, every typographic decision, and every interaction — tuned to Sun AI's brand, not Superside's.
+This prompt is ready to paste directly into Google AI Studio, Lovable, Cursor, or any AI-assisted frontend builder. It specifies every section, every layout pattern, every typographic decision, and every interaction — tuned to AMO AI's brand, not Superside's.

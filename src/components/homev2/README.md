@@ -478,6 +478,6 @@ For questions or issues:
 
 ---
 
-**Maintained by:** Sun AI Agency  
+**Maintained by:** AMO AI
 **Design System:** V2 Luxury Editorial  
 **Status:** Production Ready ✅

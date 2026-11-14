@@ -45,7 +45,7 @@ export default function VelocityProcessSection() {
             className="text-xs tracking-widest uppercase mb-4"
             style={{ color: '#00875A', letterSpacing: '0.08em' }}
           >
-            The Sun AI Velocity System
+            The AMO AI Velocity System
           </motion.p>
 
           <motion.h2

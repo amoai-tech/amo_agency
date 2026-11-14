@@ -95,11 +95,11 @@ export default function DashboardSidebar({ open, onClose, badges = {} }: Dashboa
             to="/app/dashboard"
             className="flex items-center gap-2"
             onClick={onClose}
-            aria-label="Sun AI Dashboard home"
+            aria-label="AMO AI Dashboard home"
           >
             <span className="text-[#00875A] text-lg shrink-0">☀</span>
             <span className="text-[#F5F5F0] font-[Georgia,serif] text-base font-semibold tracking-tight md:hidden lg:inline">
-              Sun AI
+              AMO AI
             </span>
           </NavLink>
           <button

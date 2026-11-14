@@ -17,9 +17,11 @@ import { strategy } from "./strategy-routes.tsx";
 import { onboarding } from "./onboarding-routes.tsx";
 import { agents } from "./agent-routes.tsx";
 import { insights } from "./insight-routes.tsx";
-import { createUser, requireAuth } from "./auth.tsx";
+import { nexus } from "./nexus-routes.tsx";
+import { requireAuth } from "./auth.tsx";
 import { ensureAISchema } from "./ensure-schema.tsx";
 import { ensureOnboardingSchema } from "./ensure-schema.tsx";
+import { healthStatus } from "./health-status.tsx";
 import { callGemini } from "./gemini.tsx";
 import { rateLimitMiddleware } from "./rate-limit.tsx";
 
@@ -60,46 +62,36 @@ app.use(
 
 // ── Health check ──
 app.get(`${PREFIX}/health`, async (c) => {
-  const schema = await ensureAISchema();
-  const onboardingSchema = await ensureOnboardingSchema();
-  return c.json({
-    status: "ok",
-    timestamp: new Date().toISOString(),
-    schema: schema.ok ? "migrated" : schema.error,
-    onboardingSchema: onboardingSchema.ok ? "migrated" : onboardingSchema.error,
-  });
+  // Fresh checks on each request: do not report cached success during an outage.
+  // Avoid direct Postgres URLs; the application itself uses Supabase's Data API.
+  const [ai, onboarding] = await Promise.all([
+    ensureAISchema(true), ensureOnboardingSchema(true),
+  ]);
+  const result = healthStatus(ai, onboarding);
+  c.header("Cache-Control", "no-store");
+  return c.json(result.response, result.statusCode);
 });
 
-// ── Signup ──
-app.post(`${PREFIX}/signup`, async (c) => {
-  try {
-    const body = await c.req.json();
-    const { email, password, name } = body;
-
-    if (!email || !password) {
-      return c.json({ error: "Email and password are required for signup" }, 400);
-    }
-
-    const { user, error } = await createUser({ email, password, name });
-
-    if (error) {
-      console.log(`[Auth] Signup error: ${error}`);
-      return c.json({ error }, 400);
-    }
-
-    console.log(`[Auth] User created: ${email}`);
-    return c.json({ success: true, user: { id: user.id, email: user.email } });
-  } catch (error) {
-    console.log(`[Auth] Signup exception: ${error}`);
-    return c.json({ error: `Signup failed: ${error}` }, 500);
-  }
-});
+// ── Legacy signup route disabled: use Supabase Auth email-verification flow ──
+app.post(`${PREFIX}/signup`, (c) =>
+  c.json({ error: "Use the verified Supabase Auth signup flow" }, 410)
+);
 
 // ── Mount wizard routes ──
 app.route("/", wizard);
 
 // ── Rate limiting on AI endpoints ──
-app.use(`${PREFIX}/ai/*`, rateLimitMiddleware());
+// Match actual paid AI routes (these do NOT use /ai/*).
+for (const route of [
+  "analyze-business",
+  "industry-diagnostics",
+  "system-recommendations",
+  "readiness-score",
+  "generate-roadmap",
+  "nexus/dispatch",
+]) {
+  app.use(`${PREFIX}/${route}`, rateLimitMiddleware());
+}
 app.use(`${PREFIX}/agents/run`, rateLimitMiddleware());
 app.use(`${PREFIX}/strategy/analyze`, rateLimitMiddleware());
 app.use(`${PREFIX}/strategy/synthesize-block`, rateLimitMiddleware());
@@ -124,7 +116,7 @@ app.post(`${PREFIX}/dashboard-insights`, async (c) => {
     // Validate auth — must be a real authenticated user (not just header presence)
     await requireAuth(c.req.header("Authorization") ?? null);
 
-    const systemPrompt = `You are a senior AI strategy consultant at Sun AI Agency. Based on the client's project state, readiness score, and recent activity, generate 2-4 prioritized action recommendations.
+    const systemPrompt = `You are a senior AI strategy consultant at AMO AI. Based on the client's project state, readiness score, and recent activity, generate 2-4 prioritized action recommendations.
 
 Each recommendation should be specific, actionable, and tied to their actual data. Avoid generic advice.
 
@@ -209,6 +201,9 @@ app.route("/", agents);
 
 // ── Mount Insight Card routes ──
 app.route("/", insights);
+
+// ── Mount NEXUS execution engine routes (production parity) ──
+app.route("/", nexus);
 
 // ── 404 handler ──
 app.notFound((c) => {

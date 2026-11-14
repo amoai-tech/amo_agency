@@ -5,7 +5,7 @@ import { createClient } from '@supabase/supabase-js';
 
 // ── Auth failure event — dispatched when API returns 401 after token refresh ──
 // AuthContext listens for this to trigger signOut + redirect to /auth
-export const AUTH_FAILURE_EVENT = 'sunai:auth-failure';
+export const AUTH_FAILURE_EVENT = 'amoai:auth-failure';
 
 function emitAuthFailure() {
   window.dispatchEvent(new CustomEvent(AUTH_FAILURE_EVENT));
@@ -318,11 +318,23 @@ export const aiApi = {
 
 // ── Auth API ──
 export const authApi = {
-  signup: (email: string, password: string, name?: string) =>
-    api('/signup', {
-      method: 'POST',
-      body: { email, password, name },
-    }),
+  signup: async (email: string, password: string, name?: string) => {
+    const supabase = getSupabaseClient();
+    const callback = new URL('/auth/callback', window.location.origin);
+    const { data, error } = await supabase.auth.signUp({
+      email,
+      password,
+      options: { data: { name: name || '' }, emailRedirectTo: callback.toString() },
+    });
+    if (error) return { data: null, error: error.message };
+    // Fail closed if hosted Supabase has email confirmation disabled. The
+    // deployment must enable "Confirm email" in Supabase Auth settings.
+    if (data.session) {
+      await supabase.auth.signOut();
+      return { data: null, error: 'Email confirmation must be enabled before signup can proceed. Please contact support.' };
+    }
+    return { data: { user: data.user, confirmationRequired: true }, error: null };
+  },
 
   signIn: async (email: string, password: string) => {
     const supabase = getSupabaseClient();
@@ -413,6 +425,7 @@ export interface AggregateStats {
   totalTokens: number;
   avgDuration: number;
   activeCacheEntries: number;
+  cacheMetricsAvailable?: boolean;
   byType: Record<string, { count: number; tokens: number; avgMs: number; successRate: number }>;
   model: string;
 }

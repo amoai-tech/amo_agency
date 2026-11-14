@@ -104,6 +104,7 @@ pipeline.get(`${PREFIX}/crm/pipelines`, async (c) => {
         const { data: deals } = await db
           .from("crm_deals")
           .select("stage_id")
+          .eq("user_id", userId)
           .in("stage_id", allStageIds);
         for (const d of deals || []) {
           dealsByStage[d.stage_id] = (dealsByStage[d.stage_id] || 0) + 1;
@@ -175,6 +176,7 @@ pipeline.get(`${PREFIX}/crm/pipelines/:id`, async (c) => {
       const { data: dealsData, error: dealsErr } = await db
         .from("crm_deals")
         .select("*")
+        .eq("user_id", userId)
         .in("stage_id", stageIds)
         .order("created_at", { ascending: false });
 
@@ -199,6 +201,7 @@ pipeline.get(`${PREFIX}/crm/pipelines/:id`, async (c) => {
       const { data: contacts } = await db
         .from("crm_contacts")
         .select("id, name, email")
+        .eq("user_id", userId)
         .in("id", contactIds);
       for (const c of contacts || []) {
         contactMap[c.id] = c;
@@ -209,6 +212,7 @@ pipeline.get(`${PREFIX}/crm/pipelines/:id`, async (c) => {
       const { data: clients } = await db
         .from("clients")
         .select("id, name")
+        .eq("user_id", userId)
         .in("id", clientIds);
       for (const c of clients || []) {
         clientMap[c.id] = c;
@@ -291,6 +295,22 @@ pipeline.post(`${PREFIX}/crm/deals`, async (c) => {
     }
 
     const db = adminClient();
+    // Pipeline/stage definitions are shared, but deals and client references are private.
+    const { data: stage } = await db.from("crm_stages")
+      .select("id").eq("id", stage_id).eq("pipeline_id", pipeline_id).maybeSingle();
+    if (!stage) return c.json({ error: "Stage does not belong to pipeline" }, 400);
+    if (client_id) {
+      const { data: client } = await db.from("clients")
+        .select("id").eq("id", client_id).eq("user_id", userId).maybeSingle();
+      if (!client) return c.json({ error: "Client not found" }, 404);
+    }
+    if (contact_id) {
+      const { data: contact } = await db.from("crm_contacts")
+        .select("id, client_id").eq("id", contact_id).eq("user_id", userId).maybeSingle();
+      if (!contact || (client_id && contact.client_id !== client_id)) {
+        return c.json({ error: "Contact not found or does not belong to client" }, 404);
+      }
+    }
     const { data: deal, error } = await db
       .from("crm_deals")
       .insert({
@@ -333,6 +353,9 @@ pipeline.put(`${PREFIX}/crm/deals/:id`, async (c) => {
     const dealId = c.req.param("id");
     const body = await c.req.json();
     const db = adminClient();
+    const { data: original } = await db.from("crm_deals")
+      .select("id, pipeline_id").eq("id", dealId).eq("user_id", userId).maybeSingle();
+    if (!original) return c.json({ error: "Deal not found" }, 404);
 
     const updates: Record<string, unknown> = {
       updated_at: new Date().toISOString(),
@@ -352,15 +375,25 @@ pipeline.put(`${PREFIX}/crm/deals/:id`, async (c) => {
       if (body[field] !== undefined) updates[field] = body[field];
     }
 
-    // If stage changed, update stage_changed_at
     if (body.stage_id) {
+      const { data: stage } = await db.from("crm_stages")
+        .select("id").eq("id", body.stage_id).eq("pipeline_id", original.pipeline_id).maybeSingle();
+      if (!stage) return c.json({ error: "Stage does not belong to deal's pipeline" }, 400);
       updates.stage_changed_at = new Date().toISOString();
+    }
+    for (const [table, id] of [["clients", body.client_id], ["crm_contacts", body.contact_id]] as const) {
+      if (id) {
+        const { data: own } = await db.from(table)
+          .select("id").eq("id", id).eq("user_id", userId).maybeSingle();
+        if (!own) return c.json({ error: "Related record not found" }, 404);
+      }
     }
 
     const { data: deal, error } = await db
       .from("crm_deals")
       .update(updates)
       .eq("id", dealId)
+      .eq("user_id", userId)
       .select()
       .single();
 
@@ -392,6 +425,7 @@ pipeline.get(`${PREFIX}/crm/deals/:id`, async (c) => {
       .from("crm_deals")
       .select("*")
       .eq("id", dealId)
+      .eq("user_id", userId)
       .maybeSingle();
 
     if (dealErr || !deal) {
@@ -403,6 +437,7 @@ pipeline.get(`${PREFIX}/crm/deals/:id`, async (c) => {
       .from("crm_interactions")
       .select("*")
       .eq("deal_id", dealId)
+      .eq("user_id", userId)
       .order("created_at", { ascending: false });
 
     // Get contact if linked
@@ -412,6 +447,7 @@ pipeline.get(`${PREFIX}/crm/deals/:id`, async (c) => {
         .from("crm_contacts")
         .select("id, name, email, phone, role")
         .eq("id", deal.contact_id)
+        .eq("user_id", userId)
         .maybeSingle();
       contact = contactData;
     }
@@ -423,6 +459,7 @@ pipeline.get(`${PREFIX}/crm/deals/:id`, async (c) => {
         .from("clients")
         .select("name")
         .eq("id", deal.client_id)
+        .eq("user_id", userId)
         .maybeSingle();
       client_name = clientData?.name || null;
     }
@@ -450,10 +487,11 @@ pipeline.delete(`${PREFIX}/crm/deals/:id`, async (c) => {
     const dealId = c.req.param("id");
     const db = adminClient();
 
-    // Delete interactions first (cascade should handle this, but be safe)
-    await db.from("crm_interactions").delete().eq("deal_id", dealId);
-
-    const { error } = await db.from("crm_deals").delete().eq("id", dealId);
+    const { data: existing } = await db.from("crm_deals")
+      .select("id").eq("id", dealId).eq("user_id", userId).maybeSingle();
+    if (!existing) return c.json({ error: "Deal not found" }, 404);
+    await db.from("crm_interactions").delete().eq("deal_id", dealId).eq("user_id", userId);
+    const { error } = await db.from("crm_deals").delete().eq("id", dealId).eq("user_id", userId);
 
     if (error) {
       console.log(`[Pipeline] Delete deal error: ${error.message}`);
@@ -494,6 +532,9 @@ pipeline.post(`${PREFIX}/crm/interactions`, async (c) => {
     }
 
     const db = adminClient();
+    const { data: ownDeal } = await db.from("crm_deals")
+      .select("id").eq("id", deal_id).eq("user_id", userId).maybeSingle();
+    if (!ownDeal) return c.json({ error: "Deal not found" }, 404);
     const { data: interaction, error } = await db
       .from("crm_interactions")
       .insert({
@@ -528,11 +569,15 @@ pipeline.get(`${PREFIX}/crm/deals/:id/interactions`, async (c) => {
 
     const dealId = c.req.param("id");
     const db = adminClient();
+    const { data: ownDeal } = await db.from("crm_deals")
+      .select("id").eq("id", dealId).eq("user_id", userId).maybeSingle();
+    if (!ownDeal) return c.json({ error: "Deal not found" }, 404);
 
     const { data: interactions, error } = await db
       .from("crm_interactions")
       .select("*")
       .eq("deal_id", dealId)
+      .eq("user_id", userId)
       .order("created_at", { ascending: false });
 
     if (error) {
@@ -557,6 +602,7 @@ pipeline.get(`${PREFIX}/crm/contacts`, async (c) => {
     const { data: contacts, error } = await db
       .from("crm_contacts")
       .select("id, name, email, client_id, role")
+      .eq("user_id", userId)
       .order("name", { ascending: true });
 
     if (error) {

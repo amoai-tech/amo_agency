@@ -1,13 +1,13 @@
-# CLAUDE.md — Sun AI Agency Platform
+# CLAUDE.md — AMO AI Platform
 
-> Context file for AI assistants working on the Sun AI Agency codebase.
+> Context file for AI assistants working on the AMO AI codebase.
 > Last updated: 2026-03-28 | Version: v0.31.0 | Overall: ~79% complete
 
 ---
 
 ## Project Summary
 
-**Sun AI Agency** is an AI consulting platform that guides businesses through structured discovery into actionable projects. Think of it as a digital consultant — observant, structured, transparent, and human-controlled.
+**AMO AI** is an AI consulting platform that guides businesses through structured discovery into actionable projects. Think of it as a digital consultant — observant, structured, transparent, and human-controlled.
 
 **Core flow:** 5-step wizard → Executive brief → Project dashboard → Ongoing delivery
 
@@ -16,7 +16,7 @@
 **Core principle:** AI proposes, human decides. Never surprise the user. Never auto-commit changes. Always explain reasoning.
 
 **Owner:** Sanjiovani (solo founder/developer)
-**Production:** https://www.sunai.one (Vercel)
+**Production:** https://www.amoai.ca (Vercel)
 **API:** Supabase Edge Functions (`make-server-283466b6`, 19 files, 74 endpoints)
 **Database:** 57 tables, 233 RLS policies, 270 indexes, 14 migration files
 **Repository:** /home/sk/sunv2/
@@ -192,7 +192,7 @@
 - 74 endpoints across 12 route modules + index
 - 57 database tables, 14 migrations, 233 RLS policies
 - Auth hardening with requireAuth on all routes
-- CORS whitelist (sunai.one allowed)
+- CORS whitelist (amoai.ca allowed)
 - Production deploy on Vercel + Supabase
 
 ### Wizard (100%)

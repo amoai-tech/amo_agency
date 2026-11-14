@@ -2,7 +2,7 @@
 
 ## Figma Make Prompt
 
-> Design Step 5 of a 5-step premium wizard for "Sun AI Agency." This is the final screen — "Launch Project" — a celebration and transition moment where the wizard results become a live project with a dashboard. This is NOT a form screen. It's a confirmation and launch screen.
+> Design Step 5 of a 5-step premium wizard for "AMO AI." This is the final screen — "Launch Project" — a celebration and transition moment where the wizard results become a live project with a dashboard. This is NOT a form screen. It's a confirmation and launch screen.
 >
 > **Layout:** This screen breaks from the three-panel layout. Use a focused, centered single-column layout with a full-width background. The three-panel served its purpose — now we're transitioning to the dashboard world.
 >
@@ -166,7 +166,7 @@ User arrives at /app/wizard/step-5
 
     5. Create initial `tasks` rows:
        - AI-generated tasks per phase (3-5 per phase)
-       - owner: mix of 'Client', 'Sun AI', 'Automated'
+       - owner: mix of 'Client', 'AMO AI', 'Automated'
        - status: 'todo'
        - ai_generated: true
 
