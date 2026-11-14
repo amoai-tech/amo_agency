@@ -31,7 +31,7 @@ import AIAgentSystemsSection from './home/AIAgentSystemsSection';
    ═══════════════════════════════════════════════════════════════ */
 
 const HERO_IMG =
-  'https://res.cloudinary.com/ddysyn5rr/image/upload/v1772367392/screens11_fgr95v.jpg';
+  '/images/projects/mdeai-public-home.webp';
 
 const STORY_IMG =
   'https://images.unsplash.com/photo-1765371513765-d2b624850162?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtaW5pbWFsJTIwYm9va3NoZWxmJTIwbW9kZXJuJTIbWludGVyaW9uJTIwZGVzaWduJTIwYXJ0JTIwbmF0dXJhbCUyMGxpZ2h0fGVufDF8fHx8MTc3MjAxMzc5MHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral';
@@ -106,7 +106,7 @@ function HeroSection() {
           className="uppercase tracking-[0.2em] mb-8"
           style={{ fontSize: '0.7rem', fontWeight: 600, color: cx.accent }}
         >
-          Artificial Intelligence at Scale
+          AI Consulting & Development
         </p>
 
         {/* Large editorial headline — BCG style */}
@@ -123,21 +123,21 @@ function HeroSection() {
                 letterSpacing: '-0.02em',
               }}
             >
-              Build Intelligent AI Products, Agents, and Automation
+              AI Solutions That Work for Your Business
             </h1>
             <p
               className="max-w-xl mb-10"
               style={{ fontSize: '1.1rem', lineHeight: 1.75, color: cx.muted }}
             >
-              We design and deploy AI systems that turn ideas into scalable
-              products, operational workflows, and measurable business growth.
+              We build AI assistants, connected workflows, and custom software
+              around the needs of your business.
             </p>
             <div className="flex flex-wrap items-center gap-4">
-              <BtnPrimary to="/booking">
-                Start a Project
+              <BtnPrimary to="/services">
+                Explore Services
                 <ArrowRight className="w-4 h-4" />
               </BtnPrimary>
-              <BtnOutline to="#capabilities">View Capabilities</BtnOutline>
+              <BtnOutline to="/projects">View Our Work</BtnOutline>
             </div>
           </div>
 
@@ -146,7 +146,7 @@ function HeroSection() {
             <div className="overflow-hidden" style={{ borderRadius: '4px', aspectRatio: '4/3' }}>
               <ImageWithFallback
                 src={HERO_IMG}
-                alt="AI technology and neural networks"
+                alt="MDE AI public product homepage showing its Medellín concierge interface"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -244,70 +244,20 @@ function CapabilitiesSection() {
 function CredibilityBand() {
   return (
     <section style={{ background: cx.bg }} className="py-20 sm:py-24">
-      <div className="max-w-[1120px] mx-auto px-6 lg:px-8">
-        {/* Top rule */}
-        <div className="mb-16" style={{ height: '1px', background: cx.border }} />
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
-          <div className="md:col-span-5">
-            <p
-              className="uppercase tracking-[0.2em] mb-3"
-              style={{ fontSize: '0.7rem', fontWeight: 600, color: cx.accent }}
-            >
-              Client Impact
-            </p>
-            <h2
-              className="tracking-tight"
-              style={{
-                fontFamily: "Georgia, 'Playfair Display', serif",
-                fontSize: 'clamp(1.5rem, 3vw, 2.25rem)',
-                fontWeight: 400,
-                lineHeight: 1.2,
-                color: cx.dark,
-              }}
-            >
-              Built for teams scaling with AI.
+      <div className="max-w-[1120px] mx-auto px-6 lg:px-8 border-y py-12" style={{ borderColor: cx.border }}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div>
+            <p className="uppercase tracking-[0.2em] mb-3" style={{ fontSize: '0.7rem', fontWeight: 600, color: cx.accent }}>How We Work</p>
+            <h2 className="tracking-tight" style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(1.5rem, 3vw, 2.25rem)', color: cx.dark }}>
+              AI solutions scoped around real work.
             </h2>
           </div>
-          <div className="md:col-span-7 flex items-center gap-16 flex-wrap">
-            <div>
-              <span
-                className="block"
-                style={{
-                  fontFamily: "Georgia, serif",
-                  fontSize: 'clamp(3rem, 5vw, 4.5rem)',
-                  fontWeight: 400,
-                  color: cx.dark,
-                  lineHeight: 1,
-                }}
-              >
-                94%
-              </span>
-              <span className="block mt-2" style={{ fontSize: '0.85rem', color: cx.muted }}>
-                Client satisfaction
-              </span>
-            </div>
-            <div style={{ width: '1px', height: '60px', background: cx.border }} />
-            <div>
-              <span
-                className="block"
-                style={{
-                  fontFamily: "Georgia, serif",
-                  fontSize: 'clamp(3rem, 5vw, 4.5rem)',
-                  fontWeight: 400,
-                  color: cx.dark,
-                  lineHeight: 1,
-                }}
-              >
-                8wk
-              </span>
-              <span className="block mt-2" style={{ fontSize: '0.85rem', color: cx.muted }}>
-                Avg. delivery timeline
-              </span>
-            </div>
-          </div>
+          <p style={{ color: cx.muted, lineHeight: 1.75 }}>
+            We start with your workflows, identify practical opportunities,
+            and build technology you can evaluate with your team.
+            Timelines and results depend on the project.
+          </p>
         </div>
-        {/* Bottom rule */}
-        <div className="mt-16" style={{ height: '1px', background: cx.border }} />
       </div>
     </section>
   );
@@ -520,7 +470,7 @@ const SERVICE_CARDS = [
   },
   {
     title: 'AI MVP Development',
-    desc: 'Turn your AI idea into a working product in 4–6 weeks.',
+    desc: 'Plan, prototype, and validate an AI product around a clearly defined use case.',
     extended: 'Move from concept to a fully functional AI product in record time. Our rapid MVP process combines strategic scoping, AI architecture design, and agile development to deliver a production-ready minimum viable product — complete with user testing, deployment infrastructure, and a clear roadmap for scale.',
     image: 'https://res.cloudinary.com/ddysyn5rr/image/upload/v1772725302/mvp-01_qxz7fv.png',
     to: '/mvp-v2',
@@ -541,11 +491,10 @@ const SERVICE_CARDS = [
   },
   {
     title: 'AI-Powered Web Development',
-    desc: 'AI-accelerated websites with smart copy, embedded chatbots, and 90+ Lighthouse scores.',
-    extended: 'Build blazing-fast websites powered by AI from the ground up. Our web development process uses AI to generate optimized copy, embed intelligent chatbots, and ensure every page scores 90+ on Lighthouse. The result: a high-performance digital presence that converts visitors into customers.',
+    desc: 'Responsive websites with accessible design, clear copy, and useful AI integrations.',
+    extended: 'Build responsive websites with clear content, helpful AI features, and measured performance. We test accessibility, speed, and usability against the agreed project requirements.',
     image: 'https://res.cloudinary.com/ddysyn5rr/image/upload/v1772367392/screens9_uyjzie.jpg',
     to: '/web-apps',
-    badge: '90+',
   },
   {
     title: 'E-commerce AI',
@@ -794,52 +743,6 @@ function ProcessSection() {
    10 — METRICS BAND
    ═══════════════════════════════════════════════════════════════ */
 
-const METRICS = [
-  { val: '42K+', lbl: 'AI Interactions Processed' },
-  { val: '1,200+', lbl: 'Workflows Automated' },
-  { val: '98%', lbl: 'System Uptime' },
-  { val: '35%', lbl: 'Average Cost Reduction' },
-];
-
-function MetricsBand() {
-  return (
-    <section style={{ background: cx.bg }} className="py-20 sm:py-24">
-      <div className="max-w-[1120px] mx-auto px-6 lg:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          {METRICS.map((m, i) => (
-            <div
-              key={m.lbl}
-              className="text-center"
-              style={{
-                borderRight: i < METRICS.length - 1 ? `1px solid ${cx.border}` : undefined,
-              }}
-            >
-              <span
-                className="block"
-                style={{
-                  fontFamily: "Georgia, serif",
-                  fontSize: 'clamp(2.25rem, 4vw, 3rem)',
-                  fontWeight: 400,
-                  color: cx.dark,
-                  lineHeight: 1.1,
-                }}
-              >
-                {m.val}
-              </span>
-              <span
-                className="block mt-3"
-                style={{ fontSize: '0.8rem', color: cx.muted, fontWeight: 400 }}
-              >
-                {m.lbl}
-              </span>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
 /* ══════════════════════════════════════════════════════════════
    11 — FINAL CTA
    ═══════════════════════════════════════════════════════════════ */
@@ -869,23 +772,23 @@ function FinalCTA() {
           className="text-white/50 max-w-lg mx-auto mb-10"
           style={{ fontSize: '1rem', lineHeight: 1.7 }}
         >
-          Let's scope your project and deliver a solution within weeks — not months.
+          Explore our services and examples to see what might fit your business.
         </p>
         <div className="flex flex-wrap justify-center gap-4">
           <Link
-            to="/booking"
+            to="/services"
             className="inline-flex items-center gap-2 px-8 py-3.5 text-[#1A1A1A] transition-all duration-300 hover:opacity-90"
             style={{ background: '#FFFFFF', fontSize: '0.875rem', fontWeight: 500 }}
           >
-            Start a Project
+            Explore Services
             <ArrowRight className="w-4 h-4" />
           </Link>
           <Link
-            to="/booking"
+            to="/projects"
             className="inline-flex items-center gap-2 px-8 py-3.5 text-white/70 hover:text-white transition-all duration-300"
             style={{ border: '1px solid rgba(255,255,255,0.2)', fontSize: '0.875rem', fontWeight: 500 }}
           >
-            Contact Us
+            View Our Work
           </Link>
         </div>
       </div>
@@ -916,7 +819,6 @@ export default function HomePageV3() {
       <StorySection />
       <SpecializedServicesSection />
       <HowWeDeliverSection />
-      <MetricsBand />
       <FinalCTA />
     </div>
   );

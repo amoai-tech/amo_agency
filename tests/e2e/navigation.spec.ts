@@ -24,7 +24,7 @@ for (const width of [390, 768, 800, 900, 1024, 1440]) {
 
     await expect(page).toHaveURL(/\/projects$/);
     await expect(page.getByRole('heading', { level: 1 }).first())
-      .toHaveText(/Real AI Products\. Real Results\./);
+      .toHaveText(/Real AI Products\. Real Work\./);
 
     if (width < 1024) {
       await expect(page.getByRole('button', { name: 'Open menu' })).toBeVisible();

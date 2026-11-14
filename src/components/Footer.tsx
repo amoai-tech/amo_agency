@@ -9,7 +9,6 @@ export default function Footer() {
     { path: '/about', label: 'About' },
     { path: '/process', label: 'Process' },
     { path: '/projects', label: 'Projects' },
-    { path: '/booking', label: 'Contact' },
   ];
 
   const servicesLinks = [
