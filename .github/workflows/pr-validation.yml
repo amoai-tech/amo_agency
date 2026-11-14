@@ -22,6 +22,7 @@ jobs:
           deno-version: v2.9.8
       - run: npm run test:security
       - run: deno check --node-modules-dir=auto --min-dep-age=0 supabase/functions/make-server-283466b6/index.ts
+      - run: deno test supabase/functions/make-server-283466b6/health.test.ts
       - run: npm run build
       - run: npx playwright install --with-deps chromium
       - run: npm run test:e2e

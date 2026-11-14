@@ -21,6 +21,7 @@ import { nexus } from "./nexus-routes.tsx";
 import { requireAuth } from "./auth.tsx";
 import { ensureAISchema } from "./ensure-schema.tsx";
 import { ensureOnboardingSchema } from "./ensure-schema.tsx";
+import { healthStatus } from "./health-status.tsx";
 import { callGemini } from "./gemini.tsx";
 import { rateLimitMiddleware } from "./rate-limit.tsx";
 
@@ -61,14 +62,14 @@ app.use(
 
 // ── Health check ──
 app.get(`${PREFIX}/health`, async (c) => {
-  const schema = await ensureAISchema();
-  const onboardingSchema = await ensureOnboardingSchema();
-  return c.json({
-    status: "ok",
-    timestamp: new Date().toISOString(),
-    schema: schema.ok ? "migrated" : schema.error,
-    onboardingSchema: onboardingSchema.ok ? "migrated" : onboardingSchema.error,
-  });
+  // Fresh checks on each request: do not report cached success during an outage.
+  // Avoid direct Postgres URLs; the application itself uses Supabase's Data API.
+  const [ai, onboarding] = await Promise.all([
+    ensureAISchema(true), ensureOnboardingSchema(true),
+  ]);
+  const result = healthStatus(ai, onboarding);
+  c.header("Cache-Control", "no-store");
+  return c.json(result.response, result.statusCode);
 });
 
 // ── Legacy signup route disabled: use Supabase Auth email-verification flow ──
