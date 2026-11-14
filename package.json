@@ -58,6 +58,7 @@
     "vaul": "^1.1.2"
   },
   "devDependencies": {
+    "@playwright/test": "1.65.0",
     "@tailwindcss/vite": "4.1.12",
     "@types/node": "^20.10.0",
     "@vitejs/plugin-react": "^4.7.0",
@@ -67,6 +68,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "smoke:prod": "node scripts/smoke-prod.mjs"
+    "smoke:prod": "node scripts/smoke-prod.mjs",
+    "test:e2e": "playwright test"
   }
 }
