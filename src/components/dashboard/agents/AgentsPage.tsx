@@ -23,11 +23,9 @@ import RunHistoryTable from './RunHistoryTable';
 const PAGE_SIZE = 20;
 
 export default function AgentsPage() {
-  // AI dashboard endpoints only need the Authorization header to exist —
-  // they use the service-role admin client server-side, not the user JWT.
-  // Using undefined lets api() default to publicAnonKey, avoiding 401s
-  // from the Supabase gateway when a user JWT is stale/expired.
-  const authToken = undefined;
+  const { accessToken } = useAuth();
+  // Always send a real user token. A public key must never authorize log access.
+  const authToken = accessToken ? 'use-fresh-token' : undefined;
 
   const [stats, setStats] = useState<AggregateStats | null>(null);
   const [cacheStats, setCacheStats] = useState<CacheStats | null>(null);

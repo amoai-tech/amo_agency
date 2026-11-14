@@ -67,6 +67,7 @@ export default function AuthPage() {
   const [name, setName] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [confirmationSent, setConfirmationSent] = useState(false);
   const [localError, setLocalError] = useState<string | null>(null);
   const [googleRedirecting, setGoogleRedirecting] = useState(false);
   const [linkedinRedirecting, setLinkedinRedirecting] = useState(false);
@@ -112,7 +113,7 @@ export default function AuthPage() {
 
     if (!validateAll()) return;
 
-    let result: { success: boolean; error?: string };
+    let result: { success: boolean; error?: string; needsEmailConfirmation?: boolean };
     if (mode === 'login') {
       result = await signIn(email, password);
     } else {
@@ -121,7 +122,11 @@ export default function AuthPage() {
 
     if (result.success) {
       setSuccess(true);
-      setTimeout(() => navigate(returnPath), 800);
+      if (result.needsEmailConfirmation) {
+        setConfirmationSent(true);
+      } else {
+        setTimeout(() => navigate(returnPath), 800);
+      }
     } else {
       setLocalError(result.error || 'Something went wrong');
     }
@@ -148,6 +153,7 @@ export default function AuthPage() {
     setLocalError(null);
     clearError();
     setSuccess(false);
+    setConfirmationSent(false);
     setFieldErrors({});
     setTouched({});
   };
@@ -285,6 +291,11 @@ export default function AuthPage() {
         style={{ backgroundColor: '#FFFFFF' }}
       >
         <div className="w-full" style={{ maxWidth: '380px' }}>
+          {confirmationSent && (
+            <div role="status" className="mb-6 rounded border border-green-200 bg-green-50 p-4 text-sm text-green-900">
+              Check your email for a confirmation link. Verify your address, then sign in.
+            </div>
+          )}
           {/* ── Tab Toggle: "Sign In" | "Create Account" ── */}
           <div
             className="flex mb-8"
@@ -624,7 +635,7 @@ export default function AuthPage() {
                   }}
                 >
                   {success ? (
-                    <><Check className="w-4 h-4" /> Success</>
+                    <><Check className="w-4 h-4" /> {confirmationSent ? "Email sent" : "Success"}</>
                   ) : loading && !googleRedirecting && !linkedinRedirecting ? (
                     <><Loader2 className="w-4 h-4 animate-spin" /> Processing…</>
                   ) : (

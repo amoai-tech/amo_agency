@@ -1,79 +1,81 @@
-// S15-RATELIMIT — Per-user rate limiting for AI endpoints
-// Uses ai_run_logs table as sliding window counter
-// Pattern: follows auth.tsx utility pattern (no routes, just helpers)
-
+// S15-RATELIMIT — Atomic, per-user quota for authenticated AI requests.
+// Requires migration 20261114082405_harden_ai_logs_and_rate_limits.sql.
+// Do not count global ai_run_logs rows: that causes cross-customer throttling.
 import { adminClient } from "./db.tsx";
-import { getUserFromToken } from "./auth.tsx";
+import { requireAuth } from "./auth.tsx";
 
 const DEFAULT_LIMIT = 10;
-const DEFAULT_WINDOW_SECONDS = 60;
-const ANON_LIMIT = 3;
+const WINDOW_SECONDS = 60;
 
-/** Check if user has exceeded their AI request limit */
-export async function checkRateLimit(
-  userId: string,
-  windowSeconds: number = DEFAULT_WINDOW_SECONDS
-): Promise<{ allowed: boolean; remaining: number; retryAfter?: number }> {
-  const limit =
-    userId === "anonymous"
-      ? ANON_LIMIT
-      : parseInt(Deno.env.get("AI_RATE_LIMIT") || String(DEFAULT_LIMIT));
+type QuotaDecision = {
+  allowed: boolean;
+  remaining: number;
+  retryAfter: number;
+  unavailable?: boolean;
+};
 
-  const db = adminClient();
-  const since = new Date(Date.now() - windowSeconds * 1000).toISOString();
-
-  try {
-    // Query by prompt_type prefix to count recent runs for this user
-    // Note: ai_run_logs stores wizard sessionId in session_id column, not userId.
-    // We use a created_at window and count all recent runs as a global rate limit.
-    const { count, error } = await db
-      .from("ai_run_logs")
-      .select("*", { count: "exact", head: true })
-      .gt("created_at", since);
-
-    if (error) {
-      // Fail open — don't block on DB error
-      console.log(`[RateLimit] Check error: ${error.message}`);
-      return { allowed: true, remaining: limit };
-    }
-
-    const used = count || 0;
-    const remaining = Math.max(0, limit - used);
-
-    if (used >= limit) {
-      return { allowed: false, remaining: 0, retryAfter: windowSeconds };
-    }
-
-    return { allowed: true, remaining };
-  } catch (e) {
-    console.log(`[RateLimit] Exception: ${e}`);
-    return { allowed: true, remaining: limit };
-  }
+function configuredLimit(): number {
+  const value = Number.parseInt(Deno.env.get("AI_RATE_LIMIT") || "", 10);
+  return Number.isFinite(value) && value > 0
+    ? Math.min(value, 1000)
+    : DEFAULT_LIMIT;
 }
 
-/** Hono middleware factory for rate-limiting AI endpoints */
+export async function checkRateLimit(
+  verifiedUserId: string,
+  windowSeconds: number = WINDOW_SECONDS
+): Promise<QuotaDecision> {
+  // User ID MUST come from requireAuth(getUser), never from a request body or header.
+  const limit = configuredLimit();
+  const { data, error } = await adminClient().rpc("consume_ai_rate_limit", {
+    p_user_id: verifiedUserId,
+    p_limit: limit,
+    p_window_seconds: windowSeconds,
+  });
+
+  if (error) {
+    console.error("[RateLimit] Atomic quota RPC unavailable:", error.message);
+    return { allowed: false, remaining: 0, retryAfter: windowSeconds, unavailable: true };
+  }
+
+  const row = Array.isArray(data) ? data[0] : data;
+  if (!row || typeof row.allowed !== "boolean") {
+    console.error("[RateLimit] Invalid quota RPC response");
+    return { allowed: false, remaining: 0, retryAfter: windowSeconds, unavailable: true };
+  }
+  return {
+    allowed: row.allowed,
+    remaining: Number(row.remaining) || 0,
+    retryAfter: Number(row.retry_after) || windowSeconds,
+  };
+}
+
 export function rateLimitMiddleware() {
   return async (c: any, next: () => Promise<void>) => {
-    const authHeader = c.req.header("Authorization") ?? null;
-    const { userId } = await getUserFromToken(authHeader);
+    let userId: string;
+    try {
+      userId = await requireAuth(c.req.header("Authorization") ?? null);
+    } catch {
+      return c.json({ error: "Authentication required for AI requests" }, 401);
+    }
 
-    // Unauthenticated or anonymous requests: apply strict anon limit
-    // (auth will be enforced by the route handler — rate limit is a defense-in-depth layer)
-    const effectiveUserId = userId || "anonymous";
+    let quota: QuotaDecision;
+    try {
+      quota = await checkRateLimit(userId);
+    } catch (error) {
+      console.error("[RateLimit] Quota check failed:", error);
+      quota = { allowed: false, remaining: 0, retryAfter: WINDOW_SECONDS, unavailable: true };
+    }
 
-    const { allowed, remaining, retryAfter } = await checkRateLimit(effectiveUserId);
-
-    // Set rate limit headers on all responses
-    c.header("X-RateLimit-Remaining", String(remaining));
-
-    if (!allowed) {
-      c.header("Retry-After", String(retryAfter));
-      console.log(`[RateLimit] User ${effectiveUserId} exceeded limit`);
+    c.header("X-RateLimit-Limit", String(configuredLimit()));
+    c.header("X-RateLimit-Remaining", String(quota.remaining));
+    if (!quota.allowed) {
+      c.header("Retry-After", String(quota.retryAfter));
+      if (quota.unavailable) {
+        return c.json({ error: "AI is temporarily unavailable. Please try again." }, 503);
+      }
       return c.json(
-        {
-          error: "Rate limit exceeded. Please try again later.",
-          retryAfter,
-        },
+        { error: "AI request limit reached. Please try again shortly.", retryAfter: quota.retryAfter },
         429
       );
     }

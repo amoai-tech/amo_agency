@@ -30,7 +30,7 @@ const PREFIX = "/make-server-283466b6";
    ────────────────────────────────────────────────────────────────── */
 agents.post(`${PREFIX}/agents/run`, async (c) => {
   try {
-    await requireAuth(c.req.header("Authorization") ?? null);
+    const userId = await requireAuth(c.req.header("Authorization") ?? null);
 
     const body = await c.req.json();
     const { slug, agentName, task, context, format } = body;
@@ -104,6 +104,7 @@ ${getStageCalibration()}`;
     // Also log to ai_run_logs with agent-specific prompt_type
     // (callGemini already logs, but we add a second entry with the slug for catalog filtering)
     await logAgentRun({
+      userId,
       slug,
       agentName: agentName || slug,
       task,
@@ -173,7 +174,7 @@ agents.post(`${PREFIX}/agents/match`, async (c) => {
    ────────────────────────────────────────────────────────────────── */
 agents.get(`${PREFIX}/agents/history/:slug`, async (c) => {
   try {
-    await requireAuth(c.req.header("Authorization") ?? null);
+    const userId = await requireAuth(c.req.header("Authorization") ?? null);
 
     const slug = c.req.param("slug");
     const limit = Math.min(Math.max(1, parseInt(c.req.query("limit") || "20") || 20), 100);
@@ -186,6 +187,7 @@ agents.get(`${PREFIX}/agents/history/:slug`, async (c) => {
       .from("ai_run_logs")
       .select("*")
       .eq("prompt_type", `agent-run:${slug}`)
+      .eq("user_id", userId)
       .order("created_at", { ascending: false })
       .limit(limit);
 
@@ -209,6 +211,7 @@ agents.get(`${PREFIX}/agents/history/:slug`, async (c) => {
 
 /* ── Helper: Log agent catalog run ──────────────────────────────── */
 async function logAgentRun(params: {
+  userId: string;
   slug: string;
   agentName: string;
   task: string;
@@ -227,6 +230,7 @@ async function logAgentRun(params: {
     // Store in ai_run_logs with a catalog-specific prompt_type
     await db.from("ai_run_logs").insert({
       prompt_type: `agent-run:${params.slug}`,
+      user_id: params.userId,
       model: GEMINI_MODELS.flash,
       tokens_used: params.tokens,
       duration_ms: params.durationMs,

@@ -20,7 +20,7 @@ export interface AuthState {
 
 interface AuthContextType extends AuthState {
   signIn: (email: string, password: string) => Promise<{ success: boolean; error?: string }>;
-  signUp: (email: string, password: string, name?: string) => Promise<{ success: boolean; error?: string }>;
+  signUp: (email: string, password: string, name?: string) => Promise<{ success: boolean; error?: string; needsEmailConfirmation?: boolean }>;
   signInWithGoogle: (returnPath?: string) => Promise<void>;
   signInWithLinkedIn: (returnPath?: string) => Promise<void>;
   signOut: () => Promise<void>;
@@ -149,13 +149,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         setState(s => ({ ...s, loading: false, error }));
         return { success: false, error };
       }
-      // After signup, auto-sign in
-      const signInResult = await authApi.signIn(email, password);
-      if (signInResult.error) {
-        setState(s => ({ ...s, loading: false, error: signInResult.error }));
-        return { success: false, error: signInResult.error || 'Auto sign-in failed after signup' };
-      }
-      return { success: true };
+      // Supabase sends an email confirmation link. Do not auto-sign in.
+      setState(s => ({ ...s, loading: false }));
+      return { success: true, needsEmailConfirmation: data?.confirmationRequired === true };
     } catch (e) {
       const msg = `Sign up error: ${e}`;
       setState(s => ({ ...s, loading: false, error: msg }));

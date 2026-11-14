@@ -15,6 +15,7 @@
 import { Hono } from "npm:hono";
 import { adminClient } from "./db.tsx";
 import { requireAuth } from "./auth.tsx";
+import { NEXUS_PHASES } from "./agent-loader.tsx";
 
 const onboarding = new Hono();
 const PREFIX = "/make-server-283466b6";
@@ -316,30 +317,45 @@ onboarding.post(`${PREFIX}/onboarding/complete`, async (c) => {
       );
     }
 
-    // ── 8. INSERT roadmap_phases from roadmap phases array ──
+    // ── 8. INSERT roadmap_phases from roadmap phases array (NEXUS-aware) ──
     let createdPhases: { id: string }[] = [];
 
     if (roadmap && aiRoadmap?.phases?.length > 0) {
       const phaseRows = aiRoadmap.phases.map(
-        (phase: any, idx: number) => ({
-          roadmap_id: roadmap.id,
-          phase_number: phase.phaseNumber || idx + 1,
-          title: phase.title || `Phase ${idx + 1}`,
-          week_range: phase.weekRange || "",
-          systems: JSON.stringify(phase.systems || []),
-          deliverables: JSON.stringify(phase.deliverables || []),
-          milestones: JSON.stringify(phase.milestones || []),
-          estimated_cost: phase.estimatedCost || "",
-          status: idx === 0 ? "active" : "upcoming",
-          progress: idx === 0 ? 0 : 0,
-          user_id: userId,
-        })
+        (phase: any, idx: number) => {
+          // NEXUS: look up phase config for agent assignments
+          const nexusPhaseNum = phase.nexusPhase ?? idx;
+          const nexusConfig = NEXUS_PHASES.find((p) => p.phase === nexusPhaseNum);
+
+          return {
+            roadmap_id: roadmap.id,
+            phase_number: phase.phaseNumber || idx + 1,
+            title: phase.title || nexusConfig?.name || `Phase ${idx + 1}`,
+            week_range: phase.weekRange || "",
+            systems: JSON.stringify(phase.systems || []),
+            deliverables: JSON.stringify(phase.deliverables || []),
+            milestones: JSON.stringify(phase.milestones || []),
+            estimated_cost: phase.estimatedCost || "",
+            status: idx === 0 ? "active" : "upcoming",
+            progress: 0,
+            user_id: userId,
+            // NEXUS columns
+            nexus_phase: nexusPhaseNum,
+            assigned_agents: JSON.stringify(
+              nexusConfig
+                ? [...nexusConfig.primary, ...nexusConfig.secondary]
+                : []
+            ),
+            gate_status: "pending",
+            gate_keeper: nexusConfig?.gateKeeper || "",
+          };
+        }
       );
 
       const { data: phases, error: phasesErr } = await db
         .from("roadmap_phases")
         .insert(phaseRows)
-        .select("id");
+        .select("id, nexus_phase");
 
       if (phasesErr) {
         console.log(
@@ -348,35 +364,70 @@ onboarding.post(`${PREFIX}/onboarding/complete`, async (c) => {
       } else {
         createdPhases = phases || [];
         console.log(
-          `[Onboarding] Created ${createdPhases.length} roadmap phases`
+          `[Onboarding] Created ${createdPhases.length} NEXUS roadmap phases`
         );
+
+        // ── 8b. INSERT phase_gates for each phase ──
+        for (let i = 0; i < (phases || []).length; i++) {
+          const phaseRow = phases![i];
+          const aiPhase = aiRoadmap.phases[i];
+          const gateCriteria = aiPhase?.gateCriteria || [];
+
+          if (gateCriteria.length > 0) {
+            const gateRows = gateCriteria.map((gc: any, gIdx: number) => ({
+              phase_id: phaseRow.id,
+              criterion: gc.criterion || `Gate ${gIdx + 1}`,
+              description: gc.description || "",
+              check_type: gc.checkType === "ai" ? "ai" : "system",
+              status: "pending",
+              sort_order: gIdx,
+              user_id: userId,
+            }));
+
+            const { error: gateErr } = await db
+              .from("phase_gates")
+              .insert(gateRows);
+
+            if (gateErr) {
+              console.log(
+                `[Onboarding] Gates create error for phase ${i}: ${gateErr.message}`
+              );
+            } else {
+              console.log(
+                `[Onboarding] Created ${gateRows.length} gates for phase ${phaseRow.nexus_phase}`
+              );
+            }
+          }
+        }
       }
     } else if (roadmap) {
-      // No AI phases — create a single default phase
-      const { data: defaultPhase, error: defErr } = await db
+      // No AI phases — create default 7 NEXUS phases
+      const defaultPhaseRows = NEXUS_PHASES.map((np, idx) => ({
+        roadmap_id: roadmap.id,
+        phase_number: idx + 1,
+        title: np.name,
+        week_range: np.defaultDuration,
+        systems: JSON.stringify(idx < 3 ? selectedSystems.slice(0, 2) : []),
+        deliverables: JSON.stringify([`${np.name} deliverables`]),
+        milestones: JSON.stringify([`${np.name} milestone`]),
+        estimated_cost: "",
+        status: idx === 0 ? "active" : "upcoming",
+        progress: 0,
+        user_id: userId,
+        nexus_phase: np.phase,
+        assigned_agents: JSON.stringify([...np.primary, ...np.secondary]),
+        gate_status: "pending",
+        gate_keeper: np.gateKeeper,
+      }));
+
+      const { data: defaultPhases, error: defErr } = await db
         .from("roadmap_phases")
-        .insert({
-          roadmap_id: roadmap.id,
-          phase_number: 1,
-          title: "Foundation & Setup",
-          week_range: "Weeks 1-4",
-          systems: JSON.stringify(selectedSystems.slice(0, 2)),
-          deliverables: JSON.stringify([
-            "System architecture",
-            "Initial integrations",
-            "Data pipeline setup",
-          ]),
-          milestones: JSON.stringify(["Platform configured", "First demo"]),
-          estimated_cost: "",
-          status: "active",
-          progress: 0,
-          user_id: userId,
-        })
+        .insert(defaultPhaseRows)
         .select("id");
 
-      if (!defErr && defaultPhase) {
-        createdPhases = defaultPhase;
-        console.log(`[Onboarding] Created 1 default roadmap phase`);
+      if (!defErr && defaultPhases) {
+        createdPhases = defaultPhases;
+        console.log(`[Onboarding] Created ${defaultPhases.length} default NEXUS phases`);
       }
     }
 

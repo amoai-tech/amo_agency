@@ -25,7 +25,7 @@ export default function WhyAIPowered() {
   };
 
   return (
-    <section ref={ref} className="bg-[#F3F4F6] py-32 lg:py-40">
+    <section ref={ref} className="bg-[#F3F4F6] py-32 lg:py-40 overflow-x-clip">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Eyebrow */}
         <motion.div
