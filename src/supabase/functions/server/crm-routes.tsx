@@ -170,7 +170,7 @@ crm.delete(`${PREFIX}/crm/clients/:id`, async (c) => {
     if (!existing) return c.json({ error: "Client not found" }, 404);
 
     // Delete contacts first (cascade)
-    await db.from("crm_contacts").delete().eq("client_id", id);
+    await db.from("crm_contacts").delete().eq("client_id", id).eq("user_id", userId);
 
     const { error } = await db.from("clients").delete().eq("id", id).eq("user_id", userId);
 
@@ -200,6 +200,9 @@ crm.post(`${PREFIX}/crm/clients/:id/contacts`, async (c) => {
     }
 
     const db = adminClient();
+    const { data: owningClient } = await db.from("clients")
+      .select("id").eq("id", clientId).eq("user_id", userId).maybeSingle();
+    if (!owningClient) return c.json({ error: "Client not found" }, 404);
     const { data: contact, error } = await db
       .from("crm_contacts")
       .insert({

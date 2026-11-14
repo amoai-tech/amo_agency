@@ -1,5 +1,5 @@
 // S15-RATELIMIT — Atomic, per-user quota for authenticated AI requests.
-// Requires migration 20261114082405_harden_ai_logs_and_rate_limits.sql.
+// Requires migration 20261114094419_harden_ai_logs_and_rate_limits.sql.
 // Do not count global ai_run_logs rows: that causes cross-customer throttling.
 import { adminClient } from "./db.tsx";
 import { requireAuth } from "./auth.tsx";

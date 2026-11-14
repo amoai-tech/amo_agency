@@ -32,7 +32,7 @@ async function saveAIResult(
       {
         session_id: sessionId,
         step_number: stepNumber,
-        ai_results: result,
+        ai_results: JSON.parse(JSON.stringify(result ?? null)),
         updated_at: new Date().toISOString(),
       },
       { onConflict: "session_id,step_number" }

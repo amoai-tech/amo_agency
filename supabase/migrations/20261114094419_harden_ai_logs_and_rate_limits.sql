@@ -133,3 +133,13 @@ grant execute on function public.consume_ai_rate_limit(uuid, integer, integer)
   to service_role;
 
 -- Operations: purge old ai_rate_limit_windows rows periodically (e.g. > 2 days).
+
+-- Security advisor: internal RLS trigger helper is not a client API.
+-- Some hosted projects expose public.rls_auto_enable() to anon/authenticated.
+-- Revoke client execution without changing its event-trigger behavior.
+do $$
+begin
+  if to_regprocedure('public.rls_auto_enable()') is not null then
+    execute 'revoke execute on function public.rls_auto_enable() from public, anon, authenticated';
+  end if;
+end $$;

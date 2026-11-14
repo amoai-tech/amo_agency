@@ -61,7 +61,7 @@ insights.get(`${PREFIX}/insights/:projectId`, async (c) => {
         .in("slug", slugs);
 
       for (const a of agentData || []) {
-        agentMap[a.slug] = { name: a.name, emoji: a.emoji };
+        agentMap[a.slug] = { name: a.name, emoji: a.emoji ?? "" };
       }
     }
 

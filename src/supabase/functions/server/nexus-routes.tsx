@@ -99,7 +99,7 @@ nexus.post(`${PREFIX}/nexus/dispatch`, async (c) => {
 
       // Use the 4-layer prompt compiler for full context
       const compiled = compilePrompt(
-        `You are an AI specialist at Sun AI Agency. Phase: ${nexusConfig.name}. Objective: ${nexusConfig.description}.`,
+        `You are an AI specialist at AMO AI. Phase: ${nexusConfig.name}. Objective: ${nexusConfig.description}.`,
         [slug],
         `Deliver your analysis and recommendations for this phase. Be specific, actionable, and evidence-based.`
       );

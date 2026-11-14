@@ -17,7 +17,11 @@ jobs:
           node-version: '22'
           cache: npm
       - run: npm ci --no-audit --no-fund
+      - uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.9.8
       - run: npm run test:security
+      - run: deno check --node-modules-dir=auto --min-dep-age=0 supabase/functions/make-server-283466b6/index.ts
       - run: npm run build
       - run: npx playwright install --with-deps chromium
       - run: npm run test:e2e

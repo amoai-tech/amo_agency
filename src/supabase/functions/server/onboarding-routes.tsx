@@ -82,6 +82,25 @@ onboarding.post(`${PREFIX}/onboarding/complete`, async (c) => {
     }
 
     const session = sessionRes.data;
+    // The service-role client bypasses RLS; verify owner before reading
+    // or creating any project, client or roadmap records from this session.
+    if (session.user_id && session.user_id !== userId) {
+      return c.json({ error: "Wizard session not found" }, 404);
+    }
+    if (!session.user_id) {
+      // Allow a logged-in user to claim their unowned guest session by
+      // possessing its randomly generated session ID. Claim atomically.
+      const { data: claimed, error: claimError } = await db
+        .from("wizard_sessions")
+        .update({ user_id: userId, updated_at: new Date().toISOString() })
+        .eq("id", sessionId)
+        .is("user_id", null)
+        .select("id")
+        .maybeSingle();
+      if (claimError || !claimed) {
+        return c.json({ error: "Guest session claim failed; reload and retry" }, 409);
+      }
+    }
     const answers = answersRes.data || [];
 
     // ── Validate wizard completeness ──
@@ -104,28 +123,40 @@ onboarding.post(`${PREFIX}/onboarding/complete`, async (c) => {
 
     // ── 2. Extract business profile from Step 1 answers ──
     const step1 = answers.find((a: any) => a.step_number === 1);
-    const step1Data = step1?.answers || {};
-    const companyName =
-      step1Data.companyName || step1Data.company_name || "Unnamed Company";
-    const industry = step1Data.industry || "";
-    const companySize = step1Data.companySize || step1Data.company_size || "";
-    const websiteUrl = step1Data.websiteUrl || step1Data.website_url || "";
-    const goal = step1Data.goal || "";
-    const challenge = step1Data.challenge || "";
+    const readObject = (value: unknown): Record<string, any> =>
+      value !== null && typeof value === "object" && !Array.isArray(value)
+        ? value as Record<string, any>
+        : {};
+    const readText = (obj: Record<string, any>, ...keys: string[]): string => {
+      for (const key of keys) {
+        if (typeof obj[key] === "string") return obj[key];
+      }
+      return "";
+    };
+    const step1Data = readObject(step1?.answers);
+    const companyName = readText(step1Data, "companyName", "company_name") || "Unnamed Company";
+    const industry = readText(step1Data, "industry");
+    const companySize = readText(step1Data, "companySize", "company_size");
+    const websiteUrl = readText(step1Data, "websiteUrl", "website_url");
+    const goal = readText(step1Data, "goal");
+    const challenge = readText(step1Data, "challenge");
 
     // ── Step 3: selected systems ──
     const step3 = answers.find((a: any) => a.step_number === 3);
-    const step3Data = step3?.answers || {};
-    const selectedSystems = step3Data.selectedSystems ||
-      step3Data.selected_systems || [];
+    const step3Data = readObject(step3?.answers);
+    const selectedSystemsSource = step3Data.selectedSystems ?? step3Data.selected_systems;
+    const selectedSystems: string[] = Array.isArray(selectedSystemsSource)
+      ? selectedSystemsSource.filter((v: unknown): v is string => typeof v === "string")
+      : [];
 
     // ── 3. Extract roadmap from Step 5 AI results (or Step 5 answers) ──
     const step5 = answers.find((a: any) => a.step_number === 5);
-    const aiRoadmap =
-      step5?.ai_results?.roadmap ||
-      step5?.ai_results ||
-      step5?.answers?.roadmap ||
-      null;
+    const step5AI = readObject(step5?.ai_results);
+    const step5Answers = readObject(step5?.answers);
+    const roadmapSource = step5AI.roadmap ?? step5?.ai_results ?? step5Answers.roadmap;
+    const aiRoadmap = roadmapSource && typeof roadmapSource === "object" && !Array.isArray(roadmapSource)
+      ? readObject(roadmapSource)
+      : null;
 
     // ── 4. Check for existing project (idempotent) ──
     const { data: existingProject } = await db
@@ -320,8 +351,9 @@ onboarding.post(`${PREFIX}/onboarding/complete`, async (c) => {
     // ── 8. INSERT roadmap_phases from roadmap phases array (NEXUS-aware) ──
     let createdPhases: { id: string }[] = [];
 
-    if (roadmap && aiRoadmap?.phases?.length > 0) {
-      const phaseRows = aiRoadmap.phases.map(
+    const aiPhases = Array.isArray(aiRoadmap?.phases) ? aiRoadmap.phases : [];
+    if (roadmap && aiPhases.length > 0) {
+      const phaseRows = aiPhases.map(
         (phase: any, idx: number) => {
           // NEXUS: look up phase config for agent assignments
           const nexusPhaseNum = phase.nexusPhase ?? idx;
@@ -370,7 +402,7 @@ onboarding.post(`${PREFIX}/onboarding/complete`, async (c) => {
         // ── 8b. INSERT phase_gates for each phase ──
         for (let i = 0; i < (phases || []).length; i++) {
           const phaseRow = phases![i];
-          const aiPhase = aiRoadmap.phases[i];
+          const aiPhase = aiPhases[i];
           const gateCriteria = aiPhase?.gateCriteria || [];
 
           if (gateCriteria.length > 0) {
