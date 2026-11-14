@@ -70,7 +70,7 @@ export default function Header() {
               {/* Mobile hamburger */}
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="md:hidden flex items-center justify-center w-9 h-9 rounded transition-colors hover:bg-gray-50"
+                className="lg:hidden flex items-center justify-center w-9 h-9 rounded transition-colors hover:bg-gray-50"
                 style={{ border: '1px solid #E8E8E4', borderRadius: '4px' }}
                 aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
                 aria-expanded={mobileMenuOpen}
@@ -95,7 +95,7 @@ export default function Header() {
             </div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center gap-1">
+            <nav className="hidden lg:flex items-center gap-1">
               {navItems.slice(1).map((item) => (
                 <Link
                   key={item.path}
@@ -188,7 +188,7 @@ export default function Header() {
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 z-40 transition-opacity duration-200 md:hidden ${
+        className={`fixed inset-0 z-40 transition-opacity duration-200 lg:hidden ${
           mobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       >
