@@ -18,7 +18,7 @@ for (const viewport of viewports) {
     test.use({ viewport: { width: viewport.width, height: viewport.height } });
 
     for (const route of publicRoutes) {
-      test(route.name + ' (' + route.path + ') renders without a React crash', async ({ page }) => {
+      test(`${route.name} (${route.path}) renders without a React crash`, async ({ page }) => {
         const errors: string[] = [];
         page.on('pageerror', (error) => errors.push(error.message));
 
@@ -29,7 +29,7 @@ for (const viewport of viewports) {
         await expect(page.getByRole('heading', { level: 1 }).first()).toBeVisible();
         await expect(page.getByText('Unexpected Application Error!', { exact: false })).toHaveCount(0);
         await expect(page.locator('#root')).not.toContainText(
-          /(?:useState|useEffect|motion|isInView) is not defined/,
+          /is not defined|ReferenceError/,
         );
         expect(errors, route.path + ' browser exceptions').toEqual([]);
       });

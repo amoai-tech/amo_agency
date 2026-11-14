@@ -4,6 +4,7 @@ import { Link } from 'react-router';
 
 export default function MVPv2CTA() {
   const ref = useRef<HTMLElement>(null);
+  // Match the other MVP sections: delay animation until well inside the viewport.
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
