@@ -814,13 +814,13 @@ export function ServicesPage() {
             Build AI That Actually Ships
           </h2>
           <p className="text-[18px] text-white/70 mb-10 max-w-[640px] mx-auto">
-            Start with a strategy session to identify your highest-impact AI opportunities.
+            Tell us about your business so we can explore where AI could help.
           </p>
           <Link
             to="/wizard"
             className="inline-flex items-center justify-center px-10 py-5 bg-[#C5F467] text-[#1A3A32] text-[16px] font-semibold rounded-lg hover:bg-[#B8E84F] transition-all duration-200 shadow-[0_6px_24px_rgba(197,244,103,0.3)] hover:shadow-[0_8px_32px_rgba(197,244,103,0.4)]"
           >
-            Start Your AI Strategy
+            Start Your AI Assessment
             <ArrowRight className="ml-2 w-5 h-5" />
           </Link>
         </div>
