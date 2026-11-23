@@ -225,11 +225,12 @@ const categories: CategoryData[] = [
   },
 ];
 
+// Illustrative delivery priorities, not company-wide numerical outcomes.
 const stats = [
-  { number: '20', suffix: '+', label: 'Production-tested technologies in active deployment' },
-  { number: '48', suffix: '+', label: 'Specialized AI agent types deployable from this stack' },
-  { number: '4–6', suffix: 'wk', label: 'Median time to full production deployment' },
-  { number: '100', suffix: '%', label: 'Client codebase ownership — no vendor lock-in' },
+  { number: '01', suffix: '', label: 'Choose tools to fit the use case' },
+  { number: '02', suffix: '', label: 'Define agent capabilities and safeguards' },
+  { number: '03', suffix: '', label: 'Agree on project milestones and validation' },
+  { number: '04', suffix: '', label: 'Review ownership and handoff terms together' },
 ];
 
 /* ── Accent color maps ── */

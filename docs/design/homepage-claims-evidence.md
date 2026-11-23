@@ -30,3 +30,16 @@ Only display measured figures with the source report, date range, numerator/deno
 ## Verification
 
 Run `npm ci && npm run build && npm run test:e2e` on the PR head, then test the exact protected Vercel Preview on 390px and 1440px. Check screenshots load (naturalWidth > 0), external product links point to approved destinations, no homepage CTA points at /booking, and both public example pages open.
+
+## Services-page truthfulness follow-up — 2026-11-23
+
+The /services page showed unverified '3.2x ROI' hero data and numerical summaries of 3.2x average ROI, 68% time saved, and 94% adoption. No source report, time window, baseline, or customer permission for those numbers is in this repository. These were removed and replaced with a three-step approach to setting a measurement baseline, tracking actual usage, and reviewing outcomes.
+
+The 'Book a demo' buttons pointed to /wizard, whose first screen requests a business brief rather than scheduling a demo. The labels now say 'Explore AI Assessment' while retaining the existing /wizard destination. No booking form, AI workflow, or database operation was added or changed. This update is separate from future actual customer performance case studies.
+
+
+### Additional Services audit / PR review follow-up
+
+Removed four unsourced statistics from the technology stack (20+ production-tested technologies, 48+ deployable agents, median 4–6 weeks, 100% codebase ownership). Replaced them with non-numerical discussion points about selecting tools, safeguards, project milestones, and negotiated ownership terms. No source report or contractual permission existed for the previous statements.
+
+The final CTA previously offered a 'strategy session' while linking to the assessment wizard. It now invites a business brief and labels the destination 'Start Your AI Assessment'. Automated Services tests only check the links rather than navigating to the wizard, because mounting the wizard may autosave a blank session.
