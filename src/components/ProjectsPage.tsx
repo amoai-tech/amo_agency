@@ -1,12 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
-import { pageToPath } from '../lib/navigation';
 import { PROJECTS } from '../lib/data/projectsData';
 import ProjectsHero from './projects/ProjectsHero';
 import ProjectNavigation from './projects/ProjectNavigation';
 import ProjectModule from './projects/ProjectModule';
-import SystemDiagram from './projects/SystemDiagram';
-import ComparisonSection from './projects/ComparisonSection';
 import ProjectsFinalCTA from './projects/ProjectsFinalCTA';
 
 export default function ProjectsPage() {
@@ -51,52 +48,25 @@ export default function ProjectsPage() {
     }
   }, []);
 
-  const handleStartProject = () => {
-    nav(pageToPath('booking'));
-  };
-
-  const handleViewProcess = () => {
-    nav(pageToPath('process-v12'));
-  };
+  const handleExploreServices = () => nav('/services');
+  const handleViewProducts = () => document.getElementById('mdeai')?.scrollIntoView({ behavior: 'smooth' });
 
   return (
     <main className="bg-white">
       <ProjectsHero
-        onStartClick={handleStartProject}
-        onProcessClick={handleViewProcess}
+        onStartClick={handleExploreServices}
+        onProcessClick={handleViewProducts}
       />
 
       <ProjectNavigation projects={PROJECTS} activeProjectId={activeProjectId} />
 
       <div className="max-w-[1400px] mx-auto px-6 lg:px-16">
-        <ProjectModule
-          project={PROJECTS[0]}
-          onStartProject={handleStartProject}
-        />
-        <ProjectModule
-          project={PROJECTS[1]}
-          onStartProject={handleStartProject}
-        />
+        {PROJECTS.map((project) => <ProjectModule key={project.id} project={project} />)}
       </div>
-
-      <SystemDiagram />
-
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-16">
-        <ProjectModule
-          project={PROJECTS[2]}
-          onStartProject={handleStartProject}
-        />
-        <ProjectModule
-          project={PROJECTS[3]}
-          onStartProject={handleStartProject}
-        />
-      </div>
-
-      <ComparisonSection />
 
       <ProjectsFinalCTA
-        onStartProject={handleStartProject}
-        onContactUs={handleStartProject}
+        onStartProject={handleExploreServices}
+        onContactUs={() => nav('/')}
       />
     </main>
   );

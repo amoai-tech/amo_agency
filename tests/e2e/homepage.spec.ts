@@ -1,9 +1,9 @@
 import { expect, test } from '@playwright/test';
 
 const publicRoutes = [
-  { path: '/', name: 'Homepage', heading: /Build Intelligent AI Products, Agents, and Automation/ },
+  { path: '/', name: 'Homepage', heading: /AI Solutions That Work for Your Business/ },
   { path: '/services', name: 'Services', heading: /AI services bring speed and impact at any scale/ },
-  { path: '/projects', name: 'Projects', heading: /Real AI Products\. Real Results\./ },
+  { path: '/projects', name: 'Projects', heading: /Real AI Products\. Real Work\./ },
   { path: '/mvp-builder', name: 'MVP Builder', heading: /Your AI product,\s*live in 6 weeks/ },
   { path: '/mvp-v2', name: 'MVP v2', heading: /Your AI Product,\s*Live in 6 Weeks/ },
 ] as const;

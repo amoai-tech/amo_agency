@@ -23,22 +23,22 @@ export default function ProjectsHero({
           className="text-center max-w-3xl mx-auto"
         >
           <p className="text-xs tracking-widest uppercase mb-4" style={{ color: '#00875A', letterSpacing: '0.08em' }}>
-            Case Studies
+            Public Product Examples
           </p>
 
           <h1
             className="text-4xl lg:text-5xl tracking-tight mb-5"
             style={{ fontFamily: 'Georgia, serif', color: '#1A1A1A' }}
           >
-            Real AI Products. Real Results.
+            Real AI Products. Real Work.
           </h1>
 
           <h2 className="text-xl lg:text-2xl mb-3" style={{ color: '#6B6B63' }}>
-            Production-ready AI platforms built and delivered in 8 weeks.
+            Explore two public products and the workflows they support.
           </h2>
 
           <p className="text-base mb-10" style={{ color: '#6B6B63' }}>
-            No demos. No prototypes. Real systems in use.
+            Screenshots are captured from the actual public product websites. No client ROI or delivery guarantees are implied.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -47,14 +47,14 @@ export default function ProjectsHero({
               className="px-8 py-4 text-sm transition-colors"
               style={{ backgroundColor: '#00875A', color: '#FFFFFF', borderRadius: '4px' }}
             >
-              Start Your Project
+              Explore Services
             </button>
             <button
               onClick={onProcessClick}
               className="border px-8 py-4 text-sm transition-colors hover:bg-[#1A1A1A] hover:text-white"
               style={{ borderColor: '#1A1A1A', color: '#1A1A1A', borderRadius: '4px' }}
             >
-              View How We Work
+              View Product Examples
             </button>
           </div>
         </motion.div>

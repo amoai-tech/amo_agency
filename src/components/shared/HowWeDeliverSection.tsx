@@ -18,35 +18,35 @@ interface DeliveryPhase {
 const deliveryPhases: DeliveryPhase[] = [
   {
     icon: <Search className="w-5 h-5" />,
-    eyebrow: 'Week 1',
+    eyebrow: 'Phase 1',
     title: 'Discover & Architect',
     description: 'We map your workflows, data, and bottlenecks — then define the fastest path to ROI.',
     bullets: ['Lead flow → scoring rules', 'Knowledge base → retrieval plan', 'Integrations → API map'],
-    duration: 'Week 1',
+    duration: 'Phase 1',
   },
   {
     icon: <Layers className="w-5 h-5" />,
-    eyebrow: 'Weeks 2-3',
+    eyebrow: 'Phase 2',
     title: 'Design Sprint',
     description: 'We turn scope into screens and system logic — UX, flows, and technical architecture.',
     bullets: ['UX flows + wireframes', 'Data model + permissions', 'Implementation plan'],
-    duration: 'Weeks 2-3',
+    duration: 'Phase 2',
   },
   {
     icon: <Code className="w-5 h-5" />,
-    eyebrow: 'Weeks 4-7',
+    eyebrow: 'Phase 3',
     title: 'Build & Integrate',
     description: 'Production builds in weekly sprints — agents, chatbots, automations, and integrations.',
     bullets: ['RAG + tool actions', 'CRM + WhatsApp sync', 'Admin + analytics'],
-    duration: 'Weeks 4-7',
+    duration: 'Phase 3',
   },
   {
     icon: <Rocket className="w-5 h-5" />,
-    eyebrow: 'Week 8',
+    eyebrow: 'Phase 4',
     title: 'Launch & Optimize',
     description: 'Deploy, train your team, monitor quality, and improve performance with real usage data.',
     bullets: ['QA + launch checklist', 'Monitoring + handoff', 'Continuous improvements'],
-    duration: 'Week 8 + Ongoing',
+    duration: 'Phase 4 + Ongoing',
   },
 ];
 
@@ -73,7 +73,7 @@ export default function HowWeDeliverSection() {
             Strategy. Systems. Speed.
           </p>
           <p className="text-sm max-w-md mx-auto" style={{ color: '#6B6B63' }}>
-            A focused process designed for speed — not bureaucracy.
+            A focused process with review points adapted to the project.
           </p>
         </div>
 
@@ -94,7 +94,7 @@ export default function HowWeDeliverSection() {
             className="inline-flex items-center gap-2 text-sm transition-colors"
             style={{ color: '#00875A' }}
           >
-            See the detailed 8-week process
+            Explore Our Process
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
@@ -104,7 +104,7 @@ export default function HowWeDeliverSection() {
 }
 
 function MiniTimeline() {
-  const weekLabels = ['Week 1', 'Weeks 2-3', 'Weeks 4-7', 'Week 8'];
+  const weekLabels = ['Phase 1', 'Phase 2', 'Phase 3', 'Phase 4'];
 
   return (
     <div className="relative mb-14 px-8 hidden md:block">

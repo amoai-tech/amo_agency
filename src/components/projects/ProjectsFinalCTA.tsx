@@ -29,7 +29,7 @@ export default function ProjectsFinalCTA({
           </h2>
 
           <p className="text-lg mb-10" style={{ color: 'rgba(245,245,240,0.6)' }}>
-            From idea to production system in 8 weeks.
+            Explore the services and examples behind these product experiences.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -38,14 +38,14 @@ export default function ProjectsFinalCTA({
               className="px-8 py-4 text-sm transition-colors"
               style={{ backgroundColor: '#00875A', color: '#FFFFFF', borderRadius: '4px' }}
             >
-              Start Your Project
+              Explore Services
             </button>
             <button
               onClick={onContactUs}
               className="px-8 py-4 border text-sm transition-colors hover:bg-white/10"
               style={{ borderColor: 'rgba(255,255,255,0.2)', color: '#FFFFFF', borderRadius: '4px' }}
             >
-              Contact Us
+              Back to Home
             </button>
           </div>
         </motion.div>
