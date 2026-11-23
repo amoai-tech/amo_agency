@@ -72,7 +72,7 @@ export function ServicesPage() {
                   to="/wizard"
                   className="inline-flex items-center justify-center px-8 py-4 bg-[#FAF8F5] text-[#1A3A32] text-[14px] font-semibold rounded-lg hover:bg-[#E8DCC4] transition-all duration-200 shadow-[0_4px_16px_rgba(0,0,0,0.08)] hover:shadow-[0_6px_24px_rgba(0,0,0,0.12)]"
                 >
-                  Book a demo
+                  Explore AI Assessment
                 </Link>
               </div>
             </motion.div>
@@ -187,9 +187,9 @@ export function ServicesPage() {
                     </div>
                     <div>
                       <div className="text-2xl font-light text-white mb-2" style={{ fontFamily: 'Georgia, serif' }}>
-                        3.2x ROI
+                        Project KPIs
                       </div>
-                      <p className="text-xs text-white/50">Average impact</p>
+                      <p className="text-xs text-white/50">Defined with your team</p>
                     </div>
                   </div>
                 </div>
@@ -249,7 +249,7 @@ export function ServicesPage() {
                   to="/wizard"
                   className="inline-flex items-center justify-center px-8 py-4 bg-[#FAF8F5] text-[#1A3A32] text-[14px] font-semibold rounded-lg hover:bg-[#E8DCC4] transition-all duration-200 shadow-[0_4px_16px_rgba(0,0,0,0.08)] hover:shadow-[0_6px_24px_rgba(0,0,0,0.12)]"
                 >
-                  Book a demo
+                  Explore AI Assessment
                 </Link>
               </motion.div>
             </div>
@@ -623,18 +623,18 @@ export function ServicesPage() {
               className="text-[48px] leading-[1.1] font-normal text-[#1F2421] mb-6"
               style={{ fontFamily: 'Georgia, serif' }}
             >
-              Results that matter
+              How we measure value
             </h2>
             <p className="text-[18px] text-[#6B7370] max-w-[640px] mx-auto">
-              Measurable impact across implementations.
+              We agree on meaningful measurements for your workflows, then track real outcomes after launch.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-12">
             {[
-              { number: '3.2x', label: 'Average ROI', sublabel: 'within first year' },
-              { number: '68%', label: 'Time saved', sublabel: 'on manual workflows' },
-              { number: '94%', label: 'Adoption rate', sublabel: 'across teams' }
+              { number: '01', label: 'Define baseline', sublabel: 'Identify the workflows and goals to measure' },
+              { number: '02', label: 'Track adoption', sublabel: 'Measure usage and operational changes' },
+              { number: '03', label: 'Review outcomes', sublabel: 'Evaluate results against the agreed goals' }
             ].map((metric, index) => (
               <motion.div
                 key={index}
