@@ -8,7 +8,7 @@
 
 ## 📋 Executive Summary
 
-The current Booking page (`/components/BookingPage.tsx`) is **simple and clean** but **does not fully follow the Sun AI Style Guide**. The form lacks branded styling, typography needs updating, and button colors need adjustment to match the official palette.
+The current Booking page (`/components/BookingPage.tsx`) is **simple and clean** but **does not fully follow the AMO AI Style Guide**. The form lacks branded styling, typography needs updating, and button colors need adjustment to match the official palette.
 
 **Style Guide Reference:** `/style-guide`
 

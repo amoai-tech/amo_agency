@@ -309,7 +309,7 @@ export default function StyleGuideComponentsShowcase() {
             Component Examples
           </h2>
           <p className="font-['Lora'] text-xl text-gray-600 max-w-3xl">
-            Live, interactive examples of core components used throughout the Sun AI experience.
+            Live, interactive examples of core components used throughout the AMO AI experience.
           </p>
         </motion.div>
 

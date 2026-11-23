@@ -1,6 +1,6 @@
 # 055: Complete Data Model — All 32 Tables
 
-> Schema reference for the entire Sun AI platform database
+> Schema reference for the entire AMO AI platform database
 
 ---
 

@@ -23,7 +23,7 @@ function isValidUUID(s: string): boolean {
 
 // ── GET /wizard/list/:userId — List user's wizard sessions ──
 // IMPORTANT: Must be registered BEFORE /wizard/:sessionId to prevent route collision
-// Filters by user_id when column exists, falls back to returning all sessions.
+// Lists sessions belonging only to the authenticated user; never falls back to unfiltered data.
 wizard.get(`${PREFIX}/wizard/list/:userId`, async (c) => {
   try {
     const callerId = await requireAuth(c.req.header("Authorization") ?? null);
@@ -35,41 +35,17 @@ wizard.get(`${PREFIX}/wizard/list/:userId`, async (c) => {
     const userId = callerId;
     const db = adminClient();
 
-    // Try to filter by user_id (column added in migration 20260307120000).
-    // If the column exists, we get proper per-user scoping.
-    // If it doesn't exist yet, the query will fail and we fall back to unfiltered.
-    let sessions: any[] | null = null;
-    let queryError: any = null;
-
-    // Attempt user-scoped query first
-    const { data: scopedSessions, error: scopedError } = await db
+    // Schema is known; never fall back to an unscoped service-role read.
+    const { data: sessions, error: queryError } = await db
       .from("wizard_sessions")
       .select("id, current_step, user_id, status, created_at, updated_at")
       .eq("user_id", userId)
       .order("updated_at", { ascending: false })
       .limit(20);
 
-    if (scopedError && scopedError.message?.includes("column")) {
-      // user_id column doesn't exist yet — fall back to unfiltered query
-      console.log(`[Wizard] user_id column not found, falling back to unfiltered list`);
-      const { data: allSessions, error: allError } = await db
-        .from("wizard_sessions")
-        .select("id, current_step, created_at, updated_at")
-        .order("updated_at", { ascending: false })
-        .limit(20);
-      sessions = allSessions;
-      queryError = allError;
-    } else {
-      sessions = scopedSessions;
-      queryError = scopedError;
-    }
-
     if (queryError) {
       console.log(`[Wizard] List error: ${queryError.message}`);
-      return c.json(
-        { error: `Failed to list wizard sessions: ${queryError.message}` },
-        500
-      );
+      return c.json({ error: "Failed to list wizard sessions" }, 500);
     }
 
     // Use status column if present, otherwise derive from current_step
@@ -92,91 +68,83 @@ wizard.post(`${PREFIX}/wizard/save`, async (c) => {
   try {
     const authHeader = c.req.header("Authorization");
 
-    // Extract user ID if available, but don't block on auth failure
-    let callerKey: string | null = null;
-    try {
-      const { userId } = await getUserFromToken(authHeader ?? null);
-      callerKey = userId && userId !== "anonymous" ? userId : null;
-    } catch {
-      // Auth extraction failed — proceed as anonymous save
-      callerKey = null;
+    // An invalid/expired user JWT is not an anonymous session.
+    const { userId, error: authError } = await getUserFromToken(authHeader ?? null);
+    if (authHeader && authError) {
+      return c.json({ error: "Invalid authentication" }, 401);
     }
+    const callerKey = userId && userId !== "anonymous" ? userId : null;
 
     const body = await c.req.json();
     const { sessionId, step, data, fullState } = body;
-
+    if (sessionId !== undefined && (!sessionId || !isValidUUID(sessionId))) {
+      return c.json({ error: "Invalid wizard session ID" }, 400);
+    }
     if (!sessionId && !fullState) {
-      return c.json(
-        { error: "Missing sessionId or fullState in request body" },
-        400
-      );
+      return c.json({ error: "Missing sessionId or fullState" }, 400);
+    }
+    if (step !== undefined && (!Number.isInteger(step) || step < 1 || step > 5)) {
+      return c.json({ error: "Invalid wizard step" }, 400);
     }
 
-    const sid = sessionId && isValidUUID(sessionId) ? sessionId : generateSessionId();
-    // Use adminClient for wizard writes — supports anonymous + expired-token users
-    // Session IDs are unguessable random keys, so this is safe
+    const sid = sessionId || generateSessionId();
     const db = adminClient();
-
-    if (fullState) {
-      // Full state save → upsert wizard_sessions
-      // Write all available columns including user_id and status (added in migration)
-      const sessionRow: Record<string, unknown> = {
-        id: sid,
-        current_step: fullState.currentStep || 1,
-        updated_at: new Date().toISOString(),
-      };
-      // Set user_id if we have an authenticated caller
-      if (callerKey) {
-        sessionRow.user_id = callerKey;
-      }
-      // Derive status: step 5 = final, so >= 5 means completed
-      if ((fullState.currentStep || 1) >= 5) {
-        sessionRow.status = "completed";
-      }
-
-      const { error } = await db.from("wizard_sessions").upsert(sessionRow);
-
-      if (error) {
-        console.log(`[Wizard] Session upsert error: ${error.message}`);
-        return c.json(
-          { error: `Failed to save wizard session: ${error.message}` },
-          500
-        );
-      }
+    const { data: existing, error: readError } = await db
+      .from("wizard_sessions")
+      .select("id, user_id, current_step")
+      .eq("id", sid)
+      .maybeSingle();
+    if (readError) return c.json({ error: "Failed to read wizard session" }, 500);
+    if (existing?.user_id && existing.user_id !== callerKey) {
+      return c.json({ error: "Wizard session access denied" }, 403);
     }
 
-    if (step !== undefined && data) {
-      // Per-step save → upsert wizard_answers
-      const { error: ansError } = await db.from("wizard_answers").upsert(
-        {
-          session_id: sid,
-          step_number: step,
-          answers: data,
-          updated_at: new Date().toISOString(),
-        },
-        { onConflict: "session_id,step_number" }
-      );
+    const currentStep =
+      typeof fullState?.currentStep === "number" && Number.isInteger(fullState.currentStep)
+        ? fullState.currentStep
+        : step ?? existing?.current_step ?? 1;
+    if (currentStep < 1 || currentStep > 5) {
+      return c.json({ error: "Invalid wizard step" }, 400);
+    }
+    const updatedAt = new Date().toISOString();
+    const sessionRow = {
+      current_step: currentStep,
+      updated_at: updatedAt,
+      ...(currentStep >= 5 ? { status: "completed" } : {}),
+      ...(callerKey ? { user_id: callerKey } : {}),
+    };
 
-      if (ansError) {
-        console.log(`[Wizard] Answer upsert error: ${ansError.message}`);
-        return c.json(
-          { error: `Failed to save wizard answer: ${ansError.message}` },
-          500
-        );
+    if (existing) {
+      // Check ownership atomically when updating; avoid racing a guest claim.
+      const base = db.from("wizard_sessions").update(sessionRow).eq("id", sid);
+      const scoped = existing.user_id
+        ? base.eq("user_id", callerKey!)
+        : base.is("user_id", null);
+      const { data: updated, error: updateError } = await scoped.select("id").maybeSingle();
+      if (updateError) return c.json({ error: "Failed to update wizard session" }, 500);
+      if (!updated) return c.json({ error: "Wizard session ownership changed" }, 409);
+    } else {
+      const { error: insertError } = await db.from("wizard_sessions").insert({
+        id: sid,
+        user_id: callerKey,
+        ...sessionRow,
+      });
+      if (insertError?.code === "23505") {
+        return c.json({ error: "Wizard session was created concurrently; retry" }, 409);
       }
+      if (insertError) return c.json({ error: "Failed to create wizard session" }, 500);
+    }
 
-      // Also update session metadata (current_step)
-      const { error: metaError } = await db
-        .from("wizard_sessions")
-        .upsert({
-          id: sid,
-          current_step: step,
-          updated_at: new Date().toISOString(),
-        });
+    if (step !== undefined && data !== undefined) {
+      // Owner check above must finish successfully before service-role answer writes.
+      const { error: ansError } = await db.from("wizard_answers").upsert({
+        session_id: sid,
+        step_number: step,
+        answers: JSON.parse(JSON.stringify(data ?? null)),
+        updated_at: updatedAt,
+      }, { onConflict: "session_id,step_number" });
 
-      if (metaError) {
-        console.log(`[Wizard] Session meta update error: ${metaError.message}`);
-      }
+      if (ansError) return c.json({ error: "Failed to save wizard answers" }, 500);
     }
 
     console.log(
@@ -186,7 +154,7 @@ wizard.post(`${PREFIX}/wizard/save`, async (c) => {
     return c.json({
       success: true,
       sessionId: sid,
-      updatedAt: new Date().toISOString(),
+      updatedAt,
     });
   } catch (error) {
     console.log(`[Wizard] Save error: ${error}`);
@@ -215,6 +183,7 @@ wizard.get(`${PREFIX}/wizard/:sessionId`, async (c) => {
       .from("wizard_sessions")
       .select("*")
       .eq("id", sessionId)
+      .eq("user_id", callerId)
       .maybeSingle();
 
     if (sessError) {

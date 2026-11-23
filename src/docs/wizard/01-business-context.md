@@ -26,7 +26,7 @@ the Gemini 3 analysis that runs between Steps 2 and 3.
 ```
 ┌──────────────────────────────────────────────────────────────────────────┐
 │                                                                          │
-│  ☀ Sun AI    Step 1: Business Context                    ✓ All saved    │
+│  ☀ AMO AI    Step 1: Business Context                    ✓ All saved    │
 │                                                                          │
 ├───────────┬───────────────────────────────────────────┬──────────────────┤
 │           │                                           │                  │

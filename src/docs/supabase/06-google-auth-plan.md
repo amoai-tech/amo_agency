@@ -470,7 +470,7 @@ gantt
 ## 9. Post-Implementation Notes
 
 - **Brand verification:** Submit for Google verification if using external users. This shows your app name/logo instead of project ID on the consent screen.
-- **Custom domain:** Consider setting `auth.sunaiagency.com` as a custom domain in Supabase for a more trustworthy consent screen.
+- **Custom domain:** Consider setting `auth.www.amoai.ca` as a custom domain in Supabase for a more trustworthy consent screen.
 - **Provider tokens:** If you later need to access Google APIs (Gmail, Calendar, etc.) on behalf of the user, pass `access_type: 'offline'` and `prompt: 'consent'` to get a refresh token from Google.
 - **Account linking:** Supabase automatically links Google and email accounts if they share the same email address.
 

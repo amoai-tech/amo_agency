@@ -87,7 +87,7 @@ const categories: CategoryData[] = [
         name: 'Google Gemini',
         use: 'Enables multimodal AI applications for search, research, coding, and data analysis.',
         description:
-          '1M-token context with native function calling and search grounding — primary intelligence engine for the Sun AI diagnostic wizard and agent platform.',
+          '1M-token context with native function calling and search grounding — primary intelligence engine for the AMO AI diagnostic wizard and agent platform.',
       },
     ],
   },
@@ -101,7 +101,7 @@ const categories: CategoryData[] = [
         name: 'Supabase + pgvector',
         use: 'Stores company data and enables AI systems to search and understand knowledge bases.',
         description:
-          'Postgres backend with vector similarity search, real-time APIs, and Row Level Security — the core data layer for every Sun AI product deployment.',
+          'Postgres backend with vector similarity search, real-time APIs, and Row Level Security — the core data layer for every AMO AI product deployment.',
       },
       {
         icon: Zap,
@@ -163,14 +163,14 @@ const categories: CategoryData[] = [
         name: 'React',
         use: 'Builds interactive dashboards and AI-powered web applications.',
         description:
-          "Component-based framework powering Sun AI's diagnostic wizard, client portals, and agent dashboards — fast rendering, composable architecture.",
+          "Component-based framework powering AMO AI's diagnostic wizard, client portals, and agent dashboards — fast rendering, composable architecture.",
       },
       {
         icon: Zap,
         name: 'Next.js',
         use: 'Creates fast, scalable websites and AI platforms.',
         description:
-          'Full-stack React framework with server rendering, API routes, and Edge functions — the production standard for public-facing Sun AI products.',
+          'Full-stack React framework with server rendering, API routes, and Edge functions — the production standard for public-facing AMO AI products.',
       },
       {
         icon: Layout,
@@ -184,14 +184,14 @@ const categories: CategoryData[] = [
         name: 'Tailwind CSS',
         use: 'Designs modern, responsive user interfaces quickly.',
         description:
-          'Utility-first CSS framework with design tokens — every Sun AI interface ships with a consistent visual language built for rapid iteration.',
+          'Utility-first CSS framework with design tokens — every AMO AI interface ships with a consistent visual language built for rapid iteration.',
       },
       {
         icon: Zap,
         name: 'Vite',
         use: 'Speeds up development and improves web application performance.',
         description:
-          'Next-generation build tooling with sub-second hot reload and optimized production bundles — default development environment for all Sun AI React applications.',
+          'Next-generation build tooling with sub-second hot reload and optimized production bundles — default development environment for all AMO AI React applications.',
       },
     ],
   },
@@ -219,7 +219,7 @@ const categories: CategoryData[] = [
         name: 'GitHub',
         use: 'Manages code, collaboration, and software updates for AI applications.',
         description:
-          'Version control platform for managing codebases, reviewing changes, and maintaining full audit trails across every Sun AI product build.',
+          'Version control platform for managing codebases, reviewing changes, and maintaining full audit trails across every AMO AI product build.',
       },
     ],
   },
@@ -429,7 +429,7 @@ export default function ServicesTechStackDetailed() {
                 color: '#2FA06A',
               }}
             >
-              Sun AI Agency · Technology Stack
+              AMO AI · Technology Stack
             </span>
             <div className="w-8 h-[1.5px]" style={{ background: '#2FA06A' }} />
           </div>

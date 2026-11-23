@@ -1,9 +1,9 @@
-# Sun AI Agency — Wizard Design System Overview
+# AMO AI — Wizard Design System Overview
 
 ## Figma Make Global Instructions
 
 ### Brand Identity
-- **Company:** Sun AI Agency — premium AI consulting platform
+- **Company:** AMO AI — premium AI consulting platform
 - **Tagline:** "Structure first. Intelligence second."
 - **Personality:** Senior consultant — calm, observant, professional, never pushy
 - **Feel:** Editorial, architectural, premium — like a high-end strategy firm's digital experience

@@ -1,4 +1,4 @@
-const SITE_URL = process.env.SITE_URL || "https://www.sunai.one";
+const SITE_URL = process.env.SITE_URL || "https://www.amoai.ca";
 const EDGE_HEALTH_URL =
   process.env.EDGE_HEALTH_URL ||
   "https://icpzzsslayhywxoniekw.supabase.co/functions/v1/make-server-283466b6/health";
@@ -8,7 +8,7 @@ const checks = [];
 async function request(url, options = {}) {
   const response = await fetch(url, {
     redirect: options.redirect || "manual",
-    headers: { "user-agent": "sunai-prod-smoke/1.0" },
+    headers: { "user-agent": "amoai-prod-smoke/1.0" },
     ...options,
   });
   const text = options.readBody === false ? "" : await response.text();

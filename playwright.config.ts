@@ -7,7 +7,8 @@ const localPort = process.env.PLAYWRIGHT_PREVIEW_PORT || '4173';
 const localBaseURL = `http://127.0.0.1:${localPort}`;
 
 export default defineConfig({
-  testDir: './tests/e2e',
+  testDir: './tests',
+  testMatch: ['**/*.spec.ts'],
   forbidOnly: Boolean(process.env.CI),
   retries: process.env.CI ? 1 : 0,
   workers: process.env.CI ? 1 : undefined,

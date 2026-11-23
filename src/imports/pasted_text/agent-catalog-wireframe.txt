@@ -10,7 +10,7 @@
 
 ```
 +----------------------------------------------------------------------+
-|  [=] Sun AI    Dashboard > Agents > Catalog              (Avatar) SK  |
+|  [=] AMO AI    Dashboard > Agents > Catalog              (Avatar) SK  |
 +----------------------------------------------------------------------+
 |       |                                                              |
 | DASH  |  AGENT CATALOG                              [ Search... ]   |
@@ -71,7 +71,7 @@
 - Each card: emoji avatar, name, description, division badge, assignment count, View/Run buttons
 - "Load more" pagination (20 per page)
 
-**Default view: 15-20 curated agents recommended for Sun AI clients.**
+**Default view: 15-20 curated agents recommended for AMO AI clients.**
 Full catalog (120+) available behind "Show all agents" toggle. Prevents overload.
 
 **Division counts in full view:**
@@ -85,7 +85,7 @@ Full catalog (120+) available behind "Show all agents" toggle. Prevents overload
 
 ```
 +----------------------------------------------------------------------+
-|  [=] Sun AI    Agents > Catalog > Rapid Prototyper       (Avatar) SK  |
+|  [=] AMO AI    Agents > Catalog > Rapid Prototyper       (Avatar) SK  |
 +----------------------------------------------------------------------+
 |       |                                                              |
 | SIDE  |  +----------------------------------------------------------+|
@@ -162,7 +162,7 @@ Full catalog (120+) available behind "Show all agents" toggle. Prevents overload
 
 ```
 +----------------------------------------------------------------------+
-|  [=] Sun AI    Agents > Rapid Prototyper > Run           (Avatar) SK  |
+|  [=] AMO AI    Agents > Rapid Prototyper > Run           (Avatar) SK  |
 +----------------------------------------------------------------------+
 |       |                                                              |
 | SIDE  |  RUN: Rapid Prototyper                                       |

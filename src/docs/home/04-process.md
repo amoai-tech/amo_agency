@@ -2,7 +2,7 @@
 
 **Purpose:** Velocity-focused 4-phase timeline section with dark navy theme  
 **Style:** Modern SaaS with orange accents and horizontal timeline  
-**Reference:** Based on "Sun AI Velocity System" design  
+**Reference:** Based on "AMO AI Velocity System" design
 **Status:** 📋 Wireframe Documentation  
 **Last Updated:** February 27, 2026
 
@@ -38,7 +38,7 @@ This is a **dark-themed alternative** to the current sage green "How We Deliver"
 │                     [DARK NAVY GRADIENT BACKGROUND]              │
 │                                                                   │
 │                  ┌──────────────────────────┐                    │
-│                  │ THE SUN AI VELOCITY SYSTEM │  ← Small badge   │
+│                  │ THE AMO AI VELOCITY SYSTEM │  ← Small badge   │
 │                  └──────────────────────────┘                    │
 │                                                                   │
 │                     Build AI in 8 Weeks.          ← Large headline│
@@ -98,7 +98,7 @@ This is a **dark-themed alternative** to the current sage green "How We Deliver"
 ### Current HomePage V3 Colors (Sage Green Theme)
 
 ```css
-/* === SUN AI V3 ACTUAL COLOR PALETTE === */
+/* === AMO AI V3 ACTUAL COLOR PALETTE === */
 
 /* Primary Backgrounds */
 --warm-beige: #F4F3EE;          /* Hero sections, main background (13 instances) */
@@ -171,7 +171,7 @@ This is a **dark-themed alternative** to the current sage green "How We Deliver"
 
 ### Eyebrow Badge
 ```
-THE SUN AI VELOCITY SYSTEM
+THE AMO AI VELOCITY SYSTEM
 ```
 
 **Specs:**
@@ -702,7 +702,7 @@ export default function VelocityProcessSection() {
       <div className="text-center mb-16 max-w-4xl mx-auto">
         <div className="mb-6 inline-block px-4 py-1 rounded-full border border-orange-500/30">
           <span className="text-xs font-semibold text-orange-500 uppercase tracking-wider">
-            The Sun AI Velocity System
+            The AMO AI Velocity System
           </span>
         </div>
         
@@ -746,7 +746,7 @@ export default function VelocityProcessSection() {
 <section aria-labelledby="velocity-heading">
   <div className="section-header">
     <p className="eyebrow" aria-label="Program name">
-      The Sun AI Velocity System
+      The AMO AI Velocity System
     </p>
     <h2 id="velocity-heading">
       Build AI in 8 Weeks. Not 8 Months.
@@ -847,7 +847,7 @@ This wireframe represents an **alternative design** focused on velocity and spee
 
 ### Current HomePageV3 Colors (Implemented)
 ```css
-/* === SUN AI V3 LUXURY EDITORIAL PALETTE === */
+/* === AMO AI V3 LUXURY EDITORIAL PALETTE === */
 
 /* Primary Backgrounds */
 --warm-beige: #F4F3EE;          /* Hero sections, main background */

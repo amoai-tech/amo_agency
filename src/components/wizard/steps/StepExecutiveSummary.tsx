@@ -257,7 +257,7 @@ export function StepExecutiveSummary() {
               {step1.companyName || 'Your Company'}
             </h2>
             <p className="text-sm" style={{ color: '#9CA39B' }}>
-              Prepared by Sun AI Agency
+              Prepared by AMO AI
             </p>
             <p className="text-sm" style={{ color: '#9CA39B' }}>March 7, 2026</p>
             <div className="mt-3 h-0.5 w-16" style={{ backgroundColor: '#00875A' }} />

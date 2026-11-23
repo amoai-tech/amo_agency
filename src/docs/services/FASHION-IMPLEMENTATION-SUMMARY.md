@@ -357,7 +357,7 @@ All statistics and examples are based on:
 ## 👥 Stakeholder Summary
 
 ### For Business Teams
-The Fashion page showcases Sun AI Agency's expertise in fashion industry AI solutions. It presents 6 core services with clear ROI metrics, backed by real-world case studies and industry research. The page positions the agency as both technically capable and industry-knowledgeable.
+The Fashion page showcases AMO AI's expertise in fashion industry AI solutions. It presents 6 core services with clear ROI metrics, backed by real-world case studies and industry research. The page positions the agency as both technically capable and industry-knowledgeable.
 
 ### For Development Teams
 The page is built with a modular component architecture, consistent animations, and follows the established V11 luxury editorial design system. All components are fully typed, documented, and follow React best practices.

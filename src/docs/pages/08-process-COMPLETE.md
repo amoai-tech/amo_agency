@@ -403,7 +403,7 @@ Used `lg:grid-cols-2` for desktop 2-column, auto-stacks on mobile without media 
 
 ## 🎨 **Visual Comparison to Superside**
 
-| Element | Superside | Sun AI Version |
+| Element | Superside | AMO AI Version |
 |---------|-----------|----------------|
 | Background | Dark green gradient | ✅ Matching gradient |
 | Layout | 2-column | ✅ 2-column |
@@ -421,7 +421,7 @@ Used `lg:grid-cols-2` for desktop 2-column, auto-stacks on mobile without media 
 ## 📈 **Impact**
 
 This section will:
-✅ Clearly communicate Sun AI's structured process  
+✅ Clearly communicate AMO AI's structured process
 ✅ Build trust through transparency  
 ✅ Differentiate with AI-powered methodology  
 ✅ Reinforce premium positioning with editorial design  
@@ -452,4 +452,4 @@ This section will:
 
 **The Premium Process Timeline is now LIVE on the `/web-design` page!** 🎉
 
-Users can now see Sun AI's 5-step web design process in a beautiful, editorial-style timeline layout with dark green gradient background, large serif metrics, and an elegant vertical timeline with numbered steps.
+Users can now see AMO AI's 5-step web design process in a beautiful, editorial-style timeline layout with dark green gradient background, large serif metrics, and an elegant vertical timeline with numbered steps.

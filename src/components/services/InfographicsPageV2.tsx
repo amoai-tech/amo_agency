@@ -377,7 +377,7 @@ function Card08() {
         <div className="flex items-end">
           <div className="w-full rounded-lg p-4" style={{ background: 'rgba(0,0,0,.2)', border: '1px solid rgba(255,255,255,.08)' }}>
             <div className={`${sans} text-[9px] font-semibold uppercase tracking-wider text-white mb-3`}>AI Performance Report</div>
-            <div className={`${sans} text-[8px] mb-3`} style={{ color: 'rgba(255,255,255,.3)' }}>Sun AI Agency · Q4 2025</div>
+            <div className={`${sans} text-[8px] mb-3`} style={{ color: 'rgba(255,255,255,.3)' }}>AMO AI · Q4 2025</div>
             <div className="grid grid-cols-2 gap-2 mb-3">
               {[{ v: '293%', l: 'Average ROI' }, { v: '80%', l: 'Automated' }].map(k => (
                 <div key={k.l} className="rounded p-2" style={{ background: 'rgba(255,255,255,.06)' }}>

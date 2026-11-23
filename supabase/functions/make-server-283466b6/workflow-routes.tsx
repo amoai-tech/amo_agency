@@ -250,7 +250,9 @@ workflows.post(`${PREFIX}/dashboard/workflows/run`, async (c) => {
     const startMs = Date.now();
 
     // Simulate execution of each action
-    const actionResults = (workflow.actions || []).map((action: any) => ({
+    // Stored JSON can be an object, scalar, or null; only arrays represent actions.
+    const actions = Array.isArray(workflow.actions) ? workflow.actions : [];
+    const actionResults = actions.map((action: any) => ({
       action_type: action.type,
       success: true,
       detail: dry_run

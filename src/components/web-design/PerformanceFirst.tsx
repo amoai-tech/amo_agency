@@ -14,10 +14,10 @@ export default function PerformanceFirst() {
   ];
 
   const comparisonData = [
-    { category: 'Performance', industry: 52, sunAI: 94 },
-    { category: 'Accessibility', industry: 68, sunAI: 96 },
-    { category: 'Best Practices', industry: 71, sunAI: 95 },
-    { category: 'SEO', industry: 74, sunAI: 98 }
+    { category: 'Performance', industry: 52, amoAI: 94 },
+    { category: 'Accessibility', industry: 68, amoAI: 96 },
+    { category: 'Best Practices', industry: 71, amoAI: 95 },
+    { category: 'SEO', industry: 74, amoAI: 98 }
   ];
 
   return (
@@ -81,7 +81,7 @@ export default function PerformanceFirst() {
           transition={{ duration: 0.8, delay: 0.8 }}
         >
           <h3 className="text-2xl mb-8 text-gray-900 font-['Lora'] font-semibold text-center">
-            Industry Average vs Sun AI
+            Industry Average vs AMO AI
           </h3>
 
           <div className="space-y-8 max-w-4xl mx-auto">
@@ -111,18 +111,18 @@ export default function PerformanceFirst() {
                     </div>
                   </div>
 
-                  {/* Sun AI Bar */}
+                  {/* AMO AI Bar */}
                   <div className="flex items-center gap-4">
-                    <span className="text-xs text-gray-900 font-semibold font-['Lora'] w-24">Sun AI</span>
+                    <span className="text-xs text-gray-900 font-semibold font-['Lora'] w-24">AMO AI</span>
                     <div className="flex-1 h-8 bg-gray-100 border-2 border-[#84CC16] relative">
                       <motion.div
                         className="absolute top-0 left-0 h-full bg-[#84CC16] flex items-center justify-end pr-2"
                         initial={{ width: 0 }}
-                        animate={isInView ? { width: `${item.sunAI}%` } : { width: 0 }}
+                        animate={isInView ? { width: `${item.amoAI}%` } : { width: 0 }}
                         transition={{ duration: 1, delay: 1.2 + index * 0.1 }}
                       >
                         <span className="text-xs font-bold text-gray-900 font-['Lora']">
-                          {item.sunAI}
+                          {item.amoAI}
                         </span>
                       </motion.div>
                     </div>
@@ -140,7 +140,7 @@ export default function PerformanceFirst() {
             </div>
             <div className="flex items-center gap-2">
               <div className="w-4 h-4 bg-[#84CC16]" />
-              <span className="text-sm text-gray-900 font-semibold font-['Lora']">Sun AI</span>
+              <span className="text-sm text-gray-900 font-semibold font-['Lora']">AMO AI</span>
             </div>
           </div>
         </motion.div>

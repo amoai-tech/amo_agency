@@ -9,7 +9,7 @@
 
 ## 🎉 **Summary**
 
-The Web Design page is now complete and accessible at `/web-design`. The page showcases Sun AI Agency's AI-accelerated web design services with a focus on speed (4-6 weeks), performance (90+ Lighthouse scores), and built-in intelligence (embedded chatbots).
+The Web Design page is now complete and accessible at `/web-design`. The page showcases AMO AI's AI-accelerated web design services with a focus on speed (4-6 weeks), performance (90+ Lighthouse scores), and built-in intelligence (embedded chatbots).
 
 ---
 
@@ -32,7 +32,7 @@ The Web Design page is now complete and accessible at `/web-design`. The page sh
    - Timeline comparison (Traditional vs AI)
    - Animated horizontal bars (Gantt-style)
    - Comparison cards (2-column grid)
-   - Highlighted Sun AI card with lime accents
+   - Highlighted AMO AI card with lime accents
 
 3. **`/components/web-design/WhatsIncluded.tsx`**
    - 6 deliverable cards (3x2 grid desktop)
@@ -43,7 +43,7 @@ The Web Design page is now complete and accessible at `/web-design`. The page sh
 4. **`/components/web-design/PerformanceFirst.tsx`**
    - 4 Lighthouse gauges (Performance, Accessibility, Best Practices, SEO)
    - Animated SVG circular progress
-   - Horizontal bar chart (Industry Average vs Sun AI)
+   - Horizontal bar chart (Industry Average vs AMO AI)
    - 2x2 grid mobile
 
 5. **`/components/web-design/BuiltInIntelligence.tsx`**
@@ -106,7 +106,7 @@ The Web Design page is now complete and accessible at `/web-design`. The page sh
 ### **Scroll-Triggered Animations:**
 1. Hero text: Fade in + slide up (0.8s)
 2. Browser mockup: Fade in + slide up with badge spin (0.6s + 0.8s delay)
-3. Timeline bars: Width animation (Traditional: 2s, Sun AI: 1s)
+3. Timeline bars: Width animation (Traditional: 2s, AMO AI: 1s)
 4. Deliverable cards: Staggered fade in (0.1s increments)
 5. Lighthouse gauges: Circular progress + number counter (1.2s)
 6. Bar charts: Width animation (1s with delays)
@@ -204,7 +204,7 @@ Added to `/routes.tsx`:
 2. **Timeline Comparison**
    - Visual Gantt-style comparison
    - Traditional: 20 weeks (gray)
-   - Sun AI: 5 weeks (lime green)
+   - AMO AI: 5 weeks (lime green)
    - Animated bar growth
 
 3. **Lighthouse Gauges**
@@ -220,7 +220,7 @@ Added to `/routes.tsx`:
    - Backdrop blur effect
 
 5. **Bar Chart Comparison**
-   - Industry Average vs Sun AI
+   - Industry Average vs AMO AI
    - Horizontal bars with animation
    - Clear visual hierarchy
 

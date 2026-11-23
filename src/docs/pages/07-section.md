@@ -437,7 +437,7 @@ interface ServiceCard {
 
 ## 🎨 **Style Guide Compliance**
 
-**⚠️ NOTE:** This section uses a DIFFERENT color palette than the main Sun AI style guide. This is intentional for visual hierarchy and section differentiation.
+**⚠️ NOTE:** This section uses a DIFFERENT color palette than the main AMO AI style guide. This is intentional for visual hierarchy and section differentiation.
 
 **Main Site Colors:**
 - Dark Teal: #0F3D3E

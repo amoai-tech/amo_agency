@@ -1,4 +1,4 @@
-# Sun AI Agency -- Wizard Flow Overview
+# AMO AI -- Wizard Flow Overview
 
 Comprehensive Mermaid diagrams covering the full 5-step premium onboarding wizard.
 

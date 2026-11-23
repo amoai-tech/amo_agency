@@ -75,7 +75,7 @@ export default function OutcomesSection() {
 
         <div className="mt-16 max-w-4xl mx-auto text-center bg-[#FDFCFB] border border-gray-200 p-8">
           <p className="text-gray-600 leading-relaxed">
-            Results vary by business and implementation. These are real outcomes achieved by Sun AI Agency clients, 
+            Results vary by business and implementation. These are real outcomes achieved by AMO AI clients,
             not hypothetical projections. We focus on practical value, not hype.
           </p>
         </div>

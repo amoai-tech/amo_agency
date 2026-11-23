@@ -144,17 +144,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const signUp = useCallback(async (email: string, password: string, name?: string) => {
     setState(s => ({ ...s, loading: true, error: null }));
     try {
-      const { data, error } = await authApi.signup(email, password, name);
+      const { error } = await authApi.signup(email, password, name);
       if (error) {
         setState(s => ({ ...s, loading: false, error }));
         return { success: false, error };
       }
-      // After signup, auto-sign in
-      const signInResult = await authApi.signIn(email, password);
-      if (signInResult.error) {
-        setState(s => ({ ...s, loading: false, error: signInResult.error }));
-        return { success: false, error: signInResult.error || 'Auto sign-in failed after signup' };
-      }
+      // Supabase sends an email confirmation link. Do not auto-sign in.
+      setState(s => ({ ...s, loading: false }));
       return { success: true };
     } catch (e) {
       const msg = `Sign up error: ${e}`;

@@ -208,7 +208,7 @@ export default function SettingsPage() {
 
           {/* Version */}
           <div className="text-xs text-[#9CA39B] text-center pt-4 pb-2">
-            Sun AI Agency · Dashboard v0.18.0
+            AMO AI · Dashboard v0.18.0
           </div>
         </div>
       )}

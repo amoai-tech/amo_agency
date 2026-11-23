@@ -1,0 +1,29 @@
+name: AMO AI PR validation
+on:
+  pull_request:
+  push:
+    branches: [main, "rebrand/amo-ai"]
+  workflow_dispatch:
+jobs:
+  build-and-browser-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      VITE_SUPABASE_URL: https://example.supabase.co
+      VITE_SUPABASE_PUBLISHABLE_KEY: sb_publishable_test_for_static_browser_smoke
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.9.8
+      - run: npm run test:security
+      - run: deno check --node-modules-dir=auto --min-dep-age=0 supabase/functions/make-server-283466b6/index.ts
+      - run: deno test supabase/functions/make-server-283466b6/health.test.ts
+      - run: npm run build
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:e2e

@@ -28,7 +28,7 @@ and worth the wait.
 ```
 ┌──────────────────────────────────────────────────────────────────────────┐
 │                                                                          │
-│  ☀ Sun AI Agency                              Download PDF ↓   Share 🔗 │
+│  ☀ AMO AI                              Download PDF ↓   Share 🔗 │
 │                                                                          │
 │  ════════════════════════════════════════════════════════════════════════ │
 │                                                                          │
@@ -197,7 +197,7 @@ and worth the wait.
 │                                                                          │
 │  ────────────────────────────────────────────────────────────────────── │
 │                                                                          │
-│  ☀ Sun AI Agency · sunaiagency.com · hello@sunaiagency.com              │
+│  ☀ AMO AI · www.amoai.ca · Contact via website              │
 │                                                                          │
 └──────────────────────────────────────────────────────────────────────────┘
 ```
@@ -206,7 +206,7 @@ and worth the wait.
 
 ```
 ┌─────────────────────────────┐
-│ ☀ Sun AI      PDF ↓  Share 🔗│
+│ ☀ AMO AI      PDF ↓  Share 🔗│
 ├─────────────────────────────┤
 │                             │
 │  PROJECT PROPOSAL           │
@@ -391,7 +391,7 @@ INTERACTION
 │
 ├── User clicks "Download PDF"
 │   ├── Generate PDF from proposal data (html2pdf or server-side)
-│   ├── Filename: "Sun-AI-Proposal-[Company]-[Date].pdf"
+│   ├── Filename: "AMO-AI-Proposal-[Company]-[Date].pdf"
 │   └── Track: proposal_downloaded event
 │
 ├── User clicks "Share"

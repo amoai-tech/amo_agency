@@ -325,7 +325,7 @@ Dynamic positioning based on `imagePosition` prop:
 ## 📈 **Impact**
 
 This section will:
-✅ Showcase Sun AI's full range of web design services  
+✅ Showcase AMO AI's full range of web design services
 ✅ Create premium brand perception with luxury design  
 ✅ Differentiate from competitors with editorial layout  
 ✅ Improve conversion with clear service descriptions  

@@ -1,4 +1,4 @@
-# Sun AI Agency — Product Requirements Document
+# AMO AI — Product Requirements Document
 
 **Version:** 3.0
 **Date:** 2026-03-07
@@ -9,7 +9,7 @@
 
 ## 1. Product Vision
 
-Sun AI Agency is a premium, wizard-first AI consulting platform that guides businesses through structured discovery into actionable projects. The product behaves like a digital consultant — observant, structured, transparent, and human-controlled.
+AMO AI is a premium, wizard-first AI consulting platform that guides businesses through structured discovery into actionable projects. The product behaves like a digital consultant — observant, structured, transparent, and human-controlled.
 
 **Core flow:** Wizard onboarding (5 screens) -> Executive brief -> Project dashboard -> Ongoing delivery
 

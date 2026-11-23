@@ -1,5 +1,5 @@
 # FIGMA MAKE PROMPT
-## Sun AI Agency — Infographic Services Page
+## AMO AI — Infographic Services Page
 ### Complete Design Brief: Layout · Copy · Sections · Visual System · Graphic Specifications
 
 ---
@@ -63,7 +63,7 @@ Hero (dark) → Services grid (cream) → Comparison spotlight (white) → Motio
 **Background:** `#1B3A2D`
 **Height:** 56px
 
-- Left: "Sun AI" wordmark in DM Serif Display 18px white
+- Left: "AMO AI" wordmark in DM Serif Display 18px white
 - Center: Home | Services | Industries | Process | Work — DM Sans 12px rgba(255,255,255,.5)
 - Right: "Run AI Diagnostic" — lime filled button, 12px semibold, 3px radius
 
@@ -313,7 +313,7 @@ RIGHT PANEL (forest dark bg, lime accent):
 
 **VISUAL REQUIREMENT — right side:**
 A report cover mockup:
-- Dark card with "AI Performance Report / Sun AI Agency · Q4 2025" header band
+- Dark card with "AI Performance Report / AMO AI · Q4 2025" header band
 - Two KPI tiles: 293% average ROI / 80% automated
 - A horizontal progress bar (lime fill, 65% complete)
 - Bottom label: "Fully designed · Brand aligned · Investor ready"
@@ -522,7 +522,7 @@ Let's animate it.
 
 ### Figma file structure
 ```
-📁 Sun AI — Infographic Services Page
+📁 AMO AI — Infographic Services Page
   📄 Cover
   📄 Style Guide Reference
   📄 Mobile 375px
@@ -563,5 +563,5 @@ Let's animate it.
 
 ---
 
-*End of Figma Make Prompt — Sun AI Agency Infographic Services Page*
+*End of Figma Make Prompt — AMO AI Infographic Services Page*
 *Version 2.0 · March 2026 · Ready for Figma Make implementation*

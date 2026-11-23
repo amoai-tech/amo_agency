@@ -3,7 +3,7 @@
 **Component:** Velocity Process Section (Dark Mode)  
 **Location:** HomePageV3 (replaces or supplements existing process section)  
 **Style:** Premium dark gradient with high contrast  
-**Color System:** Uses ONLY existing Sun AI V3 palette colors  
+**Color System:** Uses ONLY existing AMO AI V3 palette colors
 **Status:** ✅ Implemented and Live  
 **Last Updated:** February 27, 2026
 
@@ -31,7 +31,7 @@ This section communicates:
 
 ### Visual Hierarchy (Top to Bottom)
 ```
-1. Badge (THE SUN AI VELOCITY SYSTEM)
+1. Badge (THE AMO AI VELOCITY SYSTEM)
 2. Headline (Build AI in 8 Weeks. Not 8 Months.)
 3. Subheadline (A proven acceleration system...)
 4. Horizontal Timeline (4 icon nodes with connector line)
@@ -111,7 +111,7 @@ background: linear-gradient(180deg, #000000 0%, #0A211F 100%);
 
 ### Content
 ```
-THE SUN AI VELOCITY SYSTEM
+THE AMO AI VELOCITY SYSTEM
 ```
 
 ### Specifications
@@ -142,7 +142,7 @@ THE SUN AI VELOCITY SYSTEM
 ### HTML Structure
 ```html
 <div class="velocity-badge">
-  THE SUN AI VELOCITY SYSTEM
+  THE AMO AI VELOCITY SYSTEM
 </div>
 ```
 
@@ -618,7 +618,7 @@ gap: 16px;  /* Mobile */
 ```html
 <section aria-labelledby="velocity-heading">
   <div class="velocity-badge" role="status">
-    THE SUN AI VELOCITY SYSTEM
+    THE AMO AI VELOCITY SYSTEM
   </div>
   
   <h2 id="velocity-heading">
@@ -674,7 +674,7 @@ interface VelocityPhase {
 
 interface VelocityProcessSectionProps {
   // Content
-  badge?: string;          // Default: "THE SUN AI VELOCITY SYSTEM"
+  badge?: string;          // Default: "THE AMO AI VELOCITY SYSTEM"
   headline?: string;       // Default: "Build AI in 8 Weeks."
   headlineAccent?: string; // Default: "8 Weeks"
   subheadline?: string;    // Default: "A proven acceleration system..."
@@ -762,7 +762,7 @@ interface VelocityProcessSectionProps {
 - Creates visual break in page rhythm
 
 ### Why Green Accent (Not Orange)?
-- Maintains brand consistency with Sun AI V3
+- Maintains brand consistency with AMO AI V3
 - Uses existing #2E6F5E accent green
 - More sophisticated than orange
 - Better contrast on dark backgrounds

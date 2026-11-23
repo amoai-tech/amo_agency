@@ -8,7 +8,7 @@
 
 ## Overview
 
-The E-Commerce AI Services page is a comprehensive industry-specific landing page designed to showcase Sun AI Agency's expertise in AI-powered e-commerce transformation. The page targets DTC founders, Shopify/WooCommerce store owners, e-commerce CMOs, and marketplace operators with the goal of driving strategy call bookings and AI readiness assessments.
+The E-Commerce AI Services page is a comprehensive industry-specific landing page designed to showcase AMO AI's expertise in AI-powered e-commerce transformation. The page targets DTC founders, Shopify/WooCommerce store owners, e-commerce CMOs, and marketplace operators with the goal of driving strategy call bookings and AI readiness assessments.
 
 ---
 
@@ -19,7 +19,7 @@ The E-Commerce AI Services page is a comprehensive industry-specific landing pag
 - Alternative: `/ecommerce`
 
 ### Meta Information
-- **Title Tag:** AI for E-Commerce | SunAI Digital Agency
+- **Title Tag:** AI for E-Commerce | AMO AI
 - **Target Audience:** DTC founders, Shopify/WooCommerce store owners, e-commerce CMOs, marketplace operators
 - **Conversion Goal:** Book strategy call → AI readiness assessment
 

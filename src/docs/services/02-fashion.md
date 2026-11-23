@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Fashion AI Services page (`/industries/fashion`) is a comprehensive service page built for Sun AI Agency's luxury editorial design system. It showcases AI solutions specifically tailored for the fashion industry, from virtual try-on to trend forecasting.
+The Fashion AI Services page (`/industries/fashion`) is a comprehensive service page built for AMO AI's luxury editorial design system. It showcases AI solutions specifically tailored for the fashion industry, from virtual try-on to trend forecasting.
 
 ## URL Structure
 

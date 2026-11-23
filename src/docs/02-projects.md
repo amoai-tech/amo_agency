@@ -291,7 +291,7 @@ Between projects 2 and 3 (after FashionOS, before EventsOS)
 
 ### Layout
 ```
-[Section Title: "How Sun AI Builds"]
+[Section Title: "How AMO AI Builds"]
 [Subtitle: "Our AI Product Systems Architect framework"]
 ↓
 [FLOWCHART DIAGRAM]
@@ -340,7 +340,7 @@ Between projects 2 and 3 (after FashionOS, before EventsOS)
 ### Table Layout
 ```
 ┌─────────────────────┬────────────��────────┐
-│ Traditional Agency  │   Sun AI Agency     │
+│ Traditional Agency  │   AMO AI     │
 ├─────────────────────┼─────────────────────┤
 │ 12-16 weeks        │   6-8 weeks         │
 │ Manual workflows    │   AI-powered        │
@@ -366,11 +366,11 @@ Between projects 2 and 3 (after FashionOS, before EventsOS)
     </ul>
   </div>
 
-  {/* Sun AI */}
+  {/* AMO AI */}
   <div className="p-8 border-2 border-[#F59E0B] bg-[#F59E0B]/5">
-    <h3 className="text-2xl font-serif mb-6 text-[#1A1A1A]">Sun AI Agency</h3>
+    <h3 className="text-2xl font-serif mb-6 text-[#1A1A1A]">AMO AI</h3>
     <ul className="space-y-4">
-      {sunAIFeatures.map(feature => (
+      {amoAIFeatures.map(feature => (
         <li className="flex gap-3 text-[#666666]">
           <Check className="w-5 h-5 text-[#F59E0B]" />
           {feature}

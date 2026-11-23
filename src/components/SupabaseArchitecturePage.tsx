@@ -1,5 +1,5 @@
 // C80-SUPABASE-ARCH — Supabase Architecture Visual Reference Document
-// Developer system blueprint for Sun AI Agency platform integration
+// Developer system blueprint for AMO AI platform integration
 
 import { Database, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router';
@@ -45,7 +45,7 @@ export default function SupabaseArchitecturePage() {
                 Supabase Architecture
               </h1>
               <p className="text-sm text-[#666] mt-2 max-w-2xl">
-                System blueprint showing how the Sun AI Agency platform connects frontend, backend, Supabase services, and AI — designed as a technical reference for the development team.
+                System blueprint showing how the AMO AI platform connects frontend, backend, Supabase services, and AI — designed as a technical reference for the development team.
               </p>
             </div>
           </div>
@@ -96,7 +96,7 @@ export default function SupabaseArchitecturePage() {
         {/* Footer note */}
         <div className="border-t border-[#E8E8E4] pt-8 text-center">
           <p className="text-xs text-[#999]">
-            Sun AI Agency — Supabase Architecture Reference v1.0
+            AMO AI — Supabase Architecture Reference v1.0
           </p>
           <p className="text-[10px] text-[#999] mt-1">
             Generated from <code className="font-mono">/imports/supabase-architecture-overview.md</code> • BCG Design System

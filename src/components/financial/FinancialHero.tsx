@@ -23,7 +23,7 @@ export function FinancialHero() {
           className="max-w-2xl mb-10"
           style={{ fontSize: '0.95rem', lineHeight: 1.7, color: '#6B6B6B' }}
         >
-          The financial sector is being reshaped by AI, data, and digital-native competitors. Sun AI Agency helps financial
+          The financial sector is being reshaped by AI, data, and digital-native competitors. AMO AI helps financial
           institutions transform operations, modernize customer experiences, and build AI-powered competitive advantages.
         </p>
 

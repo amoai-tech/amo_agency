@@ -1,7 +1,7 @@
 Update the existing screen for 001-WIZ — Wizard Step 1: Business Context
 
 Do not redesign from scratch.
-Keep the current premium editorial Sun AI Agency style, 3-panel layout, typography, spacing, and overall structure.
+Keep the current premium editorial AMO AI style, 3-panel layout, typography, spacing, and overall structure.
 
 Goal of this update
 

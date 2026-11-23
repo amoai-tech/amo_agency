@@ -46,7 +46,7 @@ export default function AgentSummaryHeader({ stats, loading }: AgentSummaryHeade
       <StatCard icon={CheckCircle} label="Success Rate" value={`${stats.successRate ?? 0}%`} sub={`${stats.successRuns ?? 0} ok / ${stats.failedRuns ?? 0} failed`} color="text-[#00875A]" />
       <StatCard icon={Zap} label="Total Tokens" value={(stats.totalTokens ?? 0).toLocaleString()} sub="Prompt + response" />
       <StatCard icon={Clock} label="Avg Latency" value={`${((stats.avgDuration ?? 0) / 1000).toFixed(1)}s`} sub={`${stats.avgDuration ?? 0}ms avg`} />
-      <StatCard icon={Database} label="Cache Entries" value={stats.activeCacheEntries ?? 0} sub="Active (non-expired)" color="text-[#D97706]" />
+      <StatCard icon={Database} label="Cache Entries" value={stats.cacheMetricsAvailable === false ? "—" : stats.activeCacheEntries ?? 0} sub={stats.cacheMetricsAvailable === false ? "Account-scoped metrics unavailable" : "Active (non-expired)"} color="text-[#D97706]" />
     </div>
   );
 }

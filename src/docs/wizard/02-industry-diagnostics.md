@@ -27,7 +27,7 @@ recommendations for Step 3.
 ```
 ┌──────────────────────────────────────────────────────────────────────────┐
 │                                                                          │
-│  ☀ Sun AI    Step 2: Industry Diagnostics                ✓ All saved    │
+│  ☀ AMO AI    Step 2: Industry Diagnostics                ✓ All saved    │
 │                                                                          │
 ├───────────┬───────────────────────────────────────────┬──────────────────┤
 │           │                                           │                  │
@@ -509,7 +509,7 @@ Cached:      Results stored in WizardState.aiRecommendations
 
 PROMPT STRUCTURE (Gemini 3):
 ────────────────────────────
-System: You are a senior AI consultant at Sun AI Agency. Analyze this 
+System: You are a senior AI consultant at AMO AI. Analyze this
         client's business context and diagnostic answers to produce 
         ranked AI system recommendations.
 

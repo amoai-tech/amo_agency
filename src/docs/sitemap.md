@@ -1,10 +1,10 @@
-# SITEMAP — SUN AI AGENCY WEBSITE
+# SITEMAP — AMO AI WEBSITE
 
 **Version:** 13  
 **Last Updated:** 2026-03-09  
 **Status:** All routes implemented with React Router (`react-router`)  
 **Design System:** BCG Consulting-Inspired (Calm Luxury Editorial)  
-**Base URL:** `https://sunaiagency.com`
+**Base URL:** `https://www.amoai.ca`
 
 ---
 
@@ -13,7 +13,7 @@
 All routes below are live and implemented in `/routes.tsx` using `react-router`.
 
 ```
-sunaiagency.com
+www.amoai.ca
 │
 ├── / ─────────────────────────── Home (V3 – BCG Luxury)         [HomePageV3]
 │
@@ -216,58 +216,58 @@ sunaiagency.com
 ## FULL URL LIST
 
 ```
-https://sunaiagency.com/
-https://sunaiagency.com/home-v1
-https://sunaiagency.com/home-v4
-https://sunaiagency.com/services
-https://sunaiagency.com/solutions
-https://sunaiagency.com/web-design
-https://sunaiagency.com/web-apps
-https://sunaiagency.com/mvp-builder
-https://sunaiagency.com/mvp-v2
-https://sunaiagency.com/agents
-https://sunaiagency.com/ai-agents
-https://sunaiagency.com/services/ai-agents
-https://sunaiagency.com/chatbots
-https://sunaiagency.com/sales-crm
-https://sunaiagency.com/services/crm
-https://sunaiagency.com/services/sales-crm
-https://sunaiagency.com/industries
-https://sunaiagency.com/industries/e-commerce
-https://sunaiagency.com/industries/fashion
-https://sunaiagency.com/industries/travel
-https://sunaiagency.com/financial
-https://sunaiagency.com/about
-https://sunaiagency.com/process
-https://sunaiagency.com/projects
-https://sunaiagency.com/case-studies
-https://sunaiagency.com/booking
-https://sunaiagency.com/style-guide
-https://sunaiagency.com/sections
-https://sunaiagency.com/sitemap
-https://sunaiagency.com/services/chatbot
-https://sunaiagency.com/whatsapp-ai
-https://sunaiagency.com/docs/supabase
-https://sunaiagency.com/login
-https://sunaiagency.com/auth/callback
-https://sunaiagency.com/wizard
-https://sunaiagency.com/wizard/processing
-https://sunaiagency.com/wizard/proposal
-https://sunaiagency.com/app
-https://sunaiagency.com/app/dashboard
-https://sunaiagency.com/app/strategy
-https://sunaiagency.com/app/projects
-https://sunaiagency.com/app/projects/:id
-https://sunaiagency.com/app/roadmap
-https://sunaiagency.com/app/clients
-https://sunaiagency.com/app/clients/:id
-https://sunaiagency.com/app/crm/pipelines
-https://sunaiagency.com/app/insights
-https://sunaiagency.com/app/documents
-https://sunaiagency.com/app/financial
-https://sunaiagency.com/app/workflows
-https://sunaiagency.com/app/agents
-https://sunaiagency.com/app/settings
+https://www.amoai.ca/
+https://www.amoai.ca/home-v1
+https://www.amoai.ca/home-v4
+https://www.amoai.ca/services
+https://www.amoai.ca/solutions
+https://www.amoai.ca/web-design
+https://www.amoai.ca/web-apps
+https://www.amoai.ca/mvp-builder
+https://www.amoai.ca/mvp-v2
+https://www.amoai.ca/agents
+https://www.amoai.ca/ai-agents
+https://www.amoai.ca/services/ai-agents
+https://www.amoai.ca/chatbots
+https://www.amoai.ca/sales-crm
+https://www.amoai.ca/services/crm
+https://www.amoai.ca/services/sales-crm
+https://www.amoai.ca/industries
+https://www.amoai.ca/industries/e-commerce
+https://www.amoai.ca/industries/fashion
+https://www.amoai.ca/industries/travel
+https://www.amoai.ca/financial
+https://www.amoai.ca/about
+https://www.amoai.ca/process
+https://www.amoai.ca/projects
+https://www.amoai.ca/case-studies
+https://www.amoai.ca/booking
+https://www.amoai.ca/style-guide
+https://www.amoai.ca/sections
+https://www.amoai.ca/sitemap
+https://www.amoai.ca/services/chatbot
+https://www.amoai.ca/whatsapp-ai
+https://www.amoai.ca/docs/supabase
+https://www.amoai.ca/login
+https://www.amoai.ca/auth/callback
+https://www.amoai.ca/wizard
+https://www.amoai.ca/wizard/processing
+https://www.amoai.ca/wizard/proposal
+https://www.amoai.ca/app
+https://www.amoai.ca/app/dashboard
+https://www.amoai.ca/app/strategy
+https://www.amoai.ca/app/projects
+https://www.amoai.ca/app/projects/:id
+https://www.amoai.ca/app/roadmap
+https://www.amoai.ca/app/clients
+https://www.amoai.ca/app/clients/:id
+https://www.amoai.ca/app/crm/pipelines
+https://www.amoai.ca/app/insights
+https://www.amoai.ca/app/documents
+https://www.amoai.ca/app/financial
+https://www.amoai.ca/app/workflows
+https://www.amoai.ca/app/agents
+https://www.amoai.ca/app/settings
 ```
 
 ---
@@ -650,7 +650,7 @@ https://sunaiagency.com/app/settings
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│ [Sun AI Agency Logo]                    [Navigation]    │
+│ [AMO AI Logo]                    [Navigation]    │
 │                                                          │
 │  Solutions ▼  Industries ▼  Company ▼   [Start Project] │
 └─────────────────────────────────────────────────────────┘
@@ -692,7 +692,7 @@ https://sunaiagency.com/app/settings
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│                    Sun AI Agency                         │
+│                    AMO AI                         │
 │     Premium AI services for businesses                   │
 │                                                          │
 │  COMPANY          SOLUTIONS        INDUSTRIES   RESOURCES│
@@ -703,7 +703,7 @@ https://sunaiagency.com/app/settings
 │  Support          Sales CRM        Automotive   API      │
 │                   MVP Builder      Tourism               │
 │                                                          │
-│  © 2026 Sun AI Agency    Privacy • Terms    [Socials]   │
+│  © 2026 AMO AI    Privacy • Terms    [Socials]   │
 └─────────────────────────────────────────────────────────┘
 ```
 
@@ -840,11 +840,11 @@ View [client success stories](/projects)
 ### Meta Title Templates
 
 ```
-Homepage: "Sun AI Agency | Build AI Systems for Your Business"
-Solutions: "[Solution Name] | AI Development in 8 Weeks | Sun AI"
-Industries: "AI Solutions for [Industry] | Sun AI Agency"
-Projects: "AI Case Studies | Real Results | Sun AI Agency"
-Process: "Our AI Development Process | 8 Weeks to Launch | Sun AI"
+Homepage: "AMO AI | Build AI Systems for Your Business"
+Solutions: "[Solution Name] | AI Development in 8 Weeks | AMO AI"
+Industries: "AI Solutions for [Industry] | AMO AI"
+Projects: "AI Case Studies | Real Results | AMO AI"
+Process: "Our AI Development Process | 8 Weeks to Launch | AMO AI"
 ```
 
 ### Internal Linking Principles

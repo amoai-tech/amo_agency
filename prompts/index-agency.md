@@ -1,8 +1,8 @@
-# Sun AI Agency — Comprehensive Progress Tracker
+# AMO AI — Comprehensive Progress Tracker
 
 > **Verified:** 2026-03-14 (detective audit against live code — not self-reported)
 > **Version:** v0.29.0 | **Branch:** `main` | **Last commit:** `faa91cc4`
-> **Production:** https://www.sunai.one | **Supabase:** `necxcwhuzylsumlkkmlk` (us-west-2)
+> **Production:** https://www.amoai.ca | **Supabase:** `necxcwhuzylsumlkkmlk` (us-west-2)
 > **Edge Function:** `make-server-283466b6` v51 (Hono monolith, 19 .tsx files, ~7,000 LOC, 88 routes)
 > **Frontend:** 353 React components, 181 routes (32 marketing + 25 dashboard + 3 wizard + auth)
 > **Model:** `gemini-3-flash-preview` (primary) | 3 tiers defined (flash/pro/lite)

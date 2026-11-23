@@ -1,7 +1,7 @@
 export default function V2Testimonials() {
   const testimonials = [
     {
-      quote: "Sun AI didn't just build a system—they transformed how we operate. The results exceeded every expectation.",
+      quote: "AMO AI didn't just build a system—they transformed how we operate. The results exceeded every expectation.",
       author: 'Sarah Chen',
       role: 'Head of Operations',
       company: 'TechCorp',
@@ -15,7 +15,7 @@ export default function V2Testimonials() {
       image: 'https://images.unsplash.com/photo-1737574821698-862e77f044c1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
     },
     {
-      quote: "Working with Sun AI felt like gaining an extension of our team. Their dedication to our success is unmatched.",
+      quote: "Working with AMO AI felt like gaining an extension of our team. Their dedication to our success is unmatched.",
       author: 'Emily Watson',
       role: 'Chief Strategy Officer',
       company: 'HealthFirst',

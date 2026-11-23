@@ -1,6 +1,6 @@
 # Supabase Architecture Overview
 
-> Sun AI Agency — Developer System Blueprint
+> AMO AI — Developer System Blueprint
 > Visual reference at: `/docs/supabase` route
 > Last updated: 2026-03-07 (v0.10.0 — post KV-to-tables refactor)
 

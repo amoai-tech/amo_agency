@@ -1,15 +1,15 @@
-# Sun AI Velocity System — Process Documentation
+# AMO AI Velocity System — Process Documentation
 
 **Component:** `VelocityProcessSection.tsx`  
 **Location:** `/components/home/VelocityProcessSection.tsx`  
 **Page:** HomePageV3 (appears after ServicesGrid)  
-**Design System:** Light Luxury Editorial (Sun AI V3)
+**Design System:** Light Luxury Editorial (AMO AI V3)
 
 ---
 
 ## Overview
 
-The **Sun AI Velocity System** is a strategic execution framework that positions Sun AI as a premium consulting partner capable of delivering production-ready AI in 8 weeks. This section transforms the traditional "process" into a structured 4-phase methodology with clear outcomes and deliverables.
+The **AMO AI Velocity System** is a strategic execution framework that positions AMO AI as a premium consulting partner capable of delivering production-ready AI in 8 weeks. This section transforms the traditional "process" into a structured 4-phase methodology with clear outcomes and deliverables.
 
 ---
 
@@ -43,7 +43,7 @@ The Velocity System communicates:
 │                                                                             │
 │     ╔═══════════════════════════════════════════════════════════════╗      │
 │     ║                                                               ║      │
-│     ║         [ The Sun AI Velocity System ]                        ║      │
+│     ║         [ The AMO AI Velocity System ]                        ║      │
 │     ║         Badge: #2E6F5E text on rgba(255,255,255,0.6)         ║      │
 │     ║         Border: rgba(30,61,54,0.15)                           ║      │
 │     ║                                                               ║      │
@@ -99,7 +99,7 @@ The Velocity System communicates:
 
 ## Content Framework
 
-# THE SUN AI VELOCITY SYSTEM
+# THE AMO AI VELOCITY SYSTEM
 
 **Build AI in 8 Weeks. Not 8 Months.**  
 A structured 4-phase framework designed to move from business analysis to production-ready AI — fast.
@@ -222,7 +222,7 @@ AI running in production with measurable performance metrics.
 │                                                                             │
 │                                                                             │
 │              ╔═══════════════════════════════════════════╗                  │
-│              ║  The Sun AI Velocity System               ║                  │
+│              ║  The AMO AI Velocity System               ║                  │
 │              ║  Badge with backdrop blur                 ║                  │
 │              ╚═══════════════════════════════════════════╝                  │
 │                                                                             │
@@ -816,7 +816,7 @@ No wasted cycles. No over-engineering. No 8-month timelines.
 - **Confidence** — Proven framework with defined outcomes
 
 ### Positioning Impact:
-- Elevates Sun AI from "dev shop" to "strategic partner"
+- Elevates AMO AI from "dev shop" to "strategic partner"
 - Shows repeatable process = reduced risk for clients
 - Demonstrates enterprise-ready capability
 - Creates clear expectations and milestones
@@ -844,5 +844,5 @@ No wasted cycles. No over-engineering. No 8-month timelines.
 ---
 
 *Last updated: 2026-02-27*  
-*Author: Sun AI Design System*  
+*Author: AMO AI Design System*
 *Version: 2.0 — Light Luxury Editorial*

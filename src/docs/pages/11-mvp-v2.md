@@ -283,7 +283,7 @@ The MVP Builder V2 page (`/mvp-v2`) is a complete redesign of the MVP Builder se
 
 ---
 
-**Maintained by:** Sun AI Agency Design Team  
+**Maintained by:** AMO AI Design Team
 **Last updated:** February 27, 2025  
 **Template source:** `/docs/pages/10-template.md`  
 **Copy source:** MVP Builder Final Copy Brief

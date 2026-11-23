@@ -32,7 +32,7 @@ async function saveAIResult(
       {
         session_id: sessionId,
         step_number: stepNumber,
-        ai_results: result,
+        ai_results: JSON.parse(JSON.stringify(result ?? null)),
         updated_at: new Date().toISOString(),
       },
       { onConflict: "session_id,step_number" }
@@ -61,7 +61,7 @@ ai.post(`${PREFIX}/analyze-business`, async (c) => {
       );
     }
 
-    const systemPrompt = `You are a senior business analyst at Sun AI Agency. Analyze the company information provided and return a structured JSON analysis.
+    const systemPrompt = `You are a senior business analyst at AMO AI. Analyze the company information provided and return a structured JSON analysis.
 
 Return this exact JSON structure:
 {
@@ -127,7 +127,7 @@ ai.post(`${PREFIX}/industry-diagnostics`, async (c) => {
       return c.json({ error: "industryId is required" }, 400);
     }
 
-    const systemPrompt = `You are an AI diagnostics specialist at Sun AI Agency. Generate industry-specific diagnostic insights based on the company profile and industry.
+    const systemPrompt = `You are an AI diagnostics specialist at AMO AI. Generate industry-specific diagnostic insights based on the company profile and industry.
 
 Return this JSON structure:
 {
@@ -184,7 +184,7 @@ ai.post(`${PREFIX}/system-recommendations`, async (c) => {
     const body = await c.req.json();
     const { sessionId, wizardAnswers, industry, signals } = body;
 
-    const systemPrompt = `You are an AI systems architect at Sun AI Agency. Based on the wizard answers and diagnostic signals, rank and recommend AI systems.
+    const systemPrompt = `You are an AI systems architect at AMO AI. Based on the wizard answers and diagnostic signals, rank and recommend AI systems.
 
 Available systems: support-engine, growth-engine, operations-autopilot, data-intelligence, content-engine, onboarding-system, cart-recovery, recommendation-engine, sales-automation, loyalty-system, booking-engine, compliance-automation
 
@@ -277,7 +277,7 @@ ai.post(`${PREFIX}/readiness-score`, async (c) => {
       }
     }
 
-    const systemPrompt = `You are an AI readiness assessment expert at Sun AI Agency. Calculate an AI readiness score based on all available data about the business.
+    const systemPrompt = `You are an AI readiness assessment expert at AMO AI. Calculate an AI readiness score based on all available data about the business.
 
 Return this JSON structure:
 {
@@ -333,6 +333,7 @@ Assess this company's AI readiness based on all available information. Be specif
 });
 
 // ── POST /generate-roadmap ──
+// NEXUS v0.32.0: Generates 7-phase NEXUS roadmap with agent teams and quality gates
 ai.post(`${PREFIX}/generate-roadmap`, async (c) => {
   try {
     await requireAuth(c.req.header("Authorization") ?? null);
@@ -343,23 +344,40 @@ ai.post(`${PREFIX}/generate-roadmap`, async (c) => {
       return c.json({ error: "At least one system must be selected" }, 400);
     }
 
-    const systemPrompt = `You are a senior project manager at Sun AI Agency. Create a phased implementation roadmap for the selected AI systems.
+    const systemPrompt = `You are a senior delivery architect at AMO AI. Create a 7-phase NEXUS execution roadmap for the selected AI systems.
+
+NEXUS is a structured delivery framework with 7 phases. Each phase has an assigned AI agent team and quality gates that must pass before advancing.
+
+The 7 NEXUS phases are:
+- Phase 0: Discovery (3-7 days) — Validate opportunity before committing resources
+- Phase 1: Strategy (1-2 weeks) — Architecture, brand, budget, and sprint plan
+- Phase 2: Foundation (1-2 weeks) — Scaffold infrastructure before feature development
+- Phase 3: Build & Iterate (2-12 weeks) — Dev/QA loops for all features
+- Phase 4: Hardening (1-2 weeks) — Quality gauntlet, prove production readiness
+- Phase 5: Launch (1 week) — Coordinated go-to-market
+- Phase 6: Operate (ongoing) — Sustained operations and optimization
 
 Return this JSON structure:
 {
-  "title": "AI Transformation Roadmap for [Company]",
-  "totalWeeks": 12,
+  "title": "NEXUS Delivery Roadmap for [Company]",
+  "totalWeeks": 16,
   "totalInvestment": "$XX,XXX - $XX,XXX",
   "phases": [
     {
       "phaseNumber": 1,
-      "title": "Foundation",
-      "weekRange": "Weeks 1-4",
+      "nexusPhase": 0,
+      "title": "Discovery",
+      "weekRange": "Week 1",
       "systems": ["systemId1"],
-      "deliverables": ["deliverable 1", "deliverable 2"],
-      "milestones": ["milestone 1"],
+      "deliverables": ["Market analysis report", "Budget model"],
+      "milestones": ["GO/NO-GO decision"],
       "estimatedCost": "$X,XXX",
-      "teamInvolvement": "description of team needs"
+      "teamInvolvement": "Discovery team validates opportunity",
+      "gateCriteria": [
+        {"criterion": "Market research completed", "checkType": "system", "description": "Trend researcher has delivered market analysis"},
+        {"criterion": "Budget model created", "checkType": "system", "description": "Finance tracker has delivered ROI projection"},
+        {"criterion": "Research quality adequate", "checkType": "ai", "description": "Executive summary confirms completeness"}
+      ]
     }
   ],
   "quickWins": ["quick win 1", "quick win 2"],
@@ -369,13 +387,21 @@ Return this JSON structure:
   "successMetrics": [
     { "metric": "metric name", "target": "target value", "timeframe": "by when" }
   ]
-}`;
+}
+
+IMPORTANT RULES:
+- Always produce exactly 7 phases (nexusPhase 0 through 6)
+- Each phase must have 2-4 gateCriteria
+- gateCriteria checkType must be either "system" (deterministic) or "ai" (qualitative)
+- At least 2 gateCriteria per phase should be "system" type
+- Be specific about deliverables relevant to the selected systems and industry
+- Phase durations should be realistic for the company size`;
 
     const userPrompt = `Selected systems: ${JSON.stringify(selectedSystems)}
 Industry: ${industry || "unknown"}
 Company size: ${companySize || "unknown"}
 
-Create a realistic, phased implementation roadmap. Consider dependencies between systems, team capacity, and quick wins. Be specific about timelines and deliverables.`;
+Create a NEXUS 7-phase delivery roadmap. Each phase must have specific deliverables tied to the selected systems, realistic timelines, and quality gate criteria. Consider the industry context and company size for appropriate scope.`;
 
     const result = await callGemini(
       "generate-roadmap",
@@ -395,7 +421,7 @@ Create a realistic, phased implementation roadmap. Consider dependencies between
     }
 
     console.log(
-      `[AI] generate-roadmap complete for ${selectedSystems.length} systems`
+      `[AI] generate-roadmap (NEXUS) complete for ${selectedSystems.length} systems`
     );
 
     return c.json({
@@ -416,7 +442,7 @@ Create a realistic, phased implementation roadmap. Consider dependencies between
 // ── GET /ai/run-logs — Query ai_run_logs for agent management dashboard ──
 ai.get(`${PREFIX}/ai/run-logs`, async (c) => {
   try {
-    await requireAuth(c.req.header("Authorization") ?? null);
+    const userId = await requireAuth(c.req.header("Authorization") ?? null);
 
     // Ensure schema is up-to-date before querying
     await ensureAISchema();
@@ -429,6 +455,7 @@ ai.get(`${PREFIX}/ai/run-logs`, async (c) => {
     let query = db
       .from("ai_run_logs")
       .select("*", { count: "exact" })
+      .eq("user_id", userId)
       .order("created_at", { ascending: false })
       .range(offset, offset + limit - 1);
 
@@ -451,50 +478,20 @@ ai.get(`${PREFIX}/ai/run-logs`, async (c) => {
 });
 
 // ── GET /ai/cache-stats — Aggregate cache stats from ai_cache table ──
+// Client cache analytics are not tenant-scoped; do not expose another
+// business's model/cost activity via the service-role client.
 ai.get(`${PREFIX}/ai/cache-stats`, async (c) => {
   try {
     await requireAuth(c.req.header("Authorization") ?? null);
-
-    // Ensure schema is up-to-date before querying
-    await ensureAISchema();
-
-    const db = adminClient();
-
-    // Fetch all cache entries
-    const { data: entries, error } = await db
-      .from("ai_cache")
-      .select("input_hash, model, tokens_used, expires_at, created_at")
-      .order("created_at", { ascending: false })
-      .limit(200);
-
-    if (error) {
-      console.log(`[AI] cache-stats query error: ${error.message}`);
-      return c.json({ error: `Failed to fetch cache stats: ${error.message}` }, 500);
-    }
-
-    const now = new Date().toISOString();
-    const active = (entries || []).filter(e => e.expires_at > now);
-    const expired = (entries || []).filter(e => e.expires_at <= now);
-    const totalTokensCached = active.reduce((sum, e) => sum + (e.tokens_used || 0), 0);
-
-    console.log(`[AI] cache-stats: ${active.length} active, ${expired.length} expired`);
-
-    return c.json({
-      totalEntries: (entries || []).length,
-      activeEntries: active.length,
-      expiredEntries: expired.length,
-      totalTokensCached,
-      entries: (entries || []).slice(0, 50),
-    });
+    return c.json({ error: "Per-user AI cache statistics are not available" }, 403);
   } catch (error) {
-    return errorResponse(c, "Cache stats query failed", error);
+    return errorResponse(c, "Cache stats authorization failed", error);
   }
 });
 
-// ── GET /ai/aggregate-stats — Summary stats for agent dashboard header ──
 ai.get(`${PREFIX}/ai/aggregate-stats`, async (c) => {
   try {
-    await requireAuth(c.req.header("Authorization") ?? null);
+    const userId = await requireAuth(c.req.header("Authorization") ?? null);
 
     // Ensure schema is up-to-date before querying
     await ensureAISchema();
@@ -505,6 +502,7 @@ ai.get(`${PREFIX}/ai/aggregate-stats`, async (c) => {
     const { data: allRuns, error: runsErr } = await db
       .from("ai_run_logs")
       .select("prompt_type, tokens_used, duration_ms, success, created_at")
+      .eq("user_id", userId)
       .order("created_at", { ascending: false })
       .limit(500);
 
@@ -537,13 +535,8 @@ ai.get(`${PREFIX}/ai/aggregate-stats`, async (c) => {
       byType[type].successRate = Math.round((byType[type].successRate / byType[type].count) * 100);
     }
 
-    // Cache hit rate (from run logs — cache hits don't generate run logs, so approximate)
-    const { data: cacheEntries } = await db
-      .from("ai_cache")
-      .select("input_hash")
-      .gt("expires_at", new Date().toISOString());
-
-    const activeCacheEntries = cacheEntries?.length || 0;
+    // Cache is shared across accounts. Do not return global cache metrics.
+    const activeCacheEntries = 0;
 
     console.log(`[AI] aggregate-stats: ${totalRuns} runs, ${totalTokens} tokens`);
 
@@ -555,6 +548,7 @@ ai.get(`${PREFIX}/ai/aggregate-stats`, async (c) => {
       totalTokens,
       avgDuration,
       activeCacheEntries,
+      cacheMetricsAvailable: false,
       byType,
       models: GEMINI_MODELS,
     });

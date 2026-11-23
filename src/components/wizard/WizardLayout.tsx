@@ -129,7 +129,7 @@ export function WizardLayout({ children, rightPanel }: WizardLayoutProps) {
           <div className="max-w-[1440px] mx-auto px-6 h-14 flex items-center justify-between">
             <Link to="/" className="flex items-center gap-2" style={{ color: '#1A1A1A' }}>
               <Sun className="w-5 h-5" style={{ color: '#00875A' }} />
-              <span style={{ fontFamily: 'Georgia, serif' }}>Sun AI Agency</span>
+              <span style={{ fontFamily: 'Georgia, serif' }}>AMO AI</span>
             </Link>
           </div>
         </header>
@@ -146,7 +146,7 @@ export function WizardLayout({ children, rightPanel }: WizardLayoutProps) {
         <div className="max-w-[1440px] mx-auto px-6 h-14 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2" style={{ color: '#1A1A1A' }}>
             <Sun className="w-5 h-5" style={{ color: '#00875A' }} />
-            <span style={{ fontFamily: 'Georgia, serif' }}>Sun AI Agency</span>
+            <span style={{ fontFamily: 'Georgia, serif' }}>AMO AI</span>
           </Link>
           <span className="text-sm hidden md:block" style={{ color: '#6B6B63' }}>
             Step {state.currentStep}: {currentLabel}

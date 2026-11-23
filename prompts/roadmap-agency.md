@@ -57,7 +57,7 @@ Four phases, each with diagrams, tasks, and exit criteria. Follows `system.md` e
 | Task ID | Diagram | Title | Skill | Priority | Status |
 |---|---|---|---|---|---|
 | AGT-COMPILE-01-01 | AGT-COMPILE-01 | Create `agent-loader.tsx` with `compilePrompt()` | backend | P0 | Open |
-| AGT-COMPILE-01-02 | AGT-COMPILE-01 | Implement Layer 1 (Sun AI base role) as constant | backend | P0 | Open |
+| AGT-COMPILE-01-02 | AGT-COMPILE-01 | Implement Layer 1 (AMO AI base role) as constant | backend | P0 | Open |
 | AGT-COMPILE-01-03 | AGT-COMPILE-01 | Implement Layer 4 (JSON schema always last) | backend | P0 | Open |
 | AGT-COMPILE-02-01 | AGT-COMPILE-02 | Implement `extractExcerpt()` with section selection | backend | P0 | Open |
 | AGT-COMPILE-02-02 | AGT-COMPILE-02 | Add 2,000-token truncation with sentence boundary | backend | P0 | Open |
@@ -73,7 +73,7 @@ Four phases, each with diagrams, tasks, and exit criteria. Follows `system.md` e
 - `compilePrompt()` assembles 4-layer prompts correctly
 - `extractExcerpt()` returns < 2,000 tokens for any agent file
 - `selectAgents()` returns relevant agents for 5 test profiles
-- Fallback works: load failure → Sun AI base prompt only
+- Fallback works: load failure → AMO AI base prompt only
 - ROI guardrail present in compiled prompt
 
 **Validation:** Unit test 5 client profiles (dental clinic, e-commerce, SaaS, restaurant, game studio). Compare compiled prompt structure against spec.

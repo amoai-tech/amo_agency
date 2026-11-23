@@ -84,7 +84,7 @@ export default function V2CapabilityFramework({ onNavigate }: V2CapabilityFramew
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-4xl lg:text-5xl text-white leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
-            How Sun AI <span style={{ color: 'rgba(245,245,240,0.7)' }}>Delivers Value</span>
+            How AMO AI <span style={{ color: 'rgba(245,245,240,0.7)' }}>Delivers Value</span>
           </h2>
           <p className="text-lg lg:text-xl text-white/70 max-w-3xl mt-6">
             A unified capability framework that transforms operations with production-grade AI systems
@@ -307,7 +307,7 @@ export default function V2CapabilityFramework({ onNavigate }: V2CapabilityFramew
           transition={{ duration: 0.6, delay: 0.6 }}
         >
           <p className="text-xs text-white/50 uppercase tracking-wider">
-            Source: Sun AI Capability Framework
+            Source: AMO AI Capability Framework
           </p>
         </motion.div>
       </div>

@@ -13,16 +13,16 @@ CTA
 
 Use this:
 
-Figma Make Prompt — Infographics Portfolio Page (Sun AI)
+Figma Make Prompt — Infographics Portfolio Page (AMO AI)
 
-Design a premium AI infographic showcase page for Sun AI Agency.
+Design a premium AI infographic showcase page for AMO AI.
 
 This page is NOT a typical landing page.
 It is a visual-first experience where most of the content is actual infographic samples, not text.
 
 The goal:
 
-Show how Sun AI turns AI strategy into visual systems
+Show how AMO AI turns AI strategy into visual systems
 
 Each section should feel like a real infographic example
 

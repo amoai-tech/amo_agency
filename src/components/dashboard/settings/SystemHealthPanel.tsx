@@ -436,7 +436,7 @@ export default function SystemHealthPanel() {
       <div className="text-xs text-[#9CA39B] space-y-1 pt-2">
         <p>Project: <span className="font-mono">{projectId}</span></p>
         <p>User: <span className="font-mono">{user?.id?.slice(0, 8) || 'none'}…</span> | Auth: {accessToken ? 'Active' : 'None'}</p>
-        <p>Sun AI Agency v0.18.0</p>
+        <p>AMO AI v0.18.0</p>
       </div>
     </div>
   );

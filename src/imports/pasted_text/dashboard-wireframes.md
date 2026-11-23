@@ -10,7 +10,7 @@
 
 ```
 +----------------------------------------------------------------------+
-|  [=] Sun AI    Dashboard  Projects  Agents  CRM  ...    (Avatar) SK  |
+|  [=] AMO AI    Dashboard  Projects  Agents  CRM  ...    (Avatar) SK  |
 +----------------------------------------------------------------------+
 |       |                                                              |
 | DASH  |  Good morning, Dr. Patel                                    |
@@ -264,7 +264,7 @@ Agent nodes in workflows:
 
 ```
 +-------------------------+
-| [=]  Sun AI     (o) SK  |
+| [=]  AMO AI     (o) SK  |
 +-------------------------+
 |                         |
 | Good morning, Dr. Patel |

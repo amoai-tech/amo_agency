@@ -4,7 +4,7 @@
 **Location:** `/components/home/TechStackSection.tsx`  
 **Page:** HomePageV3  
 **Position:** After VelocityProcessSection, before CapabilitiesSection  
-**Design System:** Sun AI V3 with Dark Green Theme
+**Design System:** AMO AI V3 with Dark Green Theme
 
 ---
 
@@ -956,6 +956,6 @@ const metrics: Metric[] = [
 ---
 
 *Last updated: 2026-02-27*  
-*Author: Sun AI Design System*  
+*Author: AMO AI Design System*
 *Version: 1.0 — Technology Stack Section*  
 *Status: Ready for Implementation*

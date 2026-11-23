@@ -21,7 +21,7 @@ export function FinancialExpand() {
                   color: '#1E3D36',
                 }}
               >
-                Sun AI Expand
+                AMO AI Expand
               </h2>
               <p style={{ fontSize: '0.875rem', lineHeight: 1.7, color: '#1E3D36', opacity: 0.7 }}>
                 A flexible engagement model for financial institutions that need ongoing AI strategy, implementation

@@ -14,7 +14,7 @@ export default function WhyAIPowered() {
       chatbot: 'Add-on ($5K-15K)',
       support: 'Hourly billing'
     },
-    sunAI: {
+    amoAI: {
       timeline: '4-6 weeks',
       copy: 'Hours per round',
       design: '10+ variations in days',
@@ -25,7 +25,7 @@ export default function WhyAIPowered() {
   };
 
   return (
-    <section ref={ref} className="bg-[#F3F4F6] py-32 lg:py-40">
+    <section ref={ref} className="bg-[#F3F4F6] py-32 lg:py-40 overflow-x-clip">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Eyebrow */}
         <motion.div
@@ -96,9 +96,9 @@ export default function WhyAIPowered() {
             <p className="text-xs text-gray-500 mt-2 font-['Lora']">20+ weeks (5 months)</p>
           </div>
 
-          {/* Sun AI Timeline */}
+          {/* AMO AI Timeline */}
           <div>
-            <p className="text-sm text-gray-900 font-semibold mb-3 font-['Lora']">Sun AI (AI-Powered)</p>
+            <p className="text-sm text-gray-900 font-semibold mb-3 font-['Lora']">AMO AI (AI-Powered)</p>
             <div className="relative h-12 bg-gray-100 border-2 border-[#84CC16]">
               <motion.div
                 className="absolute top-0 left-0 h-full bg-[#84CC16] flex items-center justify-center text-xs text-gray-900 font-['Lora'] font-semibold"
@@ -155,7 +155,7 @@ export default function WhyAIPowered() {
             </div>
           </motion.div>
 
-          {/* Sun AI Card */}
+          {/* AMO AI Card */}
           <motion.div
             className="bg-[#84CC16]/10 border-2 border-[#84CC16] p-8"
             initial={{ opacity: 0, x: 40 }}
@@ -163,32 +163,32 @@ export default function WhyAIPowered() {
             transition={{ duration: 0.8, delay: 0.5 }}
           >
             <h4 className="text-2xl mb-6 text-gray-900" style={{ fontFamily: 'Playfair Display, serif' }}>
-              Sun AI (AI-Powered)
+              AMO AI (AI-Powered)
             </h4>
             <div className="space-y-4 font-['Lora'] text-gray-900 font-semibold">
               <div className="flex justify-between border-b border-[#84CC16]/30 pb-3">
                 <span>Timeline</span>
-                <span>{comparisonData.sunAI.timeline}</span>
+                <span>{comparisonData.amoAI.timeline}</span>
               </div>
               <div className="flex justify-between border-b border-[#84CC16]/30 pb-3">
                 <span>Copy Production</span>
-                <span>{comparisonData.sunAI.copy}</span>
+                <span>{comparisonData.amoAI.copy}</span>
               </div>
               <div className="flex justify-between border-b border-[#84CC16]/30 pb-3">
                 <span>Design Iterations</span>
-                <span>{comparisonData.sunAI.design}</span>
+                <span>{comparisonData.amoAI.design}</span>
               </div>
               <div className="flex justify-between border-b border-[#84CC16]/30 pb-3">
                 <span>Performance Score</span>
-                <span>{comparisonData.sunAI.performance}</span>
+                <span>{comparisonData.amoAI.performance}</span>
               </div>
               <div className="flex justify-between border-b border-[#84CC16]/30 pb-3">
                 <span>Chatbot Integration</span>
-                <span>{comparisonData.sunAI.chatbot}</span>
+                <span>{comparisonData.amoAI.chatbot}</span>
               </div>
               <div className="flex justify-between">
                 <span>Post-Launch Support</span>
-                <span>{comparisonData.sunAI.support}</span>
+                <span>{comparisonData.amoAI.support}</span>
               </div>
             </div>
           </motion.div>

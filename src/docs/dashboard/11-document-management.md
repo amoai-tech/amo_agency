@@ -50,7 +50,7 @@ Real-world: "The 'Acme Retail' project folder contains: auto-generated proposal 
 │  SIDEBAR    │  FOLDER TREE      │  MAIN CONTENT                            │
 │  240px      │  200px            │                                          │
 │             │                   │  Documents                               │
-│  ☀ Sun AI   │  All Documents    │  ┌──────────────────┐ ┌──┬──┐           │
+│  ☀ AMO AI   │  All Documents    │  ┌──────────────────┐ ┌──┬──┐           │
 │             │                   │  │ 🔍 Search docs...│ │▦ │☰ │           │
 │  ──────────│  ▾ Acme Retail    │  └──────────────────┘ └──┴──┘           │
 │  ○ Dashboard│    ▸ AI Trans. (7)│                                          │

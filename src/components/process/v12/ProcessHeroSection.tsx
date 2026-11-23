@@ -19,7 +19,7 @@ export default function ProcessHeroSection({
           {/* Left Column - Content */}
           <div className="lg:col-span-5">
             <p className="text-xs tracking-widest uppercase mb-6" style={{ color: '#00875A', letterSpacing: '0.08em' }}>
-              Sun AI Process
+              AMO AI Process
             </p>
 
             <h1 className="mb-8">

@@ -8,7 +8,7 @@
 
 ## 📋 Executive Summary
 
-The current Projects page (`/components/ProjectsPage.tsx`) is **mostly aligned** with the Sun AI Style Guide. It uses correct typography (Playfair Display), clean design, and appropriate spacing. However, some color adjustments and minor refinements are needed for 100% compliance.
+The current Projects page (`/components/ProjectsPage.tsx`) is **mostly aligned** with the AMO AI Style Guide. It uses correct typography (Playfair Display), clean design, and appropriate spacing. However, some color adjustments and minor refinements are needed for 100% compliance.
 
 **Style Guide Reference:** `/style-guide`
 

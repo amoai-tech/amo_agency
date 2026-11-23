@@ -984,4 +984,4 @@ Copy this for quick reference while building:
 **Last Updated:** February 27, 2025  
 **Reference Page:** `/web-design`  
 **Style Guide:** `/components/style-guide/`  
-**Maintained by:** Sun AI Agency Design Team
+**Maintained by:** AMO AI Design Team

@@ -1,5 +1,5 @@
 # 00 — PROJECT BRIEF WIZARD
-# Sun AI Agency — Complete Implementation Plan
+# AMO AI — Complete Implementation Plan
 
 **Component:** `C29-WizardPage`
 **Route:** `/wizard`
@@ -302,7 +302,7 @@ IF Step 2 industry = "Fashion"
 ```
 ┌──────────────────────────────────────────────────────────────────┐
 │                                                                  │
-│  ☀ Sun AI Agency     Step 3 of 6: Goals           ✓ Auto-saved  │
+│  ☀ AMO AI     Step 3 of 6: Goals           ✓ Auto-saved  │
 │                                                                  │
 ├──────────┬──────────────────────────────────────┬────────────────┤
 │          │                                      │                │
@@ -582,7 +582,7 @@ IF Step 2 industry = "Fashion"
 │  │  +20%      │ │            │ │  -10%      │       │
 │  └────────────┘ └────────────┘ └────────────┘       │
 │  ┌──────────────────────────────────────────┐        │
-│  │  Flexible — let Sun AI recommend          │        │
+│  │  Flexible — let AMO AI recommend          │        │
 │  └──────────────────────────────────────────┘        │
 │                                                      │
 │  Budget Range *                                      │
@@ -743,7 +743,7 @@ State 5: "Finalizing recommendations"
 ```
 ┌──────────────────────────────────────────────────────────────┐
 │                                                              │
-│  ☀ Sun AI Agency                           Download PDF  ↓  │
+│  ☀ AMO AI                           Download PDF  ↓  │
 │                                                              │
 │  ─────────────────────────────────────────────────────────   │
 │                                                              │
@@ -1558,7 +1558,7 @@ import ProposalPage from './components/wizard/ProposalPage';
 ### Full Route Tree Update
 
 ```
-sunaiagency.com
+www.amoai.ca
 │
 ├── / ──────────────── Home (V3)
 │
@@ -1891,7 +1891,7 @@ RELATED DOCS:
 ├── /imports/design-system-overview.md ... Wizard design tokens
 ├── /imports/bcg-style-guide.md ......... BCG consulting style reference
 ├── /imports/bcg-style-guide-1.md ....... BCG style guide (extended)
-├── /imports/sun-ai-service-page.md ..... Superside service page layout
+├── /imports/amo-ai-service-page.md ..... Superside service page layout
 
 RELATED COMPONENTS:
 ├── /components/services/ChatbotServicePage.tsx .... Chatbot page (links to wizard)

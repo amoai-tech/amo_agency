@@ -452,7 +452,7 @@ Max: 1320px (with 40px padding on sides)
 
 ### **Meta Tags**
 ```html
-<title>AI MVP Builder | From Idea to Product in 6 Weeks | Sun AI Agency</title>
+<title>AI MVP Builder | From Idea to Product in 6 Weeks | AMO AI</title>
 <meta name="description" content="We turn product ideas into working MVPs — scoped, architected, and built for market validation. Ship in 6 weeks. Skip the 6-month cycle. Production-grade, not throwaway." />
 ```
 
@@ -464,7 +464,7 @@ Max: 1320px (with 40px padding on sides)
   "name": "AI MVP Builder",
   "provider": {
     "@type": "Organization",
-    "name": "Sun AI Agency"
+    "name": "AMO AI"
   },
   "description": "6-week MVP development service",
   "offers": {
@@ -481,7 +481,7 @@ Max: 1320px (with 40px padding on sides)
 <meta property="og:title" content="AI MVP Builder | From Idea to Product in 6 Weeks" />
 <meta property="og:description" content="Ship your AI product in 6 weeks. Production-grade MVPs for validation, not throwaway prototypes." />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://sunai.agency/services/mvp-builder" />
+<meta property="og:url" content="https://www.amoai.ca/services/mvp-builder" />
 ```
 
 ---

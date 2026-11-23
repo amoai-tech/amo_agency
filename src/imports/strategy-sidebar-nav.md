@@ -31,7 +31,7 @@ spec_refs: [tasks/lean/02-wireframes.md §10]
 
 ```
 ┌──────────────────┐
-│  ☀ SUN AI        │
+│  ☀ AMO AI        │
 │                   │
 │  📊 Dashboard     │
 │  📁 Projects      │

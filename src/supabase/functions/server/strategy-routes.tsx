@@ -14,6 +14,22 @@ import { getHonestyProtocol } from "./fragments/honesty-protocol.ts";
 const strategy = new Hono();
 const PREFIX = "/make-server-283466b6";
 
+const CANVAS_BLOCKS = [
+  "problem", "customer_segments", "value_proposition", "solution", "channels",
+  "revenue_streams", "cost_structure", "key_metrics", "unfair_advantage",
+] as const;
+type CanvasBlock = (typeof CANVAS_BLOCKS)[number];
+function isCanvasBlock(value: unknown): value is CanvasBlock {
+  return typeof value === "string" &&
+    (CANVAS_BLOCKS as readonly string[]).includes(value);
+}
+function asRecord(value: unknown): Record<string, unknown> {
+  return value !== null && typeof value === "object" && !Array.isArray(value)
+    ? value as Record<string, unknown>
+    : {};
+}
+
+
 function errorResponse(c: any, context: string, error: unknown) {
   const msg = String(error);
   const isAuthError = msg.includes("Authentication required") || msg.includes("Auth validation error") || msg.includes("No Authorization header");
@@ -512,17 +528,19 @@ strategy.post(`${PREFIX}/strategy/recommendations/:id/approve`, async (c) => {
 
     // If approved and type is canvas_update, apply changes to canvas
     if (approved && rec.recommendation_type === "canvas_update" && rec.canvas_id) {
-      const proposed = rec.proposed_changes || {};
-      const targetBlock = proposed.target_block;
-      const items = proposed.items || [];
-      const action = proposed.action || "add";
+      const proposed = asRecord(rec.proposed_changes);
+      // Never let agent-generated JSON select arbitrary database columns.
+      const targetBlock = isCanvasBlock(proposed.target_block) ? proposed.target_block : null;
+      const items = Array.isArray(proposed.items) ? proposed.items : [];
+      const action = proposed.action === "replace" ? "replace" : "add";
 
       if (targetBlock && items.length > 0) {
         const { data: canvas } = await db
           .from("lean_canvases").select("*").eq("id", rec.canvas_id).single();
 
         if (canvas) {
-          const currentItems = canvas[targetBlock] || [];
+          const storedItems = canvas[targetBlock];
+          const currentItems = Array.isArray(storedItems) ? storedItems : [];
           let mergedItems;
           if (action === "replace") {
             mergedItems = items;
@@ -715,7 +733,7 @@ strategy.post(`${PREFIX}/strategy/analyze`, async (c) => {
     const agentResults: any[] = [];
 
     // 3. Phase A — 3 agents in parallel
-    const systemPromptBase = `You are an AI strategy analyst for Sun AI Agency. Analyze the business data and Lean Canvas below.\n\n${getHonestyProtocol()}`;
+    const systemPromptBase = `You are an AI strategy analyst for AMO AI. Analyze the business data and Lean Canvas below.\n\n${getHonestyProtocol()}`;
 
     const [synthResult, oppResult, metricsResult] = await Promise.all([
       (async () => {
@@ -918,6 +936,7 @@ strategy.post(`${PREFIX}/strategy/synthesize-block`, async (c) => {
     const db = adminClient();
 
     if (!canvas_id || !block) return c.json({ error: "canvas_id and block are required" }, 400);
+    if (!isCanvasBlock(block)) return c.json({ error: "Invalid canvas block" }, 400);
 
     const { data: canvas } = await db.from("lean_canvases").select("*").eq("id", canvas_id).eq("user_id", userId).single();
     if (!canvas) return c.json({ error: "Canvas not found" }, 404);
@@ -954,7 +973,7 @@ ${context ? `User context: ${context}` : ""}${wizardContext}
 
 Suggest improvements for the "${blockLabels[block] || block}" block.`,
       { canvas_id, block },
-      canvas.session_id
+      canvas.session_id ?? undefined
     );
     const duration = Date.now() - startTime;
 

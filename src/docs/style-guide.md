@@ -1,4 +1,4 @@
-# Sun AI V11 Style Guide — Calm Luxury Editorial
+# AMO AI V11 Style Guide — Calm Luxury Editorial
 
 **Design Philosophy:** Premium editorial aesthetic. No clutter, no shadows, no rounded buttons. Strong typography, structured borders, generous whitespace.
 
@@ -482,7 +482,7 @@ hover:text-[#F59E0B]
   <div className="max-w-4xl">
     {/* Eyebrow */}
     <p className="text-xs font-semibold uppercase tracking-widest text-[#F59E0B] mb-6">
-      Sun AI Process
+      AMO AI Process
     </p>
     
     {/* H1 Headline */}
@@ -548,7 +548,7 @@ hover:text-[#F59E0B]
 <blockquote className="max-w-3xl mx-auto text-center">
   <p className="text-2xl md:text-3xl text-[#1A1A1A] mb-6"
      style={{ fontFamily: 'Lora, serif' }}>
-    "Sun AI delivered our platform in 6 weeks. Incredible quality."
+    "AMO AI delivered our platform in 6 weeks. Incredible quality."
   </p>
   <footer className="text-sm text-[#999999]">
     <span className="font-semibold text-[#666666]">Jane Doe</span>

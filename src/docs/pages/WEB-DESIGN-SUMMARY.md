@@ -115,10 +115,10 @@
 │                                          │
 │  [Timeline Comparison Bars]              │
 │  Traditional: ████████████████████       │
-│  Sun AI:      ████                       │
+│  AMO AI:      ████                       │
 │                                          │
 │  [Comparison Cards Grid]                 │
-│  Traditional | Sun AI (highlighted)      │
+│  Traditional | AMO AI (highlighted)      │
 └──────────────────────────────────────────┘
 ```
 
@@ -150,9 +150,9 @@
 │   (94)   (96)   (95)   (98)             │
 │    ○      ○      ○      ○               │
 │                                          │
-│  [Bar Chart: Industry vs Sun AI]         │
+│  [Bar Chart: Industry vs AMO AI]         │
 │  Industry: ████████                      │
-│  Sun AI:   ██████████████████            │
+│  AMO AI:   ██████████████████            │
 └──────────────────────────────────────────┘
 ```
 
@@ -275,7 +275,7 @@
 
 ## 📈 **Impact**
 
-This page will help Sun AI Agency:
+This page will help AMO AI:
 - ✅ Showcase AI-accelerated development capabilities
 - ✅ Differentiate from traditional agencies (timeline comparison)
 - ✅ Build trust with performance metrics (Lighthouse gauges)
