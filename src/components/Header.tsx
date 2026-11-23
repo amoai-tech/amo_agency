@@ -351,7 +351,7 @@ export default function Header() {
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
               <Link
-                to="/booking"
+                to="/services"
                 onClick={() => setMobileMenuOpen(false)}
                 className="flex items-center justify-center w-full py-3 text-sm border transition-colors"
                 style={{
@@ -360,7 +360,7 @@ export default function Header() {
                   borderRadius: '4px',
                 }}
               >
-                Book a Call
+                Explore Services
               </Link>
             </div>
           </nav>

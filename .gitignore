@@ -38,6 +38,11 @@ sunai-figma/
 remotion/
 figma/
 images/
+
+# Public product screenshots used in the AMO portfolio are versioned assets.
+!public/images/
+!public/images/projects/
+!public/images/projects/*.webp
 prompts/archive/
 prompts/data/
 prompts/prompts/

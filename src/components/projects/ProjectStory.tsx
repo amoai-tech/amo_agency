@@ -33,7 +33,7 @@ export default function ProjectStory({ project }: ProjectStoryProps) {
       {/* AI Capabilities */}
       <div>
         <h3 className="text-sm uppercase tracking-widest text-[#999999] font-bold mb-4">
-          AI Capabilities
+          Product Features
         </h3>
         <ul className="space-y-2">
           {project.aiCapabilities.map((capability, index) => (
@@ -45,8 +45,8 @@ export default function ProjectStory({ project }: ProjectStoryProps) {
         </ul>
       </div>
 
-      {/* Results */}
-      <div>
+      {/* Publish measured results only when verified, never illustrative metrics. */}
+      {project.results.length > 0 && <div>
         <h3 className="text-sm uppercase tracking-widest text-[#999999] font-bold mb-4">
           Results
         </h3>
@@ -58,10 +58,10 @@ export default function ProjectStory({ project }: ProjectStoryProps) {
             </li>
           ))}
         </ul>
-      </div>
+      </div>}
 
-      {/* Tech Stack */}
-      <div>
+      {/* Publish the technology stack only when there is evidence. */}
+      {project.techStack.length > 0 && <div>
         <h3 className="text-sm uppercase tracking-widest text-[#999999] font-bold mb-4">
           Tech Stack
         </h3>
@@ -76,7 +76,7 @@ export default function ProjectStory({ project }: ProjectStoryProps) {
             </div>
           ))}
         </div>
-      </div>
+      </div>}
     </div>
   );
 }

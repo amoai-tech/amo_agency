@@ -7,25 +7,25 @@ import { Compass, Zap, Link2, Rocket, ArrowRight } from 'lucide-react';
 
 const phases = [
   {
-    weeks: 'Week 1',
+    weeks: 'Phase 1',
     title: 'Strategy & Design',
     desc: 'AI opportunity audit, roadmap prioritization, and system architecture.',
     icon: Compass,
   },
   {
-    weeks: 'Weeks 2-3',
+    weeks: 'Phase 2',
     title: 'System Architecture',
     desc: 'UX flows, AI behavior design, and technical blueprint.',
     icon: Zap,
   },
   {
-    weeks: 'Weeks 4-7',
+    weeks: 'Phase 3',
     title: 'Build & Integrate',
     desc: 'Production AI development with weekly sprint releases.',
     icon: Link2,
   },
   {
-    weeks: 'Week 8+',
+    weeks: 'Phase 4',
     title: 'Launch & Optimize',
     desc: 'Deployment, team enablement, and continuous improvement.',
     icon: Rocket,
@@ -56,9 +56,9 @@ export default function VelocityProcessSection() {
             className="text-3xl md:text-4xl mb-4"
             style={{ fontFamily: 'Georgia, serif', color: '#1A1A1A', fontWeight: 400, lineHeight: 1.15 }}
           >
-            Build AI in <span style={{ color: '#00875A' }}>8 Weeks</span>.
+            Build AI with <span style={{ color: '#00875A' }}>a Clear Plan</span>.
             <br className="hidden md:block" />
-            Not 8 Months.
+            From Idea to Useful Software.
           </motion.h2>
 
           <motion.p
@@ -69,7 +69,7 @@ export default function VelocityProcessSection() {
             className="text-base"
             style={{ color: '#6B6B63', lineHeight: 1.7 }}
           >
-            A proven acceleration system that takes your AI project from idea to production — fast.
+            A phased approach to discovery, design, delivery, and refinement. Timelines depend on project scope.
           </motion.p>
 
           <div className="mt-6 mx-auto h-0.5 w-16" style={{ backgroundColor: '#00875A' }} />
@@ -160,14 +160,14 @@ export default function VelocityProcessSection() {
             Strategy. Architecture. Production. Optimization.
           </p>
           <p className="text-sm mb-6" style={{ color: '#6B6B63' }}>
-            No wasted cycles. No over-engineering. No 8-month timelines.
+            Every stage has a practical review point. Timing depends on scope.
           </p>
           <a
             href="/process"
             className="inline-flex items-center gap-2 text-sm transition-colors"
             style={{ color: '#00875A' }}
           >
-            See the detailed 8-week process
+            Explore Our Process
             <ArrowRight className="w-3.5 h-3.5" />
           </a>
         </motion.div>

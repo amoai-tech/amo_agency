@@ -199,10 +199,14 @@ export default function AIAgentSystemsSection() {
               lineHeight: 1.7,
             }}
           >
-            Enterprise AI platform that deploys autonomous agents to qualify leads,
-            onboard customers, automate pipelines, and surface real-time insights.
+            Example interface showing how AI agents could qualify leads,
+            support onboarding, automate workflows, and summarize information.
           </motion.p>
         </div>
+
+        <p role="note" className="max-w-xl mx-auto mb-6 text-center text-sm" style={{ color: 'rgba(245, 245, 240, 0.75)' }}>
+          Illustrative AI dashboard — sample values only, not live client data or verified business results.
+        </p>
 
         {/* ── Holographic Dashboard Visualization ── */}
         <motion.div
@@ -247,7 +251,7 @@ export default function AIAgentSystemsSection() {
                   }}
                 >
                   <span style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.3)', fontFamily: 'monospace' }}>
-                    ai-agents.sun-ai.io/dashboard
+                    illustrative agent dashboard
                   </span>
                 </div>
                 <div className="flex gap-1.5 opacity-30">
